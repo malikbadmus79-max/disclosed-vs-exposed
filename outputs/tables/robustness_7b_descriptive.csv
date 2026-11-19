@@ -1,0 +1,64 @@
+check,claim,quantity,value,baseline_value
+baseline,1,firm-years with narrative text / of which no hazard-tagged paragraph,97 / 68,97 / 68
+baseline,1,mean Y3d (share of narrative paragraphs hazard-tagged),0.0031,about 0.003
+baseline,2,exposed main point sites / named anywhere / named in a hazard-tagged paragraph (mechanical),51 / 50 / 7,51 / 50 / 7
+baseline,2,exposed main point sites named in a genuine site physical-risk statement (Phase 7 reading),"0 (the only genuine statement, Seplat FY2025 OML 40, concerns a licence area)",0
+baseline,2,firms with a river flood-exposed site / of which ever use river flood terms,21 / 6,21 / 7
+baseline,3,firms with a heat-exposed site / of which ever use heat terms,15 / 2,15 / 2
+baseline,4,unscored firms / of which generic facility description only (C1),29 / 22,29 / 22
+baseline,7,firms (latest year held) / with all five elements / with none,56 / 2 / 50,56 / 2 / 50
+rp10,1,firm-years with narrative text / of which no hazard-tagged paragraph,97 / 68,97 / 68
+rp10,1,mean Y3d (share of narrative paragraphs hazard-tagged),0.0031,about 0.003
+rp10,2,exposed main point sites / named anywhere / named in a hazard-tagged paragraph (mechanical),51 / 50 / 7,51 / 50 / 7
+rp10,2,exposed main point sites named in a genuine site physical-risk statement (Phase 7 reading),"0 (the only genuine statement, Seplat FY2025 OML 40, concerns a licence area)",0
+rp10,2,firms with a river flood-exposed site / of which ever use river flood terms,19 / 6,21 / 7
+rp10,3,firms with a heat-exposed site / of which ever use heat terms,15 / 2,15 / 2
+rp10,4,unscored firms / of which generic facility description only (C1),29 / 22,29 / 22
+rp10,7,firms (latest year held) / with all five elements / with none,56 / 2 / 50,56 / 2 / 50
+rp500,1,firm-years with narrative text / of which no hazard-tagged paragraph,97 / 68,97 / 68
+rp500,1,mean Y3d (share of narrative paragraphs hazard-tagged),0.0031,about 0.003
+rp500,2,exposed main point sites / named anywhere / named in a hazard-tagged paragraph (mechanical),51 / 50 / 7,51 / 50 / 7
+rp500,2,exposed main point sites named in a genuine site physical-risk statement (Phase 7 reading),"0 (the only genuine statement, Seplat FY2025 OML 40, concerns a licence area)",0
+rp500,2,firms with a river flood-exposed site / of which ever use river flood terms,22 / 6,21 / 7
+rp500,3,firms with a heat-exposed site / of which ever use heat terms,15 / 2,15 / 2
+rp500,4,unscored firms / of which generic facility description only (C1),29 / 22,29 / 22
+rp500,7,firms (latest year held) / with all five elements / with none,56 / 2 / 50,56 / 2 / 50
+depth05,1,firm-years with narrative text / of which no hazard-tagged paragraph,97 / 68,97 / 68
+depth05,1,mean Y3d (share of narrative paragraphs hazard-tagged),0.0031,about 0.003
+depth05,2,exposed main point sites / named anywhere / named in a hazard-tagged paragraph (mechanical),51 / 50 / 7,51 / 50 / 7
+depth05,2,exposed main point sites named in a genuine site physical-risk statement (Phase 7 reading),"0 (the only genuine statement, Seplat FY2025 OML 40, concerns a licence area)",0
+depth05,2,firms with a river flood-exposed site / of which ever use river flood terms,20 / 6,21 / 7
+depth05,3,firms with a heat-exposed site / of which ever use heat terms,15 / 2,15 / 2
+depth05,4,unscored firms / of which generic facility description only (C1),29 / 22,29 / 22
+depth05,7,firms (latest year held) / with all five elements / with none,56 / 2 / 50,56 / 2 / 50
+b5km,1,firm-years with narrative text / of which no hazard-tagged paragraph,97 / 68,97 / 68
+b5km,1,mean Y3d (share of narrative paragraphs hazard-tagged),0.0031,about 0.003
+b5km,2,exposed main point sites / named anywhere / named in a hazard-tagged paragraph (mechanical),57 / 56 / 7,51 / 50 / 7
+b5km,2,exposed main point sites named in a genuine site physical-risk statement (Phase 7 reading),"0 (the only genuine statement, Seplat FY2025 OML 40, concerns a licence area)",0
+b5km,2,firms with a river flood-exposed site / of which ever use river flood terms,23 / 6,21 / 7
+b5km,3,firms with a heat-exposed site / of which ever use heat terms,15 / 2,15 / 2
+b5km,4,unscored firms / of which generic facility description only (C1),29 / 22,29 / 22
+b5km,7,firms (latest year held) / with all five elements / with none,56 / 2 / 50,56 / 2 / 50
+no_fs,1,firm-years with narrative text / of which no hazard-tagged paragraph,68 / 39,97 / 68
+no_fs,1,mean Y3d (share of narrative paragraphs hazard-tagged),0.0044,about 0.003
+no_fs,2,exposed main point sites / named anywhere / named in a hazard-tagged paragraph (mechanical),49 / 45 / 7,51 / 50 / 7
+no_fs,2,exposed main point sites named in a genuine site physical-risk statement (Phase 7 reading),"0 (the only genuine statement, Seplat FY2025 OML 40, concerns a licence area)",0
+no_fs,2,firms with a river flood-exposed site / of which ever use river flood terms,20 / 6,21 / 7
+no_fs,3,firms with a heat-exposed site / of which ever use heat terms,14 / 2,15 / 2
+no_fs,4,unscored firms / of which generic facility description only (C1),13 / 9,29 / 22
+no_fs,7,firms (latest year held) / with all five elements / with none,37 / 2 / 31,56 / 2 / 50
+dwl,1,firm-years with narrative text / of which no hazard-tagged paragraph,95 / 66,97 / 68
+dwl,1,mean Y3d (share of narrative paragraphs hazard-tagged),0.0032,about 0.003
+dwl,2,exposed main point sites / named anywhere / named in a hazard-tagged paragraph (mechanical),51 / 50 / 7,51 / 50 / 7
+dwl,2,exposed main point sites named in a genuine site physical-risk statement (Phase 7 reading),"0 (the only genuine statement, Seplat FY2025 OML 40, concerns a licence area)",0
+dwl,2,firms with a river flood-exposed site / of which ever use river flood terms,21 / 6,21 / 7
+dwl,3,firms with a heat-exposed site / of which ever use heat terms,15 / 2,15 / 2
+dwl,4,unscored firms / of which generic facility description only (C1),27 / 20,29 / 22
+dwl,7,firms (latest year held) / with all five elements / with none,54 / 2 / 48,56 / 2 / 50
+stratum,1,firm-years / firms / with no hazard-tagged paragraph / mean Y3d,"3 / 3 (ABCTRANS, RTBRISCOE, TRANSCORP) / 3 of 3 / 0.0",
+stratum,2,exposed main point sites / named in a hazard-tagged paragraph,5 / 0,
+stratum,-,doc types,ABCTRANS 2025 FS; RTBRISCOE 2025 FS; TRANSCORP 2025 FS,
+dispersed,1/7,dispersed only: firms / firm-years with narrative / with no hazard paragraph / mean Y3d / latest-year all five P1-P5 / none,8 / 8 / 5 / 0.0019 / 1 (MTNN) / 6,
+dispersed,1/7,dispersed + point sites: firms / firm-years with narrative / with no hazard paragraph / mean Y3d / latest-year all five P1-P5 / none,3 / 10 / 2 / 0.008 / 1 (SEPLAT) / 1,
+dispersed,1/7,point sites only / none: firms / firm-years with narrative / with no hazard paragraph / mean Y3d / latest-year all five P1-P5 / none,45 / 79 / 61 / 0.0026 / 0 () / 43,
+dispersed,-,firms,"dispersed only: AIRTELAFRI, CONOIL, ETERNA, JBERGER, MTNN, OANDO, PZ, TOTAL; mixed: ARADEL, DANGCEM, SEPLAT",

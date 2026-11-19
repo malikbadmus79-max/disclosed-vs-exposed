@@ -1,0 +1,149 @@
+{
+ "name": "Physical-risk hazard dictionary (design f4; main outcomes Y3d, Y4d, Y4s, Y4r under A20)",
+ "frozen_on": "2026-11-17",
+ "source": "docs/design.md f4 and config/parameters.json text.physical_risk_dictionary (OD-11, decided 2026-11-07). The design's 16 terms in the design's order, minus bare 'heat', plus 'extreme heat' (A20).",
+ "amendment": "A17 (matching rule); A20 (OD-11 decided by a pre-set rule: 'heat' dropped, 'extreme heat' added)",
+ "terms": [
+  {
+   "term": "flood",
+   "hazard_group": "flood",
+   "plural_matched": true,
+   "patterns": [
+    "(?<![A-Za-z0-9])flood(?:e?s)?(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "flooding",
+   "hazard_group": "flood",
+   "plural_matched": false,
+   "patterns": [
+    "(?<![A-Za-z0-9])flooding(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "inundation",
+   "hazard_group": "flood",
+   "plural_matched": true,
+   "patterns": [
+    "(?<![A-Za-z0-9])inundation(?:e?s)?(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "rainfall",
+   "hazard_group": "flood",
+   "plural_matched": true,
+   "patterns": [
+    "(?<![A-Za-z0-9])rainfall(?:e?s)?(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "storm",
+   "hazard_group": "storm",
+   "plural_matched": true,
+   "patterns": [
+    "(?<![A-Za-z0-9])storm(?:e?s)?(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "drought",
+   "hazard_group": "drought / water stress",
+   "plural_matched": true,
+   "patterns": [
+    "(?<![A-Za-z0-9])drought(?:e?s)?(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "water scarcity",
+   "hazard_group": "drought / water stress",
+   "plural_matched": false,
+   "patterns": [
+    "(?<![A-Za-z0-9])water[\\s\\-‐‑–]+scarcity(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "water stress",
+   "hazard_group": "drought / water stress",
+   "plural_matched": false,
+   "patterns": [
+    "(?<![A-Za-z0-9])water[\\s\\-‐‑–]+stress(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "heatwave",
+   "hazard_group": "heat",
+   "plural_matched": true,
+   "patterns": [
+    "(?<![A-Za-z0-9])heatwave(?:e?s)?(?![A-Za-z0-9])",
+    "(?<![A-Za-z0-9])heat[\\s\\-‐‑–]+wave(?:e?s)?(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "extreme temperature",
+   "hazard_group": "heat",
+   "plural_matched": true,
+   "patterns": [
+    "(?<![A-Za-z0-9])extreme[\\s\\-‐‑–]+temperature(?:e?s)?(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "extreme heat",
+   "hazard_group": "heat",
+   "plural_matched": false,
+   "patterns": [
+    "(?<![A-Za-z0-9])extreme[\\s\\-‐‑–]+heat(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "erosion",
+   "hazard_group": "coastal / erosion / sea level",
+   "plural_matched": false,
+   "patterns": [
+    "(?<![A-Za-z0-9])erosion(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "sea level",
+   "hazard_group": "coastal / erosion / sea level",
+   "plural_matched": true,
+   "patterns": [
+    "(?<![A-Za-z0-9])sea[\\s\\-‐‑–]+level(?:e?s)?(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "coastal",
+   "hazard_group": "coastal / erosion / sea level",
+   "plural_matched": false,
+   "patterns": [
+    "(?<![A-Za-z0-9])coastal(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "desertification",
+   "hazard_group": "drought / water stress",
+   "plural_matched": false,
+   "patterns": [
+    "(?<![A-Za-z0-9])desertification(?![A-Za-z0-9])"
+   ]
+  },
+  {
+   "term": "wildfire",
+   "hazard_group": "wildfire",
+   "plural_matched": true,
+   "patterns": [
+    "(?<![A-Za-z0-9])wildfire(?:e?s)?(?![A-Za-z0-9])"
+   ]
+  }
+ ],
+ "matching_rule": {
+  "case": "case-insensitive",
+  "unit": "the paragraph (or split piece) text as stored in data/interim/paragraphs.csv",
+  "boundaries": "whole words: the character before and after a match is not a letter or digit",
+  "plurals": "regular plural -s/-es only, for count nouns (floods, storms, droughts, heatwaves, wildfires, inundations, rainfalls, extreme temperatures, sea levels); no other inflection",
+  "multi_word_terms": "a space in a term matches one or more spaces or hyphens (sea-level, water-stress); 'heatwave' also matches 'heat wave' and 'heat-wave'",
+  "not_matched": "verb and adjective forms that are not in the list, e.g. 'flooded', 'floodplain', 'stormwater', 'water-stressed', 'heated', 'heating', 'eroded'. Recall is not measured (A20); adding any form requires an amendment",
+  "tag": "a paragraph is hazard-tagged if at least one term matches; Y3d = tagged / all scored narrative paragraphs, with no climate filter (A20)"
+ },
+ "od11_bare_heat": "Decided by a pre-set rule without looking at any count (A20, 2026-11-17): bare 'heat' is dropped (mostly process heat in kiln, furnace, brewery and power-plant reports, e.g. 'waste heat recovery'); 'extreme heat' is added; 'heatwave' and 'extreme temperature' are kept; 'high temperature' is not added (mostly process language).",
+ "precision_check": "A20: 100 tagged snippets checked by one external person; see docs/amendments.md",
+ "regex_flavour": "Python re; apply with re.IGNORECASE"
+}

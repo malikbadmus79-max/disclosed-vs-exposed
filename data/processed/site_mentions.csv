@@ -1,0 +1,126 @@
+facility_id,ticker,census_stratum,site_set,facility,sector,exp_rf100,exp_coastal,exp_heat,exp_water,exp_any,Y5_named_any,named_in_hazard_para,named_in_hazard_para_refined
+F0001,DANGCEM,main,office,Head office,Industrial Goods,1,0,1,1,1,1,0,0
+F0002,DANGCEM,main,main,Obajana plant,Industrial Goods,0,0,0,0,0,1,1,1
+F0003,DANGCEM,main,main,Gboko plant,Industrial Goods,1,0,0,0,1,1,1,1
+F0004,DANGCEM,main,main,Ibese plant,Industrial Goods,0,0,1,0,1,1,1,1
+F0007,DANGCEM,main,main,Apapa export terminal,Industrial Goods,1,0,1,1,1,1,0,0
+F0008,DANGCEM,main,main,Onne export terminal,Industrial Goods,1,0,0,0,1,1,1,0
+F0010,BUACEMENT,main,office,Registered office,Industrial Goods,1,1,1,0,1,1,0,0
+F0011,BUACEMENT,main,main,Obu plant,Industrial Goods,0,0,0,0,0,1,1,1
+F0012,BUACEMENT,main,main,Sokoto (Kalambaina) plant,Industrial Goods,0,0,0,0,0,1,1,1
+F0013,BUACEMENT,main,main,Head office building (Sokoto),Industrial Goods,1,0,0,1,1,1,1,1
+F0014,BUACEMENT,main,main,Ososo project,Industrial Goods,0,0,0,0,0,1,0,0
+F0016,GUINNESS,main,office,Headquarters,Consumer Goods,0,0,1,1,1,1,0,0
+F0017,GUINNESS,main,main,Ogba Brewery,Consumer Goods,0,0,1,1,1,1,0,0
+F0018,GUINNESS,main,main,Benin Brewery,Consumer Goods,1,0,0,0,1,1,0,0
+F0019,GUINNESS,main,main,Aba Brewery/Logistics Centre,Consumer Goods,1,0,0,0,1,1,0,0
+F0020,OKOMUOIL,main,main,Main estate (registered office and principal place of business),Agriculture,1,0,0,0,1,1,0,0
+F0023,OKOMUOIL,main,R2,Rubber factory,Agriculture,0,0,0,0,0,0,0,0
+F0032,BETAGLAS,main,office,Registered office,Industrial Goods,1,0,1,1,1,1,0,0
+F0033,BETAGLAS,main,main,Agbara plant,Industrial Goods,1,0,1,0,1,1,0,0
+F0034,BETAGLAS,main,main,Ughelli plant,Industrial Goods,1,0,0,0,1,1,0,0
+F0035,INTBREW,main,office,Registered office,Consumer Goods,1,0,1,1,1,1,0,0
+F0036,INTBREW,main,R2,Breweries,Consumer Goods,0,0,1,0,1,0,0,0
+F0037,HBMNG,main,office,Registered office,Industrial Goods,1,1,1,1,1,1,0,0
+F0038,HBMNG,main,main,Ewekoro,Industrial Goods,0,0,1,0,1,1,0,0
+F0039,HBMNG,main,main,Sagamu,Industrial Goods,1,0,1,0,1,1,0,0
+F0040,HBMNG,main,main,Mfamosing,Industrial Goods,0,0,0,0,0,1,0,0
+F0042,CADBURY,main,office,Registered office,Consumer Goods,0,0,1,1,1,1,0,0
+F0043,CADBURY,main,R2,Factory,Consumer Goods,0,0,1,1,1,0,0,0
+F0044,MTNN,main,office,Registered office,ICT,1,1,1,1,1,1,0,0
+F0045,MTNN,main,office,Head office (MTN Plaza),ICT,1,1,1,1,1,1,0,0
+F0049,NESTLE,main,office,Registered office,Consumer Goods,0,0,1,1,1,1,0,0
+F0050,NESTLE,main,main,Agbara factory (with distribution centre),Consumer Goods,1,0,1,0,1,1,0,0
+F0052,NESTLE,main,main,Abaji factory,Consumer Goods,0,0,0,0,0,1,0,0
+F0053,UNILEVER,main,office,Registered office,Consumer Goods,1,0,1,1,1,1,0,0
+F0054,UNILEVER,main,main,Oregun manufacturing site,Consumer Goods,1,0,1,1,1,1,0,0
+F0055,UNILEVER,main,main,Agbara manufacturing site,Consumer Goods,1,0,1,0,1,1,0,0
+F0057,NB,main,office,Headquarters (Iganmu House),Consumer Goods,1,0,1,1,1,1,0,0
+F0058,NB,main,main,Lagos Brewery,Consumer Goods,1,0,1,1,1,1,0,0
+F0059,NB,main,main,Ibadan Brewery,Consumer Goods,0,0,1,0,1,1,0,0
+F0061,NB,main,main,Aba Malting Plant,Consumer Goods,1,0,0,0,1,1,0,0
+F0062,NB,main,main,Aba Brewery,Consumer Goods,1,0,0,0,1,1,0,0
+F0063,NB,main,main,Ama Brewery,Consumer Goods,0,0,0,0,0,1,0,0
+F0066,NB,main,main,Ota Brewery,Consumer Goods,0,0,1,0,1,1,0,0
+F0067,NB,main,main,Ijebu-Ode Brewery,Consumer Goods,0,0,1,0,1,1,0,0
+F0068,NB,main,main,Onitsha Distribution Centre,Consumer Goods,1,0,0,0,1,1,0,0
+F0069,NB,main,main,Makurdi Distribution Centre,Consumer Goods,1,0,0,0,1,1,0,0
+F0070,NB,main,office,Lagos Sales Office,Consumer Goods,1,0,1,1,1,1,0,0
+F0072,NB,main,office,Benin Sales Office,Consumer Goods,1,0,0,0,1,1,0,0
+F0073,NB,main,office,Abuja Sales Office,Consumer Goods,1,0,0,0,1,1,0,0
+F0076,NB,main,office,Enugu Sales Office,Consumer Goods,0,0,0,0,0,1,0,0
+F0077,NB,main,office,Aba Sales Office,Consumer Goods,1,0,0,0,1,1,0,0
+F0078,SEPLAT,main,office,Registered office,Oil and Gas,1,1,1,0,1,1,0,0
+F0080,SEPLAT,main,main,Sapele gas processing,Oil and Gas,1,0,0,0,1,1,1,0
+F0082,SEPLAT,main,main,Amukpe flow station,Oil and Gas,1,0,0,0,1,1,1,0
+F0083,SEPLAT,main,main,Qua Iboe Terminal,Oil and Gas,1,0,1,0,1,1,0,0
+F0090,DANGSUGAR,main,office,Registered office (administrative building),Consumer Goods,1,0,1,1,1,1,0,0
+F0091,DANGSUGAR,main,main,Numan refinery operations,Consumer Goods,1,0,0,0,1,1,0,0
+F0095,FTNCOCOA,main,office,Registered office,Agriculture,1,0,1,0,1,1,0,0
+F0100,NASCON,main,office,Business office,Consumer Goods,1,0,1,1,1,1,0,0
+F0102,VITAFOAM,main,office,Registered office,Consumer Goods,1,0,1,1,1,1,0,0
+F0103,VITAFOAM,main,main,Aba manufacturing facility,Consumer Goods,1,0,0,0,1,1,0,0
+F0104,VITAFOAM,main,main,Ikeja manufacturing facility,Consumer Goods,0,0,1,1,1,1,0,0
+F0105,VITAFOAM,main,main,Jos manufacturing facility,Consumer Goods,0,0,0,0,0,1,0,0
+F0106,VITAFOAM,main,main,Kano manufacturing facility,Consumer Goods,0,0,0,1,1,1,0,0
+F0107,NEIMETH,main,office,Registered office,Healthcare,1,0,1,1,1,1,0,0
+F0108,NEIMETH,main,main,Oregun plant,Healthcare,1,0,1,1,1,1,0,0
+F0110,CUTIX,main,main,Registered office and factory,Industrial Goods,1,0,0,0,1,1,0,0
+F0111,BERGER,main,office,Registered office,Industrial Goods,1,0,1,1,1,1,0,0
+F0113,PZ,main,office,Registered office,Consumer Goods,0,0,1,1,1,1,0,0
+F0116,MAYBAKER,main,office,Registered office,Healthcare,1,0,1,1,1,1,0,0
+F0117,MAYBAKER,main,main,Kano warehouse (leased out),Healthcare,0,0,0,1,1,1,0,0
+F0118,MAYBAKER,main,main,Abuja warehouse (leased out),Healthcare,0,0,0,0,0,1,0,0
+F0119,MAYBAKER,main,main,Abuja sales depot,Healthcare,0,0,0,0,0,1,0,0
+F0121,MORISON,main,office,Registered office,Healthcare,1,0,1,1,1,1,0,0
+F0123,HONYFLOUR,main,office,Registered office,Consumer Goods,1,0,1,1,1,1,0,0
+F0124,HONYFLOUR,main,main,Apapa Factory,Consumer Goods,1,0,1,1,1,1,0,0
+F0125,HONYFLOUR,main,main,Sagamu Factory,Consumer Goods,1,0,1,0,1,1,0,0
+F0126,HONYFLOUR,main,main,Onitsha warehouse,Consumer Goods,0,0,0,0,0,1,0,0
+F0127,TRANSCORP,robustness_stratum,office,Registered office,Conglomerates,1,1,1,1,1,1,0,0
+F0128,TRANSCORP,robustness_stratum,main,Transcorp Hilton Hotel Abuja,Conglomerates,0,0,0,0,0,1,0,0
+F0129,TRANSCORP,robustness_stratum,main,Transcorp Hotels Port Harcourt,Conglomerates,1,1,0,0,1,1,0,0
+F0130,TRANSCORP,robustness_stratum,main,Afam Power,Conglomerates,1,0,0,0,1,1,0,0
+F0132,ABCTRANS,robustness_stratum,office,Registered office,Services,1,0,0,0,1,1,0,0
+F0133,ABCTRANS,robustness_stratum,main,Amuwo-Odofin property,Services,1,0,1,1,1,1,0,0
+F0134,ABCTRANS,robustness_stratum,main,Eliozu property,Services,1,0,0,0,1,1,0,0
+F0135,ABCTRANS,robustness_stratum,main,Jibowu property (with hotel),Services,1,0,1,1,1,1,0,0
+F0138,LIVESTOCK,main,main,Ikeja mill,Agriculture,0,0,1,1,1,1,0,0
+F0139,LIVESTOCK,main,main,Aba mill,Agriculture,1,0,0,0,1,1,0,0
+F0141,THOMASWY,main,office,Head office,Industrial Goods,1,0,1,1,1,1,0,0
+F0143,ACADEMY,main,main,Company premises (registered office),Industrial Goods,0,0,1,1,1,1,0,0
+F0144,ARADEL,main,office,Head office,Oil and Gas,1,1,1,0,1,1,0,0
+F0148,ARADEL,main,main,Ever Oil & Gas Depot (50% stake),Oil and Gas,1,1,0,0,1,1,0,0
+F0149,BUAFOODS,main,office,Registered office,Consumer Goods,1,1,1,0,1,1,0,0
+F0150,BUAFOODS,main,main,Plant site: Apapa,Consumer Goods,1,0,1,1,1,1,0,0
+F0151,BUAFOODS,main,main,Plant site: Ikeja,Consumer Goods,1,0,1,1,1,0,0,0
+F0152,BUAFOODS,main,main,"BUA Foods Industrial Complex, Port Harcourt",Consumer Goods,1,1,0,0,1,1,0,0
+F0153,BUAFOODS,main,main,BUA Sugar Refinery FZE,Consumer Goods,1,1,0,0,1,1,0,0
+F0154,BUAFOODS,main,main,LASUCO Sugar Company,Consumer Goods,1,0,0,0,1,1,0,0
+F0155,BUAFOODS,main,main,Flour Mills Plants II,Consumer Goods,1,1,0,0,1,1,0,0
+F0156,BUAFOODS,main,main,"Plant site: Sharada Industrial Estate, Kano",Consumer Goods,0,0,0,1,1,1,1,1
+F0159,FIDSON,main,office,Registered office,Healthcare,1,0,1,1,1,1,0,0
+F0160,FIDSON,main,main,Biotech factory,Healthcare,0,0,1,0,1,1,0,0
+F0161,MEYER,main,office,Registered office,Industrial Goods,1,0,1,1,1,1,0,0
+F0163,NNFM,main,main,Registered office and production facility,Consumer Goods,1,0,0,1,1,1,0,0
+F0164,TOTAL,main,office,Head office (Eko Tower 1),Oil and Gas,1,1,1,0,1,1,0,0
+F0168,CHAMPION,main,office,Registered office,Consumer Goods,1,0,0,0,1,1,0,0
+F0170,EUNISELL,main,office,Registered office,Industrial Goods,1,0,1,1,1,1,0,0
+F0172,GOLDBREW,main,office,Registered office,Consumer Goods,0,0,0,0,0,1,0,0
+F0174,IMG,main,office,Registered office,Industrial Goods,1,0,1,1,1,1,0,0
+F0176,JAPAULGOLD,main,office,Registered office (Japaul House),Natural Resources,0,0,1,0,1,1,0,0
+F0177,JAPAULGOLD,main,main,"Gold mining site, Libeli",Natural Resources,0,0,0,0,0,1,0,0
+F0178,MECURE,main,office,Corporate office (Debo Industrial Compound),Healthcare,1,0,1,1,1,1,0,0
+F0184,TRANSPOWER,main,office,Registered office,Utilities,1,1,1,1,1,1,0,0
+F0185,TRANSPOWER,main,main,Ughelli power plant,Utilities,1,0,0,0,1,1,0,0
+F0186,CAP,main,office,Registered office,Industrial Goods,1,0,1,1,1,1,0,0
+F0188,OANDO,main,office,Registered office (The Wings Complex),Oil and Gas,1,1,1,0,1,1,0,0
+F0191,JBERGER,main,office,Registered office,Construction/Real Estate,0,0,0,0,0,0,0,0
+F0193,AIRTELAFRI,main,office,Airtel Networks Limited (Nigeria) office,ICT,1,0,1,1,1,0,0,0
+F0196,ELLAHLAKES,main,office,Registered office,Agriculture,1,0,0,0,1,0,0,0
+F0198,ELLAHLAKES,main,main,"Adani farm (5,000 ha concession)",Agriculture,0,0,0,0,0,1,0,0
+F0204,UNIONDICON,main,office,Registered office (Kirikiri Lighter Terminal),Industrial Goods,1,0,1,1,1,1,0,0
+F0208,ALEX,main,main,Suleja powder-coating plant (leased),Industrial Goods,0,0,0,0,0,1,0,0
+F0209,ETERNA,main,office,Registered office,Oil and Gas,1,1,1,1,1,0,0,0
+F0213,GEREGU,main,office,Corporate office,Utilities,1,1,1,0,1,1,0,0
+F0214,GEREGU,main,main,Geregu power plant (plant operations),Utilities,1,0,0,0,1,1,0,0

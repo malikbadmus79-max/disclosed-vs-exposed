@@ -1,0 +1,881 @@
+{
+  "_meta": {
+    "project": "Disclosed vs exposed: physical climate risk at Nigeria's listed companies",
+    "design_document": "docs/design.md",
+    "version": "frozen-2026-11-07",
+    "frozen": true,
+    "status_values": {
+      "proposed": "analyst proposal; owner may accept as is",
+      "decided": "set by an owner decision already recorded in docs/phase0_audit.md"
+    },
+    "note": "No value here has been used to compute any result. Citations marked not_verified were not confirmed from a primary source.",
+    "frozen_on": "2026-11-07",
+    "freeze_record": "docs/amendments.md (SHA-256 of this file and docs/design.md)"
+  },
+  "hypotheses": {
+    "confirmatory": [
+      "H1",
+      "H2",
+      "H3"
+    ],
+    "descriptive": [
+      "H4"
+    ],
+    "status": "proposed"
+  },
+  "units": {
+    "years": {
+      "value": [
+        2020,
+        2025
+      ],
+      "status": "decided"
+    },
+    "firm_year_label": {
+      "value": "calendar year in which the fiscal year ends",
+      "status": "proposed"
+    }
+  },
+  "census": {
+    "source_list": {
+      "value": "data/raw/manual/ngx/ngx_equities_price_list_2026-11-06.csv",
+      "status": "decided"
+    },
+    "main_census_firms": {
+      "value": 59,
+      "status": "decided",
+      "note": "before document test"
+    },
+    "robustness_stratum_firms": {
+      "value": 18,
+      "status": "decided"
+    },
+    "document_test": {
+      "value": "full annual report for at least one fiscal year 2023-2025",
+      "status": "decided"
+    },
+    "exclusions": {
+      "value": [
+        "non-operating instruments",
+        "delisted firms",
+        "failed document test",
+        "board flag confirmed as suspended or delisting",
+        "unresolved tickers unless identified in Phase 2"
+      ],
+      "status": "decided"
+    },
+    "dwl_rule": {
+      "value": "if DWL confirmed to mean delisting, drop MULTITREX and UNIONDICON and report results with and without them",
+      "status": "decided"
+    },
+    "census_fixed_at": {
+      "value": "end of Phase 2, before outcomes",
+      "status": "proposed"
+    }
+  },
+  "location": {
+    "grades": {
+      "value": {
+        "A": "exact coordinates or full address",
+        "B": "town or industrial estate",
+        "C": "state only or LGA only",
+        "D": "not stated"
+      },
+      "status": "decided"
+    },
+    "rule_C1": {
+      "value": "estate without town is B only if uniquely matched in report text or OSM, else C",
+      "status": "decided"
+    },
+    "asset_types": {
+      "value": [
+        "point",
+        "dispersed"
+      ],
+      "status": "decided"
+    },
+    "source_priority_point": {
+      "value": [
+        "company reports",
+        "company website, EIAs, regulator records",
+        "OpenStreetMap"
+      ],
+      "status": "decided"
+    },
+    "source_priority_dispersed": {
+      "value": [
+        "company reports",
+        "Global Energy Monitor (after licence verified)",
+        "regulator records (e.g. NUPRC, NCC)"
+      ],
+      "status": "decided"
+    },
+    "main_analysis_set": {
+      "value": "grade A+B point sites, report or priority-2 sources",
+      "status": "proposed"
+    },
+    "robustness_sets": {
+      "value": {
+        "R1": "add grade C",
+        "R2": "add OSM-sourced sites",
+        "R3": "report-only locations"
+      },
+      "status": "proposed"
+    },
+    "geocoder": {
+      "value": "manual geocoding from OSM features and named addresses; no web geocoder in Phase 2",
+      "status": "decided",
+      "id": "OD-1",
+      "owner_spot_check": "owner manually spot-checks every grade-A site location before Phase 3",
+      "owner_spot_check_status": "replaced by amendment A6 (2026-11-12): rule-based cross-check of all grade-A rows instead of the owner's visual spot-check",
+      "amendment": "A6",
+      "decided_on": "2026-11-07"
+    }
+  },
+  "buffers_m": {
+    "A": {
+      "value": 500,
+      "status": "decided",
+      "id": "OD-2",
+      "citation": "analyst proposal, no citation",
+      "decided_on": "2026-11-07"
+    },
+    "A_crosscheck": {
+      "value": {"correct (rule-based)": "500 (OD-2 grade-A buffer)", "approximate (rule-based)": "coord_precision_m of the site", "no coordinate": "not scored"},
+      "status": "decided",
+      "id": "A6",
+      "rule": "correct: coord_method osm_feature AND the OSM name matches the firm/site AND state_check consistent or no state in report; approximate: coord_method osm_place or osm_place_rank (or an osm_feature row failing the name or state test); no coordinate: no coordinate or withdrawn",
+      "column": "facilities.csv buffer_m (grade-A rows only; grade B and C buffers follow OD-2 and are set in Phase 3)",
+      "decided_on": "2026-11-12",
+      "amendment": "A6"
+    },
+    "A_robustness_500": {
+      "value": 500,
+      "status": "decided",
+      "id": "A7",
+      "rule": "robustness check only: every grade-A site with a coordinate (A6 correct or approximate) is also scored with a 500 m buffer; the main analysis keeps the A6 buffers",
+      "precedence": "grade A: A6 buffer (main) / 500 m (A7 robustness); grade B: OSM polygon + 250 m if the site has an OSM way/relation feature, else 2 km (main) and 5 km (robustness), per OD-2/e5; grade C: state-level share, robustness only",
+      "decided_on": "2026-11-12",
+      "amendment": "A7"
+    },
+    "B_main": {
+      "value": 2000,
+      "status": "decided",
+      "id": "OD-2",
+      "citation": "analyst proposal, no citation",
+      "decided_on": "2026-11-07"
+    },
+    "B_robustness": {
+      "value": 5000,
+      "status": "decided",
+      "id": "OD-2",
+      "citation": "analyst proposal, no citation",
+      "decided_on": "2026-11-07"
+    },
+    "osm_polygon_padding": {
+      "value": 250,
+      "status": "decided",
+      "id": "OD-2",
+      "citation": "analyst proposal, no citation",
+      "decided_on": "2026-11-07"
+    },
+    "C": {
+      "value": "state-level share, robustness only",
+      "status": "proposed"
+    }
+  },
+  "hazards": {
+    "river_flood": {
+      "dataset": {
+        "value": "JRC Global river flood hazard maps v2.1.2 (3 arc-second)",
+        "status": "proposed"
+      },
+      "return_period_main": {
+        "value": 100,
+        "status": "proposed",
+        "citation": "EU Floods Directive 2007/60/EC Art. 6(3)(b): medium probability, likely return period >= 100 years (read)"
+      },
+      "return_periods_robustness": {
+        "value": [
+          10,
+          500
+        ],
+        "status": "proposed",
+        "citation": "same article lists high and low probability scenarios (read)"
+      },
+      "depth_threshold_m": {
+        "value": 0.0,
+        "operator": ">",
+        "status": "decided",
+        "id": "OD-3",
+        "alternative": 0.5,
+        "citation": "no depth-damage source verified",
+        "robustness": 0.5,
+        "decided_on": "2026-11-07"
+      },
+      "scores": {
+        "value": [
+          "share of buffer flooded",
+          "max depth in buffer"
+        ],
+        "status": "proposed"
+      },
+      "scenario": {
+        "value": "baseline (static maps)",
+        "status": "proposed"
+      },
+      "permanent_water_robustness": {
+        "value": "JRC v2.1.2 Permanent_WaterBodies tiles: cells marked permanent water are excluded before computing RP100 exposure (depth > 0 m) and the flooded share of the buffer",
+        "status": "decided",
+        "id": "A8",
+        "use": "robustness check only; the main river-flood measure is unchanged",
+        "decided_on": "2026-11-12",
+        "amendment": "A8"
+      }
+    },
+    "coastal_flood": {
+      "dataset": {
+        "value": "WRI Aqueduct Floods Hazard Maps v2.0, coastal",
+        "status": "proposed",
+        "licence": "not_verified",
+        "resolution": "not_verified"
+      },
+      "return_period_main": {
+        "value": 100,
+        "status": "proposed"
+      },
+      "depth_threshold_m": {
+        "value": 0.0,
+        "operator": ">",
+        "status": "decided",
+        "id": "OD-3",
+        "robustness": 0.5,
+        "decided_on": "2026-11-07"
+      },
+      "coastal_zone": {
+        "value": "none defined: every A/B point site scored; inland sites score zero",
+        "status": "decided",
+        "id": "OD-4",
+        "decided_on": "2026-11-07"
+      },
+      "future_descriptive": {
+        "value": "2050, higher-emissions scenario offered by dataset",
+        "status": "proposed",
+        "citation": "scenario names not_verified"
+      }
+    },
+    "heat": {
+      "dataset": {
+        "value": "NASA POWER daily point API: T2M_MAX, T2M_MIN, RH2M",
+        "status": "decided"
+      },
+      "baseline_period": {
+        "value": [
+          1991,
+          2020
+        ],
+        "status": "proposed",
+        "citation": "WMO standard normal period (search excerpt; WMO-No. 1203 not read): not_verified"
+      },
+      "main_metric": {
+        "value": "annual days with T2M_MAX above site 90th percentile of baseline (TX90p-type)",
+        "status": "proposed",
+        "citation": "Zhang et al. 2011, WIREs Climate Change 2(6) 851-870, doi:10.1002/wcc.147 (Crossref)"
+      },
+      "exposure_margin": {
+        "value": "continuous anomaly (2020-2025 mean minus 1991-2020 mean); exposed = top tercile of sites",
+        "status": "decided",
+        "id": "OD-5",
+        "decided_on": "2026-11-07"
+      },
+      "absolute_heat_index_threshold": {
+        "value": null,
+        "status": "decided",
+        "id": "OD-6",
+        "formula": "NWS Rothfusz regression (NOAA WPC page; NWS TA SR 90-23) (read)",
+        "citation": "NWS category cut-offs not_verified",
+        "decision": "no fixed-threshold heat-index check (fallback)",
+        "verification_attempt": "owner-specified URL https://www.weather.gov/media/unr/heatindex.pdf returned HTTP 404 on 2026-11-07; NWS categories not verified",
+        "decided_on": "2026-11-07"
+      },
+      "era5": {
+        "value": "not used; revisit only via amendment if several sites share one NASA POWER cell",
+        "status": "decided",
+        "id": "OD-7",
+        "decided_on": "2026-11-07",
+        "revisited": "A10 (2026-11-12): condition met; ERA5 is the main heat source (see hazards.heat.era5_main)"
+      },
+      "grid_cell_assignment": {
+        "value": "each site takes the MERRA-2 native grid cell that contains it (0.5 deg latitude x 0.625 deg longitude; cell centres at latitude -90 + 0.5*i and longitude -180 + 0.625*j); one NASA POWER point series per native cell, requested at the exact cell centre",
+        "edge_rule": "half-open cells: a site exactly on a cell edge goes to the cell to its north (latitude) or east (longitude)",
+        "cells_downloaded": "every native cell that contains at least one main-analysis site; office and R2 sites in other cells are not scored for heat",
+        "replaces": "0.5 x 0.5 deg bins with edges at multiples of 0.5 deg, requested at the bin centre (implementation choice, not in design.md)",
+        "status": "decided",
+        "id": "A9",
+        "decided_on": "2026-11-12",
+        "amendment": "A9",
+        "superseded_by": "A10 (2026-11-12): heat main comes from ERA5; A9 was never applied"
+      },
+      "era5_main": {
+        "value": "ERA5 hourly time-series data on single levels (CDS dataset reanalysis-era5-single-levels-timeseries; A11, replaces derived-era5-single-levels-daily-statistics of A10): variable 2m_temperature, 1991-01-01 to 2025-12-31 UTC, one point series per 0.25 deg grid point; daily maximum = maximum of hourly values per local day in UTC+01:00 (West Africa Time)",
+        "cell_rule": "each site takes the 0.25 deg grid point nearest to it (the cell centred on that point, +/- 0.125 deg); a site exactly on a cell edge goes to the cell to its north / east",
+        "metric": "unchanged (e3, OD-5): per cell, 90th percentile of all daily maxima 1991-2020 pooled; score = mean annual exceedance days 2020-2025 minus mean 1991-2020; exposed = score >= 2/3 quantile of main-set site scores",
+        "robustness": "NASA POWER heat from the 0.5 deg bin files already scored (owner manual download, identical to the API files), reported side by side",
+        "trigger": "OD-7 condition met: several main sites share one NASA POWER cell (18 Lagos main sites in one MERRA-2 cell)",
+        "status": "decided",
+        "id": "A10",
+        "decided_on": "2026-11-12",
+        "amendment": "A10",
+        "source_A11": "A11 (2026-11-17): data source switched to CDS reanalysis-era5-single-levels-timeseries (ERA5 hourly time series, single levels), 2m_temperature 1991-01-01 to 2025-12-31 UTC, one request per 0.25 deg grid point (A10 cell rule), shifted to UTC+01:00 and reduced to the local-day maximum of hourly values; validation gate: max |diff| vs the A10 daily-statistics files for 1991 and 2025 must be <= 0.5 C; metric unchanged"
+      }
+    },
+    "water_stress": {
+      "dataset": {
+        "value": "WRI Aqueduct 4.0 baseline annual (CC BY 4.0)",
+        "status": "proposed",
+        "citation": "Kuzma et al. 2023, doi:10.46830/writn.23.00061 (Crossref)"
+      },
+      "variables": {
+        "value": [
+          "bws_cat",
+          "bws_label",
+          "bws_raw"
+        ],
+        "status": "proposed"
+      },
+      "threshold": {
+        "value": "two highest bws categories",
+        "status": "proposed",
+        "citation": "category cut-offs not_verified; read from bws_label and technical note in Phase 2"
+      },
+      "future_descriptive": {
+        "value": [
+          "2030",
+          "2050"
+        ],
+        "scenario": "business-as-usual",
+        "status": "proposed",
+        "citation": "scenario names not_verified"
+      }
+    }
+  },
+  "firm_exposure": {
+    "weights": {
+      "value": "none (unless reports give capacity for every site)",
+      "status": "decided"
+    },
+    "main": {
+      "value": "E_share",
+      "status": "proposed"
+    },
+    "also": {
+      "value": [
+        "E_any",
+        "E_max"
+      ],
+      "status": "proposed"
+    },
+    "combined_index": {
+      "value": "mean of hazard-specific E_share (secondary)",
+      "status": "decided",
+      "id": "OD-8",
+      "primary_hazards": [
+        "river_flood",
+        "heat"
+      ],
+      "decided_on": "2026-11-07"
+    },
+    "dispersed": {
+      "value": "share of operating states exposed; reported separately",
+      "status": "proposed"
+    }
+  },
+  "text": {
+    "documents": {
+      "value": [
+        "annual report",
+        "integrated report",
+        "sustainability report",
+        "sustainability extract",
+        "FS-only filing"
+      ],
+      "status": "decided"
+    },
+    "exclude_sections": {
+      "value": "audited financial statements and notes (except site names)",
+      "status": "proposed",
+      "tagging": {
+        "value": "rule-based page range per document (auditor's report / primary statements / notes headings in the first 6 heading-like blocks of a page, contents pages ignored; start = first auditor or statement page; end = page before the first post-statement section heading, else document end), with analyst review of flagged documents; replaces hand tagging",
+        "output": "data/interim/section_tags.csv",
+        "status": "decided",
+        "id": "A14",
+        "decided_on": "2026-11-17",
+        "amendment": "A14"
+      }
+    },
+    "extraction": {
+      "value": "PyMuPDF + Unicode NFKC",
+      "status": "proposed"
+    },
+    "readability_min_common_word_share": {
+      "value": 0.25,
+      "status": "decided",
+      "id": "OD-9",
+      "calibration": "calibrate on Phase 0 files before use (Unilever 2025 must fail, others pass); log calibrated value as an amendment",
+      "decided_on": "2026-11-07",
+      "calibrated_on": "2026-11-12",
+      "amendment": "A1",
+      "previous_value": 0.3,
+      "word_list": "wordfreq 3.1.1 top_n_list('en', 1000); code Apache-2.0, data CC BY-SA 4.0; Speer (2022) doi:10.5281/zenodo.7199437",
+      "tokens": "wordfreq.tokenize(text, 'en') on PyMuPDF + NFKC text of the whole document; tokens with at least one letter",
+      "calibration_file": "data/interim/readability_calibration.csv"
+    },
+    "readability_page_rule": {
+      "value": {"page_share_below": 0.2, "max_share_of_pages": 0.1},
+      "status": "decided",
+      "id": "A2",
+      "rule": "a file is also OCR'd (OCRmyPDF + Tesseract + Ghostscript, --force-ocr -l eng --oversample 300) if more than 10% of its pages have a common-word share below 0.20; the OCR copy is used for text work",
+      "page_share": "same word list and tokens as readability_min_common_word_share; a page with no word tokens has share 0",
+      "applies_to": "every report file (originals; OCR copies are not re-tested by this rule)",
+      "decided_on": "2026-11-12",
+      "amendment": "A2"
+    },
+    "page_text_selection": {
+      "value": {"original_page_min_share": 0.2},
+      "status": "decided",
+      "id": "A3",
+      "rule": "for every report with an OCR copy, text is chosen page by page: the original page text if its common-word share is >= 0.20; otherwise the OCR page text if its share is >= 0.20; if both are below 0.20, the one with the higher share (original on a tie), and the page is flagged",
+      "replaces": "A2 'use the whole OCR copy' (the A2 trigger rule stays)",
+      "page_share": "same word list and tokens as A1/A2; a page with no word tokens has share 0",
+      "outputs": "data/interim/text/<key>.txt (page markers) and data/interim/text_sources.csv (per-page source); PDFs are not modified",
+      "decided_on": "2026-11-12",
+      "amendment": "A3"
+    },
+    "page_text_selection_a4": {
+      "value": {"both_low_share": 0.2, "min_token_ratio": 0.5},
+      "status": "decided",
+      "id": "A4",
+      "rule": "refines A3: for each page with an original and an OCR version, use the version with the higher common-word share, unless it has fewer than half the word tokens of the other version, in which case use the other; if both shares are below 0.20, use the higher share (original on a tie) and flag the page",
+      "ties": "equal shares -> original",
+      "flag": "pages where both shares are below 0.20; pages where the token-count override selects a version with share below 0.20 are also flagged",
+      "replaces": "the A3 selection order (original if >= 0.20, else OCR); A3 outputs and the A2 trigger rule stay",
+      "decided_on": "2026-11-12",
+      "amendment": "A4"
+    },
+    "page_text_selection_a5": {
+      "value": {"guard_requires_other_share_at_least": 0.2},
+      "status": "decided (final for this study)",
+      "id": "A5",
+      "rule": "refines A4: the 'fewer than half the word tokens' guard applies only when the other version's share is >= 0.20; a version with share < 0.20 can never win through the guard; everything else in A4 stays",
+      "decided_on": "2026-11-12",
+      "amendment": "A5"
+    },
+    "ocr_trigger_run_together": {
+      "value": {"max_share_run_together_tokens": 0.01, "token_min_chars": 25, "token_min_letter_share": 0.85},
+      "status": "decided",
+      "id": "A12",
+      "rule": "a report is also OCR'd (same tools and settings as A2) if more than 1% of the whitespace tokens of its segmented text are run-together tokens (>= 25 characters, >= 85% letters, not a URL or e-mail); pages are then chosen by A3-A5",
+      "applied_to": "LIVESTOCK FY2025 (data/raw/manual/livestock/2025_AR.pdf)",
+      "decided_on": "2026-11-17",
+      "amendment": "A12"
+    },
+    "control_characters": {
+      "value": "C0 control characters other than tab, line feed and carriage return (U+0000-U+0008, U+000B, U+000C, U+000E-U+001F) and U+007F are replaced by a space in extracted text, before NFKC and whitespace normalisation",
+      "status": "decided",
+      "id": "A15",
+      "reason": "LIVESTOCK FY2025 encodes the space glyph as U+0003 (about 19,500 occurrences), which made words run together",
+      "decided_on": "2026-11-17",
+      "amendment": "A15"
+    },
+    "ligature_repair": {
+      "value": "after NFKC: U+F001 -> fi, U+F002 -> fl; on original text-layer pages only, a token (>= 3 letters, wordfreq zipf < 1.5) or split pair 'A B' (A 1-6 letters, B >= 2 lower-case letters with zipf < 1.5) is repaired by inserting one of ffi, ffl, ff, fi, fl if exactly one candidate has zipf >= 3.0 (wordfreq 3.1.1, English)",
+      "status": "decided",
+      "id": "A13",
+      "log": "data/interim/ligature_repairs.csv",
+      "decided_on": "2026-11-17",
+      "amendment": "A13"
+    },
+    "ocr": {
+      "value": "OCRmyPDF (MPL-2.0) + Tesseract (Apache-2.0), English",
+      "status": "proposed"
+    },
+    "ocr_qc_pages_per_doc": {
+      "value": 2,
+      "status": "proposed"
+    },
+    "min_paragraph_words": {
+      "value": 40,
+      "status": "proposed"
+    },
+    "max_tokens": {
+      "value": 512,
+      "status": "proposed",
+      "citation": "tokenizer model_max_length (read)"
+    },
+    "models": {
+      "detector": {
+        "value": "climatebert/distilroberta-base-climate-detector",
+        "threshold": 0.5,
+        "status": "decided",
+        "id": "OD-10",
+        "decided_on": "2026-11-07"
+      },
+      "specificity": {
+        "value": "climatebert/distilroberta-base-climate-specificity",
+        "threshold": 0.5,
+        "status": "decided",
+        "id": "OD-10",
+        "decided_on": "2026-11-07"
+      },
+      "tcfd": {
+        "value": "climatebert/distilroberta-base-climate-tcfd",
+        "rule": "argmax",
+        "status": "proposed"
+      },
+      "sentiment": {
+        "value": "climatebert/distilroberta-base-climate-sentiment",
+        "rule": "argmax",
+        "status": "proposed"
+      },
+      "revision_hash": {
+        "value": {
+          "detector": "2c3bc660d45a59e31b35f5d3e365ee4f59fdf76c",
+          "specificity": "4ada96ed4bf5c3a7a711282e41f1ab9b29f0ddea",
+          "tcfd": "970630beedc21db81a84156448ad2e3ac860153d",
+          "sentiment": "e9f9a94ee4263f5ad5cfc97b8539a497fc88aa7d"
+        },
+        "status": "decided",
+        "note": "recorded when the corpus was scored (2026-11-17; exploratory, unvalidated outcomes, A20/A21)",
+        "amendment": "A21"
+      }
+    },
+    "physical_risk_dictionary": {
+      "value": [
+        "flood",
+        "flooding",
+        "inundation",
+        "rainfall",
+        "storm",
+        "drought",
+        "water scarcity",
+        "water stress",
+        "heatwave",
+        "extreme temperature",
+        "extreme heat",
+        "erosion",
+        "sea level",
+        "coastal",
+        "desertification",
+        "wildfire"
+      ],
+      "status": "decided",
+      "id": "OD-11",
+      "rule": "drop bare 'heat' if validation shows false positives; log as amendment",
+      "decided_on": "2026-11-07",
+      "od11_resolution": "A20 (2026-11-17): validation dropped; decided by a pre-set rule without looking at counts: bare 'heat' dropped, 'extreme heat' added, 'heatwave' and 'extreme temperature' kept, 'high temperature' not added",
+      "previous_value": "design list of 16 terms including bare 'heat'",
+      "amendment": "A20",
+      "file": "config/dictionary_hazard.json (frozen 2026-11-17; SHA-256 in docs/amendments.md)",
+      "matching": "case-insensitive whole words; regular plural -s/-es for count nouns only; a space in a term matches spaces or hyphens; 'heatwave' also matches 'heat wave'; no other inflection (e.g. 'flooded', 'water-stressed' are not matched)",
+      "matching_id": "A17",
+      "matching_decided_on": "2026-11-17"
+    },
+    "site_dictionary": {
+      "value": "config/dictionary_sites.json (frozen 2026-11-17; SHA-256 in docs/amendments.md), built from data/processed/facilities.csv (supersedes data/interim/facility_locatability.csv) by src/phase4_dictionaries.py",
+      "status": "decided",
+      "id": "A17",
+      "rule": "R1: place term + facility-context term in the same paragraph (case-insensitive); R2 (ambiguous place: shared by 2+ firms, major city/state, common word or other sense): case-sensitive + facility-context term in the same sentence; R3: facility proper name or licence counts alone (case-sensitive; R3+R2 if ambiguous); the firm's own name phrases that contain a site term are removed before matching; generic words are never terms",
+      "previous_value": "built from data/interim/facility_locatability.csv; frozen before outcomes",
+      "decided_on": "2026-11-17",
+      "amendment": "A17"
+    },
+    "outcomes": {
+      "value": {
+        "Y1": "climate share",
+        "Y2": "specificity share",
+        "Y3": "physical-risk share",
+        "Y4": "site-named physical-risk mentions",
+        "Y5": "site ever named (site level)"
+      },
+      "status": "proposed"
+    },
+    "hazard_dictionary_refined_a21": {
+      "value": "config/dictionary_hazard_refined.json: frozen dictionary minus 'storm', 'erosion', 'coastal' (13 terms)",
+      "status": "exploratory (post hoc, chosen after the precision results; precision on the same sample is optimistic); frozen dictionary stays main",
+      "id": "A21",
+      "decided_on": "2026-11-17",
+      "amendment": "A21"
+    },
+    "outcomes_main_a20": {
+      "value": {
+        "Y3d": "hazard-tagged scored narrative paragraphs / all scored narrative paragraphs (no climate filter)",
+        "Y4d": "count of hazard-tagged scored narrative paragraphs naming >= 1 of the firm's sites (site dictionary R1-R3); also binary",
+        "Y4s": "Y4d / hazard-tagged paragraphs (missing if none)",
+        "Y4r": "Y4d / all scored narrative paragraphs",
+        "Y5": "site ever named (unchanged)"
+      },
+      "exploratory_unvalidated": ["Y1", "Y2", "TCFD category", "sentiment", "ClimateBERT H3 version tau(Y1) vs tau(Y4)"],
+      "limitation_note": "ClimateBERT outcomes were not validated against human coding; design g validation dropped by owner decision (A20)",
+      "status": "decided",
+      "id": "A20",
+      "decided_on": "2026-11-17",
+      "amendment": "A20"
+    }
+  },
+  "validation": {
+    "n_paragraphs": {
+      "value": 200,
+      "status": "decided"
+    },
+    "max_per_firm": {
+      "value": 10,
+      "status": "proposed"
+    },
+    "fs_only_cap_share": {
+      "value": 0.1,
+      "status": "proposed"
+    },
+    "random_seed": {
+      "value": 20261107,
+      "status": "proposed"
+    },
+    "recode_min_days": {
+      "value": 7,
+      "status": "decided"
+    },
+    "metrics": {
+      "value": [
+        "Krippendorff alpha (intra-coder)",
+        "Cohen kappa and F1 (model vs human)"
+      ],
+      "status": "proposed",
+      "citation": "Hayes & Krippendorff 2007 doi:10.1080/19312450709336664; Cohen 1960 doi:10.1177/001316446002000104 (Crossref)"
+    },
+    "min_alpha": {
+      "value": 0.8,
+      "status": "decided",
+      "id": "OD-12",
+      "citation": "attributed to Krippendorff (2019) doi:10.4135/9781071878781; value not_verified from text",
+      "note": "benchmark values to be confirmed in the original texts before the paper",
+      "decided_on": "2026-11-07"
+    },
+    "min_kappa": {
+      "value": 0.61,
+      "status": "decided",
+      "id": "OD-12",
+      "citation": "attributed to Landis & Koch 1977 doi:10.2307/2529310; value not_verified from text",
+      "note": "benchmark values to be confirmed in the original texts before the paper",
+      "decided_on": "2026-11-07"
+    },
+    "fallback": {
+      "value": "one pre-declared threshold recalibration on a split sample; else human-coded outcome and descriptive-only hypothesis",
+      "status": "proposed"
+    },
+    "status_a20": {
+      "value": "human validation (design g) dropped by owner decision; coder, codebook and sampling keys below (A18, A19) are superseded and not used",
+      "decided_on": "2026-11-17",
+      "amendment": "A20"
+    },
+    "precision_check": {
+      "value": "100 snippets of hazard-tagged scored narrative paragraphs (main census), stratified by hazard term family (flood; storm; drought / water stress; heat; coastal / erosion / sea level; wildfire), equal allocation 17/17/17/17/16/16, shortfall to other families in turn; max 5 per firm, 1 per paragraph; snippet = sentence with the match +/- 1 sentence, match marked [[ ]]; one external person answers: Is the highlighted word used about a real weather/climate hazard? yes/no",
+      "seed": 20261117,
+      "file": "data/interim/precision_sample.csv (id, firm, year, term, snippet)",
+      "rule": "precision overall and per family with Clopper-Pearson 95% intervals; overall precision < 0.80 -> H1-H3 reported as descriptive only; terms with precision < 0.50 and n >= 5 listed as a limitation (counts unchanged unless a later amendment)",
+      "status": "decided",
+      "id": "A20",
+      "decided_on": "2026-11-17",
+      "amendment": "A20"
+    },
+    "coder": {
+      "value": "one external coder (not the project owner) codes all sampled paragraphs twice; second pass in a new random order at least 7 days after the first; the coder sees no model output and no dictionary tag",
+      "reference_coding": "the external coder's first pass, with disagreements resolved in that coder's second pass",
+      "previous_value": "the project owner (design g)",
+      "status": "decided",
+      "id": "A18",
+      "decided_on": "2026-11-17",
+      "amendment": "A18"
+    },
+    "codebook": {
+      "value": "docs/coding_guide.md (frozen before coding; SHA-256 in docs/amendments.md)",
+      "status": "decided",
+      "decided_on": "2026-11-17"
+    },
+    "sampling": {
+      "frame": "data/interim/paragraphs.csv rows with model_eligible = 1 and section = narrative, from main-census firms (robustness-stratum firms excluded); the Phase 0 test document DANGCEM_2025_SRX is excluded (coding-guide examples)",
+      "strata": "6 cells: detector prediction (climate no; climate yes and specific; climate yes and non-specific, at the OD-10 thresholds of 0.5) x hazard-dictionary tag (yes / no, config/dictionary_hazard.json)",
+      "allocation": "equal: 34/33/33/33/34/33 for (no,untagged)/(no,tagged)/(spec,untagged)/(spec,tagged)/(non-spec,untagged)/(non-spec,tagged); a shortfall in a cell is filled from the other cell of the same prediction class, then from any cell",
+      "caps": "at most 10 paragraphs per firm; at most 10% (20) from FS-type documents; enforced while drawing (candidates in seeded random order, cells taken in turn)",
+      "predictions_use": "detector and specificity models run on the frame only to form strata; stored in data/interim/validation_strata.csv, never shown to the coder, not used for any outcome",
+      "weights": "inclusion weight per cell = frame cell size / sampled cell size, stored with the strata for weighted metrics",
+      "status": "decided",
+      "id": "A19",
+      "decided_on": "2026-11-17",
+      "amendment": "A19"
+    }
+  },
+  "analysis": {
+    "h3_listing_rule": {
+      "value": "for H3, a firm-year counts in the main analysis only if its fiscal year ends on or after the firm's NGX listing date; pre-listing firm-years are kept and reported as a robustness check only",
+      "applies_to": "H3 only (H1/H2 not changed by A16)",
+      "listing_dates_after_2020_main_census": {
+        "TRANSPOWER": "2024-03-04 (owner; nairametrics.com 2024-03-04)",
+        "ARADEL": "2024-10-14 (owner; nairametrics.com 2024-10-14)",
+        "BUAFOODS": "2022-01-05 (NGX announcement via ngxgroup.com / nairametrics.com 2022-01-05)",
+        "GEREGU": "2022-10-05 (nairametrics.com 2022-10-05; NGX)",
+        "MECURE": "2023-11-07/08 (Growth Board; nairametrics.com 2023-11-08/09, company press release 2023-11-08)"
+      },
+      "other_firms": "all other main-census firms are taken as listed before 2020-01-01 (long-standing NGX listings); not individually verified from a primary source",
+      "status": "decided",
+      "id": "A16",
+      "decided_on": "2026-11-17",
+      "amendment": "A16"
+    },
+    "h1_estimator": {
+      "value": "fractional logit (main), OLS (robustness)",
+      "status": "proposed"
+    },
+    "primary_outcomes_a20": {
+      "value": {
+        "H1": "primary Y4s ~ exposure (fractional logit; OLS robustness); secondary Y3d and Y4d binary",
+        "H2": "primary Y3d; secondary Y4s; exposure vs institutional blocks as design h",
+        "H3": "tau(Y3d) > 0 and tau(Y3d) > tau(Y4r), standardised, bootstrap interval for the difference; A16 sample rule unchanged",
+        "H4": "Y5 (unchanged)"
+      },
+      "previous_value": {"H1": "Y2", "H2": "Y1-Y3", "H3": "tau(Y1) vs tau(Y4)"},
+      "conditional_rule": "if dictionary precision overall < 0.80 (precision check, A20), H1-H3 are reported as descriptive only",
+      "conditional_rule_result": "A21: overall precision 30/46 = 0.65 < 0.80, so H1-H3 are DESCRIPTIVE ONLY; limitations: storm (1/8), erosion (2/6); coastal (1/4, n < 5) noted; heat (n = 3) and wildfire (n = 0) not estimable",
+      "status": "decided",
+      "id": "A20",
+      "decided_on": "2026-11-17",
+      "amendment": "A20"
+    },
+    "fixed_effects": {
+      "value": {
+        "H1_H2": [
+          "year",
+          "sector"
+        ],
+        "H3": [
+          "firm"
+        ]
+      },
+      "status": "proposed"
+    },
+    "controls": {
+      "value": [
+        "log total assets",
+        "sector",
+        "foreign parent",
+        "external assurance",
+        "Big Four auditor",
+        "document type",
+        "year"
+      ],
+      "status": "decided"
+    },
+    "foreign_parent_threshold": {
+      "value": 0.5,
+      "status": "decided",
+      "id": "OD-13",
+      "robustness": 0.2,
+      "decided_on": "2026-11-07"
+    },
+    "clustering": {
+      "value": "firm",
+      "status": "decided"
+    },
+    "inference": {
+      "value": "wild cluster bootstrap",
+      "status": "proposed",
+      "citation": "Cameron, Gelbach & Miller 2008 doi:10.1162/rest.90.3.414; MacKinnon & Webb 2017 doi:10.1002/jae.2508 (Crossref)"
+    },
+    "bootstrap_reps": {
+      "value": 9999,
+      "status": "decided",
+      "id": "OD-14",
+      "citation": "analyst proposal, no citation",
+      "decided_on": "2026-11-07"
+    },
+    "multiple_testing": {
+      "value": "Benjamini-Hochberg over H1-H3 primary tests",
+      "q": 0.05,
+      "status": "decided",
+      "id": "OD-15",
+      "citation": "Benjamini & Hochberg 1995 doi:10.1111/j.2517-6161.1995.tb02031.x (Crossref)",
+      "decided_on": "2026-11-07"
+    },
+    "robustness": {
+      "value": [
+        "R1-R3 location sets",
+        "5 km B buffers",
+        "RP10 and RP500",
+        "absolute heat index",
+        "OLS",
+        "exclude FS-only firm-years",
+        "exclude DWL-flagged firms",
+        "robustness stratum separately",
+        "leave-one-sector-out",
+        "dispersed-asset firms separately"
+      ],
+      "status": "proposed"
+    }
+  },
+  "sociology_policy": {
+    "population": {
+      "value": "WorldPop Global2 R2025A 100 m 2025 constrained",
+      "status": "proposed"
+    },
+    "population_radius_m": {
+      "value": 5000,
+      "status": "decided",
+      "id": "OD-16",
+      "citation": "analyst proposal, no citation",
+      "decided_on": "2026-11-07"
+    },
+    "policy_codes": {
+      "value": [
+        "P1 resilience",
+        "P2 scenario analysis",
+        "P3 physical-risk metric",
+        "P4 risk-management integration",
+        "P5 locations/assets at physical risk identified (IFRS S2 paras 13(b), 29(c), B65(b); A24)",
+        "P6 adoption status",
+        "P7 NGX guidelines reference"
+      ],
+      "status": "proposed"
+    },
+    "ifrs_s2": {
+      "value": "data/raw/manual/policy/issb-2026-a-ifrs-s2-climate-related-disclosures.pdf (ISSB-2026-A consolidated edition incl. Dec 2025 GHG amendments; effective for annual periods beginning on or after 1 January 2024, amendments from 1 January 2027); paragraph numbers cited only, text not quoted (personal non-commercial licence)",
+      "previous_value": "pending - owner to supply before Phase 6",
+      "status": "decided",
+      "supplied_on": "2026-11-18",
+      "amendment": "A24"
+    },
+    "policy_coding": {
+      "value": "descriptive, analyst-coded firm-year coding of P1-P7 (design i): keyword search over all text rows of the firm-year's documents, every match read by the analyst; a code is 1 only with page evidence; no human validation",
+      "rules": {
+        "P1": "1 if a passage discusses the resilience of the firm's strategy or business model to climate-related physical risks or climate hazards (FRC Roadmap PDF p23; IFRS S2 para 22)",
+        "P2": "1 if a passage states that climate-related scenario analysis was used (qualitative or quantitative), e.g. named climate scenarios or warming pathways (FRC Roadmap PDF p23-24; IFRS S2 para 22)",
+        "P3": "1 if a metric for climate-related physical risk is reported: an amount or percentage of assets, sites or business activities exposed or vulnerable to physical climate hazards (FRC Roadmap PDF p25; IFRS S2 para 29(c))",
+        "P4": "1 if a passage states that climate-related (physical) risks are identified or managed within the firm's risk-management process (enterprise risk management, risk register, risk committee) (FRC Roadmap s7.4; IFRS S2 para 25)",
+        "P5": "as config sociology_policy.p5_definition (A24)",
+        "P6": "early / voluntary / none: 'early' if the firm-year states it applies IFRS S1/S2 for a period ending on or before 31 Dec 2023; 'voluntary' if it states it applies or reports in accordance with IFRS S1/S2 for a 2024-2027 period; 'none' otherwise (statements of readiness, plans or alignment only are recorded as 'none (readiness stated)') (FRC Roadmap s6.1; SEC circular)",
+        "P7": "1 if the documents refer to the NGX (or NSE) Sustainability Disclosure Guidelines"
+      },
+      "scope": "main-census firm-years with documents, excluding NNFM FY2020 (A23); all documents of the firm-year, all sections",
+      "output": "data/processed/policy_codes_firm_year.csv; evidence in data/processed/policy_codes_evidence.csv",
+      "status": "decided",
+      "id": "A25",
+      "decided_on": "2026-11-18",
+      "amendment": "A25"
+    },
+    "p5_definition": {
+      "value": "P5 = 1 if the firm-year's documents identify where climate-related physical risks are concentrated by geographical area, facility or type of asset (IFRS S2 para 13(b)), or report the amount or percentage of assets or business activities vulnerable to climate-related physical risks (para 29(c); para B65(b) links that metric to the concentration in 13(b)); physical risks as defined in IFRS S2 Appendix A (acute and chronic)",
+      "previous_value": "defined from the FRC Roadmap only, pending IFRS S2",
+      "status": "decided",
+      "id": "A24",
+      "decided_on": "2026-11-18",
+      "amendment": "A24"
+    }
+  }
+}

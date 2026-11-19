@@ -1,0 +1,13 @@
+variant,quantity,estimate_sd_per_year,cr1_se,wcb_low,wcb_high,n_firm_years,firms,sd_a,sd_b,instability
+main (A16 post-listing years),tau Y3d,0.0131,0.0784,-0.1134,0.1408,66,26,0.006869,0.003543,Y4r non-zero in 8 of 66 firm-years; few non-zero cases
+main (A16 post-listing years),tau Y4r,0.052,0.0474,-0.0145,0.1197,66,26,0.006869,0.003543,Y4r non-zero in 8 of 66 firm-years; few non-zero cases
+main (A16 post-listing years),difference tau(Y3d) - tau(Y4r),-0.0389,0.0702,-0.1472,0.0709,66,26,0.006869,0.003543,Y4r non-zero in 8 of 66 firm-years; few non-zero cases
+robustness: pre-listing years included (A16),tau Y3d,0.0074,0.0729,-0.1105,0.1261,68,26,0.006785,0.003493,Y4r non-zero in 8 of 68 firm-years; few non-zero cases
+robustness: pre-listing years included (A16),tau Y4r,0.0487,0.044,-0.0135,0.1117,68,26,0.006785,0.003493,Y4r non-zero in 8 of 68 firm-years; few non-zero cases
+robustness: pre-listing years included (A16),difference tau(Y3d) - tau(Y4r),-0.0414,0.0652,-0.142,0.061,68,26,0.006785,0.003493,Y4r non-zero in 8 of 68 firm-years; few non-zero cases
+robustness: refined dictionary,tau Y3d_refined,0.0572,0.0649,-0.0426,0.1562,66,26,0.005484,0.003493,Y4r_refined non-zero in 8 of 66 firm-years; few non-zero cases
+robustness: refined dictionary,tau Y4r_refined,0.0479,0.0476,-0.0181,0.1144,66,26,0.005484,0.003493,Y4r_refined non-zero in 8 of 66 firm-years; few non-zero cases
+robustness: refined dictionary,difference tau(Y3d_refined) - tau(Y4r_refined),0.0092,0.0548,-0.0766,0.0964,66,26,0.005484,0.003493,Y4r_refined non-zero in 8 of 66 firm-years; few non-zero cases
+exploratory ClimateBERT version of the design's H3 (unvalidated),tau Y1_cb,0.0451,0.0507,-0.0356,0.128,66,26,0.115232,0.003543,Y4r non-zero in 8 of 66 firm-years; few non-zero cases
+exploratory ClimateBERT version of the design's H3 (unvalidated),tau Y4r,0.052,0.0474,-0.0145,0.1197,66,26,0.115232,0.003543,Y4r non-zero in 8 of 66 firm-years; few non-zero cases
+exploratory ClimateBERT version of the design's H3 (unvalidated),difference tau(Y1_cb) - tau(Y4r),-0.0069,0.0603,-0.0983,0.0822,66,26,0.115232,0.003543,Y4r non-zero in 8 of 66 firm-years; few non-zero cases

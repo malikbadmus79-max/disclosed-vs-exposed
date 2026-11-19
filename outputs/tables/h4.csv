@@ -1,0 +1,37 @@
+level,group,exposed_sites,never_named,share_never_named,cp_low,cp_high
+overall,"main census, main point sites",51,1,0.0196,0.0005,0.1045
+sector,Agriculture,3,0,0.0,0.0,0.7076
+sector,Consumer Goods,28,1,0.0357,0.0009,0.1835
+sector,Healthcare,3,0,0.0,0.0,0.7076
+sector,Industrial Goods,11,0,0.0,0.0,0.2849
+sector,Natural Resources,0,0,,,
+sector,Oil and Gas,4,0,0.0,0.0,0.6024
+sector,Utilities,2,0,0.0,0.0,0.8419
+firm,ACADEMY,1,0,0.0,0.0,0.975
+firm,ALEX,0,0,,,
+firm,ARADEL,1,0,0.0,0.0,0.975
+firm,BETAGLAS,2,0,0.0,0.0,0.8419
+firm,BUACEMENT,1,0,0.0,0.0,0.975
+firm,BUAFOODS,7,1,0.1429,0.0036,0.5787
+firm,CUTIX,1,0,0.0,0.0,0.975
+firm,DANGCEM,4,0,0.0,0.0,0.6024
+firm,DANGSUGAR,1,0,0.0,0.0,0.975
+firm,ELLAHLAKES,0,0,,,
+firm,FIDSON,1,0,0.0,0.0,0.975
+firm,GEREGU,1,0,0.0,0.0,0.975
+firm,GUINNESS,3,0,0.0,0.0,0.7076
+firm,HBMNG,2,0,0.0,0.0,0.8419
+firm,HONYFLOUR,2,0,0.0,0.0,0.8419
+firm,JAPAULGOLD,0,0,,,
+firm,LIVESTOCK,2,0,0.0,0.0,0.8419
+firm,MAYBAKER,1,0,0.0,0.0,0.975
+firm,NB,8,0,0.0,0.0,0.3694
+firm,NEIMETH,1,0,0.0,0.0,0.975
+firm,NESTLE,1,0,0.0,0.0,0.975
+firm,NNFM,1,0,0.0,0.0,0.975
+firm,OKOMUOIL,1,0,0.0,0.0,0.975
+firm,SEPLAT,3,0,0.0,0.0,0.7076
+firm,TRANSPOWER,1,0,0.0,0.0,0.975
+firm,UNILEVER,2,0,0.0,0.0,0.8419
+firm,VITAFOAM,3,0,0.0,0.0,0.7076
+robustness stratum,robustness-stratum main point sites (separate),5,0,0.0,0.0,0.5218

@@ -1,0 +1,71 @@
+firm,year,doc,excluded_A23,total_assets_ngn,log_total_assets,ta_page,ta_method,big4,auditor,auditor_page,auditor_method,assurance,foreign_share,foreign_parent_50,foreign_parent_20,foreign_holder
+ACADEMY,2020,ACADEMY_2020_AR,0,2617764000,21.6856,24,rule,1,Ernst & Young,9,analyst: directors' report,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+ACADEMY,2025,ACADEMY_2025_AR,0,3106287000,21.8567,39,rule,1,EY,34,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+ALEX,2020,ALEX_2020_AR,0,2566564000,21.6658,24,analyst,0,"Madu, Onyekwena & Co",17,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+ALEX,2024,ALEX_2024_FS,0,4082372000,22.1299,14,analyst,0,"Madu, Onyekwena & Co",4,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+ARADEL,2021,ARADEL_2021_AR,0,377433169000,26.6567,49,analyst,1,Deloitte,45,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+ARADEL,2024,ARADEL_2024_AR,0,1749835623000,28.1905,77,analyst,1,Deloitte,69,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+ARADEL,2025,ARADEL_2025_AR,0,9896139369000,29.9232,23,analyst,1,Deloitte,18,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+BETAGLAS,2020,BETAGLAS_2020_AR,0,53963634000,24.7116,49,rule,1,EY,43,rule,0,61.9,1,1,Frigoglass S.A.I.C. (Greece) via Frigoglass Industries Nigeria Ltd
+BETAGLAS,2023,BETAGLAS_2023_AR,0,106851898000,25.3947,47,analyst,1,EY,41,rule,0,61.9,1,1,Frigoglass S.A.I.C. (Greece) via Frigoglass Industries Nigeria Ltd
+BUACEMENT,2020,BUACEMENT_2020_AR,0,766302578000,27.3648,31,rule,1,PricewaterhouseCoopers,23,analyst: directors' report,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+BUACEMENT,2021,BUACEMENT_2021_AR,0,728507473000,27.3143,66,rule,1,PricewaterhouseCoopers,49,analyst: directors' report,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+BUACEMENT,2022,BUACEMENT_2022_AR,0,874011884000,27.4964,77,rule,1,PricewaterhouseCoopers,33,analyst: corporate information,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+BUACEMENT,2023,BUACEMENT_2023_AR,0,1215686377000,27.8263,87,rule,1,PricewaterhouseCoopers,66,analyst: directors' report,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+BUACEMENT,2024,BUACEMENT_2024_AR,0,1570351865000,28.0823,84,rule,1,PwC,77,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+BUACEMENT,2025,BUACEMENT_2025_AR,0,1856127006000,28.2495,45,rule,1,PricewaterhouseCoopers,34,analyst: directors' report,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+BUAFOODS,2022,BUAFOODS_2022_AR,0,607224625000,27.1322,121,rule,1,PricewaterhouseCoopers,112,analyst: audit committee report,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+BUAFOODS,2024,BUAFOODS_2024_AR,0,1095504241000,27.7222,23,rule,1,PwC,18,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+CUTIX,2020,CUTIX_2020_AR,0,3627990000,22.0119,55,rule,0,ANOC Professional Services,42,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+CUTIX,2025,CUTIX_2025_FS,0,8691668000,22.8856,42,rule,0,Ngozi Monica Okonkwo & Co,20,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+DANGCEM,2020,DANGCEM_2020_AR,0,2022451000000,28.3353,163,rule,1,KPMG,160,rule,1,0.0,0,0,no foreign parent or substantial foreign holder identified
+DANGCEM,2022,DANGCEM_2022_AR,0,2615655000000,28.5925,112,rule,1,KPMG,109,rule,1,0.0,0,0,no foreign parent or substantial foreign holder identified
+DANGCEM,2023,DANGCEM_2023_AR,0,3938725000000,29.0019,112,rule,1,KPMG,107,rule,1,0.0,0,0,no foreign parent or substantial foreign holder identified
+DANGCEM,2024,DANGCEM_2024_AR,0,6403238000000,29.4878,153,rule,1,KPMG,144,rule,1,0.0,0,0,no foreign parent or substantial foreign holder identified
+DANGCEM,2025,DANGCEM_2025_AR,0,6040727000000,29.4295,123,rule,1,KPMG,115,rule,1,0.0,0,0,no foreign parent or substantial foreign holder identified
+DANGSUGAR,2020,DANGSUGAR_2020_AR,0,278032389000,26.351,132,rule,1,PwC,126,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+DANGSUGAR,2025,DANGSUGAR_2025_FS,0,965925567000,27.5964,31,rule,1,PwC,26,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+ELLAHLAKES,2020,ELLAHLAKES_2020_FS,0,5630878000,22.4515,12,rule,0,Olabode Akande & Co,6,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+ELLAHLAKES,2024,ELLAHLAKES_2024_FS,0,24551842000,23.9241,12,analyst,0,Olabode Akande & Co,6,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+FIDSON,2020,FIDSON_2020_AR,0,27242484000,24.028,26,analyst,1,Deloitte,22,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+FIDSON,2025,FIDSON_2025_AR,0,80286939000,25.1089,21,rule,1,Deloitte & Touche,12,analyst: directors' report,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+GEREGU,2022,GEREGU_2022_AR,0,174030404000,25.8825,31,rule,1,PricewaterhouseCoopers,21,analyst: directors' report,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+GEREGU,2024,GEREGU_2024_AR,0,243470423000,26.2183,52,rule,1,PwC,50,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+GUINNESS,2020,GUINNESS_2020_AR,0,144145581000,25.6941,78,rule,1,PwC,73,rule,0,58.02,1,1,Diageo plc (UK) via Guinness Overseas Ltd 50.18% + Atalantaf Ltd 7.84%
+GUINNESS,2021,GUINNESS_2021_AR,0,169406525000,25.8556,80,rule,1,PwC,78,rule,0,58.02,1,1,Diageo plc (UK) via Guinness Overseas Ltd 50.18% + Atalantaf Ltd 7.84%
+GUINNESS,2022,GUINNESS_2022_AR,0,215660208000,26.097,90,rule,1,PwC,84,rule,0,58.02,1,1,Diageo plc (UK) via Guinness Overseas Ltd 50.18% + Atalantaf Ltd 7.84%
+GUINNESS,2023,GUINNESS_2023_AR,0,241748144000,26.2112,82,rule,1,PwC,76,rule,0,58.02,1,1,Diageo plc (UK) via Guinness Overseas Ltd 50.18% + Atalantaf Ltd 7.84%
+GUINNESS,2024,GUINNESS_2024_AR,0,226130077000,26.1444,82,rule,1,PwC,74,rule,0,58.02,1,1,Diageo plc (UK) via Guinness Overseas Ltd 50.18% + Atalantaf Ltd 7.84%
+GUINNESS,2025,GUINNESS_2025_AR,0,245176709000,26.2252,86,rule,1,PwC,78,rule,0,70.86,1,1,Tolaram Group (headquartered in Singapore) via N-Seven Nigeria Ltd
+HBMNG,2020,HBMNG_2020_FS,0,507213975000,26.9522,16,rule,1,KPMG,14,rule,0,83.81,1,1,Holcim via AIC UK 27.77% + CariCement BV 56.04%
+HBMNG,2023,HBMNG_2023_FS,0,681371572000,27.2474,23,rule,1,EY,17,rule,0,83.81,1,1,Holcim via AIC UK 27.77% + CariCement BV 56.04%
+HONYFLOUR,2020,HONYFLOUR_2020_AR,0,142261292000,25.6809,58,rule,0,Baker Tilly,52,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+HONYFLOUR,2025,HONYFLOUR_2025_FS,0,167446235000,25.8439,31,rule,1,Ernst & Young,18,analyst: directors' report,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+JAPAULGOLD,2021,JAPAULGOLD_2021_FS,0,13089217000,23.2951,12,analyst,0,PKF (inferred),8,"analyst: no Big Four name anywhere in the file (Phase 7); auditor identity inferred from letterhead tagline, signature page missing",0,0.0,0,0,no foreign parent or substantial foreign holder identified
+JAPAULGOLD,2025,JAPAULGOLD_2025_FS,0,38046674000,24.3621,27,analyst,0,SIAO Partners,79,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+LIVESTOCK,2020,LIVESTOCK_2020_AR,0,6474140000,22.5911,50,rule,1,Ernst & Young,10,"analyst: EY resigned with effect from 31 March 2021, after the FY2020 audit",0,0.0,0,0,no foreign parent or substantial foreign holder identified
+LIVESTOCK,2025,LIVESTOCK_2025_AR,0,10136484000,23.0394,61,rule,1,KPMG,54,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+MAYBAKER,2020,MAYBAKER_2020_AR,0,14352163000,23.3872,40,rule,0,PKF Professional Services,20,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+MAYBAKER,2025,MAYBAKER_2025_FS,0,25615432000,23.9665,16,rule,0,Grant Thornton,3,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+NB,2020,NB_2020_AR,0,445857202000,26.8233,36,rule,1,Deloitte & Touche,24,analyst: directors' report,0,56.0,1,1,Heineken N.V. (Netherlands)
+NB,2025,NB_2025_AR,0,1066117729000,27.695,73,rule,1,KPMG,63,rule,0,72.9,1,1,Heineken Group
+NEIMETH,2020,NEIMETH_2020_AR,0,6441360000,22.586,75,rule,0,PKF Professional Services,60,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+NEIMETH,2025,NEIMETH_2025_FS,0,14014101000,23.3633,19,rule,0,BDO Professional Services,9,analyst,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+NESTLE,2020,NESTLE_2020_AR,0,246184996000,26.2293,51,analyst,1,EY,46,rule,0,66.5,1,1,Nestle S.A. (Switzerland)
+NESTLE,2025,NESTLE_2025_AR,0,846159936000,27.464,56,rule,1,EY,54,rule,0,70.81,1,1,Societe des Produits Nestle S.A.
+NNFM,2020,NNFM_2020_AR,1,,,,,,,,missing,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+NNFM,2025,NNFM_2025_AR,0,30548937000,24.1426,39,rule,1,KPMG,34,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+OKOMUOIL,2020,OKOMUOIL_2020_AR,0,55011848000,24.7308,32,rule,0,Crowe Dafinone,20,analyst,0,62.94,1,1,Socfinaf S.A. (Luxembourg)
+OKOMUOIL,2021,OKOMUOIL_2021_AR,0,65772444000,24.9095,38,analyst,1,EY,33,rule,0,62.94,1,1,Socfinaf S.A. (Luxembourg)
+OKOMUOIL,2022,OKOMUOIL_2022_AR,0,72498290000,25.0068,37,rule,1,EY,33,rule,0,62.94,1,1,Socfinaf S.A. (Luxembourg)
+OKOMUOIL,2023,OKOMUOIL_2023_AR,0,95100383000,25.2782,37,rule,1,EY,32,rule,0,62.94,1,1,Socfinaf S.A. (Luxembourg)
+OKOMUOIL,2024,OKOMUOIL_2024_AR,0,117037938000,25.4858,44,analyst,1,EY,39,rule,0,62.94,1,1,Socfinaf S.A. (Luxembourg)
+SEPLAT,2020,SEPLAT_2020_AR,0,1310837000000,27.9017,153,analyst,1,PwC,150,rule,0,20.46,0,1,Maurel & Prom (France) via MPI
+SEPLAT,2025,SEPLAT_2025_IAR,0,8729381000000,29.7977,171,analyst,1,PricewaterhouseCoopers,109,analyst: directors' report,0,0.0,0,0,none >= 20% at year-end: Maurel & Prom's 20.07% passed to Heirs Group on 31 Dec 2025
+TRANSPOWER,2020,TRANSPOWER_2020_FS,0,171910325000,25.8702,13,rule,1,Deloitte,9,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+TRANSPOWER,2024,TRANSPOWER_2024_AR,0,396782267000,26.7067,36,rule,1,Deloitte,29,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+TRANSPOWER,2025,TRANSPOWER_2025_AR,0,563478957000,27.0574,33,analyst,1,Deloitte & Touche,9,analyst: directors' report,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+UNILEVER,2020,UNILEVER_2020_AR,0,91517538000,25.2398,70,rule,1,KPMG,64,rule,0,75.97,1,1,Unilever Overseas Holdings B.V.
+UNILEVER,2025,UNILEVER_2025_AR,0,180179325000,25.9172,77,analyst,0,Forvis Mazars,67,analyst,0,75.97,1,1,Unilever Overseas Holdings B.V.
+VITAFOAM,2020,VITAFOAM_2020_AR,0,21635766000,23.7976,40,rule,1,Deloitte,35,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified
+VITAFOAM,2025,VITAFOAM_2025_FS,0,65275389000,24.9019,57,analyst,1,PwC,52,rule,0,0.0,0,0,no foreign parent or substantial foreign holder identified

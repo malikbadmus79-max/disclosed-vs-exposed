@@ -1,0 +1,9 @@
+step,firm_years,firms
+main-census firm-years with documents,100,56
+minus NNFM FY2020 (A23: wrong issuer),99,56
+H1/H2: firm-years of firms with an exposure score,69,27
+H1/H2: with all controls,69,27
+H1 primary (Y4s defined: >= 1 hazard-tagged paragraph),25,12
+  of which Y4s > 0,8,4
+H3: main-analysis firm-years of firms with >= 2 main years (A16),68,27
+H3 robustness: pre-listing years included,70,27

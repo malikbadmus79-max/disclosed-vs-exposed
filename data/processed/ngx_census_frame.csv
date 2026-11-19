@@ -1,0 +1,147 @@
+ticker,board_flag,board_flag_meaning,issuer_identified,sector_provisional,census_stratum,document_test,principal_activity_page,identity_status,sector_status
+ABBEYBANK,,,Abbey Mortgage Bank,Financial Services,excluded,,,,
+ABCTRANS,,,Associated Bus Company (ABC Transport),Services,robustness_stratum,passed (report in hand),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+ACADEMY,,,Academy Press,Industrial Goods,main,passed (report in hand),42,verified from report cover and principal-activity statement,activity-based (report p.42); NGX sector label not stated in report
+ACCESSCORP,,,Access Holdings,Financial Services,excluded,,,,
+AFRINSURE,MRF,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),,,excluded,,,,
+AFRIPRUD,,,Afriprudential,Financial Services,excluded,,,,
+AFROMEDIA,MRF,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Afromedia,Services,excluded,,,,
+AIICO,,,AIICO Insurance,Financial Services,excluded,,,,
+AIRTELAFRI,,,Airtel Africa,ICT,main,passed (report in hand: FY to 31 Mar 2025 annual report and accounts),195,verified from report cover and principal-activity statement,activity-based (report p.195); NGX sector label not stated in report
+ALEX,BMF,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Aluminium Extrusion Industries,Industrial Goods,main,passed (report in hand: FY2024 financial statements (scan; OCR copy)),17,verified from report cover and principal-activity statement,activity-based (report p.17); NGX sector label not stated in report
+ARADEL,,,Aradel Holdings,Oil and Gas,main,passed (report in hand),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+AUSTINLAZ,RST,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Austin Laz & Company,Industrial Goods,main,"failed — only an abridged version found (owner, 2026-11-07)",,,
+AVACAP,,,,,excluded,,,,
+AVAIF,,,,,excluded,,,,
+BAPLC,MRF,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),,,excluded,,,,
+BERGER,,,Berger Paints Nigeria,Industrial Goods,main,passed (report in hand),7,verified from report cover and principal-activity statement,activity-based (report p.7); NGX sector label not stated in report
+BETAGLAS,,,Beta Glass,Industrial Goods,main,passed (report in hand),22,verified from report cover and principal-activity statement,activity-based (report p.22); NGX sector label not stated in report
+BUACEMENT,,,BUA Cement,Industrial Goods,main,passed (report in hand),32,verified from report cover and principal-activity statement,activity-based (report p.32); NGX sector label not stated in report
+BUAFOODS,,,BUA Foods,Consumer Goods,main,passed (report in hand),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+CADBURY,,,Cadbury Nigeria,Consumer Goods,main,passed (report in hand),8,verified from report cover and principal-activity statement,activity-based (report p.8); NGX sector label not stated in report
+CAP,,,Chemical and Allied Products,Industrial Goods,main,passed (report in hand: FY2025 annual report),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+CAVERTON,,,Caverton Offshore Support Group,Services,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+CHAMPION,,,Champion Breweries,Consumer Goods,main,passed (report in hand: FY2025 annual report and financial statements),51,verified from report cover and principal-activity statement,activity-based (report p.51); NGX sector label not stated in report
+CHAMS,,,Chams,ICT,excluded,,,,
+CHELLARAM,,,Chellarams,Conglomerates,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+CILEASING,,,C & I Leasing,Services,excluded,,,,
+CMFC,DWL,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),,,excluded,,,,
+CNIF,,,,,excluded,,,,
+CONHALLPLC,,,Consolidated Hallmark Holdings,Financial Services,excluded,,,,
+CONOIL,,,Conoil,Oil and Gas,main,passed (report in hand),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+CORNERST,,,Cornerstone Insurance,Financial Services,excluded,,,,
+CUSTODIAN,,,Custodian Investment,Financial Services,excluded,,,,
+CUTIX,,,Cutix,Industrial Goods,main,passed (report in hand),10,verified from report cover and principal-activity statement,activity-based (report p.10); NGX sector label not stated in report
+CWG,,,CWG,ICT,excluded,,,,
+DAARCOMM,,,Daar Communications,Services,excluded,,,,
+DANGCEM,,,Dangote Cement,Industrial Goods,main,passed (report in hand),,report in hand; principal-activity statement not found by text search (check manually),not verified — confirm in Phase 2 from a primary source
+DANGSUGAR,,,Dangote Sugar Refinery,Consumer Goods,main,passed (report in hand),3,verified from report cover and principal-activity statement,activity-based (report p.3); NGX sector label not stated in report
+EKOCORP,DIP,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Ekocorp,Healthcare,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+ELLAHLAKES,,,Ellah Lakes,Agriculture,main,passed (report in hand: FY to 31 Jul 2024 consolidated financial statements (scan; OCR copy)),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+ENAMELWA,,,Nigerian Enamelware,Consumer Goods,main,passed (report in hand),3,verified from report cover and principal-activity statement,activity-based (report p.3); NGX sector label not stated in report
+ETERNA,,,Eterna,Oil and Gas,main,passed (report in hand: FY2025 annual report and financial statements (scan; OCR copy)),4,verified from report cover and principal-activity statement,activity-based (report p.4); NGX sector label not stated in report
+ETI,,,Ecobank Transnational,Financial Services,excluded,,,,
+ETRANZACT,,,eTranzact International,ICT,excluded,,,,
+EUNISELL,,,Eunisell Interlinked,Industrial Goods,main,passed (report in hand: FY to 30 Jun 2025 annual financial statements),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+FCMB,,,FCMB Group,Financial Services,excluded,,,,
+FIDELITYBK,MRF,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Fidelity Bank,Financial Services,excluded,,,,
+FIDSON,,,Fidson Healthcare,Healthcare,main,passed (report in hand),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+FIRSTHOLDCO,,,FirstHoldCo,Financial Services,excluded,,,,
+FTGINSURE,DWL,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),,,excluded,,,,
+FTNCOCOA,RST,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),FTN Cocoa Processors,Agriculture,main,passed (report in hand),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+GEREGU,,,Geregu Power,Utilities,main,passed (report in hand: FY2024 annual report and financial statements (scan; OCR copy)),16,verified from report cover and principal-activity statement,activity-based (report p.16); NGX sector label not stated in report
+GOLDBREW,BMF,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Golden Guinea Breweries,Consumer Goods,main,passed (report in hand: FY to 31 Mar 2024 financial statements),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+GTCO,,,Guaranty Trust Holding,Financial Services,excluded,,,,
+GUINEAINS,,,Guinea Insurance,Financial Services,excluded,,,,
+GUINNESS,,,Guinness Nigeria,Consumer Goods,main,passed (report in hand),90,verified from report cover and principal-activity statement,activity-based (report p.90); NGX sector label not stated in report
+HBMNG,,,HBM Nigeria Plc (formerly Lafarge Africa Plc; symbol changed from WAPCO),Industrial Goods,main,passed (report in hand),4,verified from report cover and principal-activity statement,activity-based (report p.4); NGX sector label not stated in report
+HMCALL,,,,,excluded,,,,
+HONYFLOUR,,,Honeywell Flour Mills,Consumer Goods,main,passed (report in hand),35,verified from report cover and principal-activity statement,activity-based (report p.35); NGX sector label not stated in report
+IKEJAHOTEL,,,Ikeja Hotel,Services,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+IMG,,,Industrial and Medical Gases Nigeria,Industrial Goods,main,passed (report in hand: FY2025 annual report and financial statements),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+INFINITY,BLS,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Infinity Trust Mortgage Bank,Financial Services,excluded,,,,
+INTBREW,,,International Breweries,Consumer Goods,main,passed (report in hand),4,verified from report cover and principal-activity statement,activity-based (report p.4); NGX sector label not stated in report
+INTENEGINS,,,International Energy Insurance,Financial Services,excluded,,,,
+JAIZBANK,,,Jaiz Bank,Financial Services,excluded,,,,
+JAPAULGOLD,,,Japaul Gold & Ventures,Natural Resources,main,passed (report in hand: FY2025 consolidated and separate financial statements),32,verified from report cover and principal-activity statement,activity-based (report p.32); NGX sector label not stated in report
+JBERGER,,,Julius Berger Nigeria,Construction/Real Estate,main,passed (report in hand: FY2025 annual report),13,verified from report cover and principal-activity statement,activity-based (report p.13); NGX sector label not stated in report
+JOHNHOLT,,,John Holt,Conglomerates,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+JULI,MRF,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Juli,Healthcare,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+LASACO,BLS,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),LASACO Assurance,Financial Services,excluded,,,,
+LEARNAFRCA,,,Learn Africa,Services,excluded,,,,
+LEGENDINT,MRF,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Legend Internet,ICT,excluded,,,,
+LINKASSURE,,,Linkage Assurance,Financial Services,excluded,,,,
+LIVESTOCK,,,Livestock Feeds,Agriculture,main,passed (report in hand),,report in hand; principal-activity statement not found by text search (check manually),not verified — confirm in Phase 2 from a primary source
+LIVINGTRUST,,,Living Trust Mortgage Bank,Financial Services,excluded,,,,
+MANSARD,,,AXA Mansard Insurance,Financial Services,excluded,,,,
+MAYBAKER,,,May & Baker Nigeria,Healthcare,main,passed (report in hand),,report in hand; principal-activity statement not found by text search (check manually),not verified — confirm in Phase 2 from a primary source
+MBENEFIT,,,Mutual Benefits Assurance,Financial Services,excluded,,,,
+MCNICHOLS,,,McNichols,Consumer Goods,main,passed (report in hand: FY2025 financial statements (scan; OCR copy)),20,verified from report cover and principal-activity statement,activity-based (report p.20); NGX sector label not stated in report
+MECURE,,,Mecure Industries,Healthcare,main,passed (report in hand: FY2025 annual report and financial statements),4,verified from report cover and principal-activity statement,activity-based (report p.4); NGX sector label not stated in report
+MEYER,,,Meyer,Industrial Goods,main,passed (report in hand),4,verified from report cover and principal-activity statement,activity-based (report p.4); NGX sector label not stated in report
+MOFIREIF,,,,,excluded,,,,
+MORISON,BLS,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Morison Industries,Healthcare,main,passed (report in hand),,report in hand; principal-activity statement not found by text search (check manually),not verified — confirm in Phase 2 from a primary source
+MTNN,,,MTN Nigeria Communications,ICT,main,passed (report in hand),81,verified from report cover and principal-activity statement,activity-based (report p.81); NGX sector label not stated in report
+MULTITREX,DWL,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Multi-Trex Integrated Foods,Agriculture,main,passed (report in hand: FY to 30 Apr 2024 reports and financial statements),25,verified from report cover and principal-activity statement,activity-based (report p.25); NGX sector label not stated in report
+MULTIVERSE,,,Multiverse Mining and Exploration,Natural Resources,main,passed (report in hand: FY2025 reports and financial statements (scan; OCR copy)),16,verified from report cover and principal-activity statement,activity-based (report p.16); NGX sector label not stated in report
+NAHCO,,,Nigerian Aviation Handling Company,Services,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+NASCON,,,NASCON Allied Industries,Consumer Goods,main,passed (report in hand),3,verified from report cover and principal-activity statement,activity-based (report p.3); NGX sector label not stated in report
+NB,,,Nigerian Breweries,Consumer Goods,main,passed (report in hand),26,verified from report cover and principal-activity statement,activity-based (report p.26); NGX sector label not stated in report
+NCR,,,NCR (Nigeria),ICT,excluded,,,,
+NEIMETH,,,Neimeth International Pharmaceuticals,Healthcare,main,passed (report in hand),4,verified from report cover and principal-activity statement,activity-based (report p.4); NGX sector label not stated in report
+NEM,,,NEM Insurance,Financial Services,excluded,,,,
+NESTLE,,,Nestle Nigeria,Consumer Goods,main,passed (report in hand),,report in hand; principal-activity statement not found by text search (check manually),not verified — confirm in Phase 2 from a primary source
+NGXGROUP,,,Nigerian Exchange Group,Financial Services,excluded,,,,
+NIDF,,,,,excluded,,,,
+NNFM,,,Northern Nigeria Flour Mills,Consumer Goods,main,passed (report in hand),6,verified from report cover and principal-activity statement,activity-based (report p.6); NGX sector label not stated in report
+NPFMCRFBK,,,NPF Microfinance Bank,Financial Services,excluded,,,,
+NREIT,,,,,excluded,,,,
+NSLTECH,,,,,excluded,,,,
+OANDO,,,Oando,Oil and Gas,main,passed (report in hand: FY2025 audited consolidated and separate financial statements),4,verified from report cover and principal-activity statement,activity-based (report p.4); NGX sector label not stated in report
+OKOMUOIL,,,Okomu Oil Palm,Agriculture,main,passed (report in hand: FY2024 annual report (no text layer; OCR copy). FY2023 annual report also OCR'd),17,verified from report cover and principal-activity statement,activity-based (report p.17); NGX sector label not stated in report
+OMATEK,,,,,excluded,,,,
+PHARMDEKO,MRS,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Pharma-Deko,Healthcare,main,"failed — no 2023-2025 annual report found (owner, 2026-11-07)",,,
+PREMPAINTS,RST,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Premier Paints,Industrial Goods,main,"failed — report not obtainable, 2026-11-12 (owner decision; no file in data/raw/manual/prempaints/)",,,
+PRESCO,,,Presco,Agriculture,main,passed (report in hand),4,verified from report cover and principal-activity statement,activity-based (report p.4); NGX sector label not stated in report
+PRESTIGE,BLS,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Prestige Assurance,Financial Services,excluded,,,,
+PZ,,,PZ Cussons Nigeria,Consumer Goods,main,passed (report in hand),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+REDSTAREX,,,Red Star Express,Services,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+REGALINS,,,Regency Alliance Insurance,Financial Services,excluded,,,,
+RONCHESS,,,,,excluded,,,,
+ROYALEX,,,Royal Exchange,Financial Services,excluded,,,,
+RTBRISCOE,,,R.T. Briscoe,Services,robustness_stratum,passed (report in hand),3,verified from report cover and principal-activity statement,activity-based (report p.3); NGX sector label not stated in report
+SCOA,,,SCOA Nigeria,Conglomerates,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+SEPLAT,,,Seplat Energy,Oil and Gas,main,passed (report in hand),106,verified from report cover and principal-activity statement,activity-based (report p.106); NGX sector label not stated in report
+SFSREIT,,,,,excluded,,,,
+SKYAVN,,,Skyway Aviation Handling Company,Services,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+SOVRENINS,,,Sovereign Trust Insurance,Financial Services,excluded,,,,
+STANBIC,,,Stanbic IBTC Holdings,Financial Services,excluded,,,,
+STERLINGNG,,,Sterling Financial Holdings,Financial Services,excluded,,,,
+SUNUASSUR,BLS,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),SUNU Assurances Nigeria,Financial Services,excluded,,,,
+TANTALIZER,,,Tantalizers,Services,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+THOMASWY,RST,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Thomas Wyatt Nigeria,Industrial Goods,main,passed (report in hand: FY to 31 Mar 2025 financial statements (scan; OCR copy)),5,verified from report cover and principal-activity statement,activity-based (report p.5); NGX sector label not stated in report
+TIP,,,The Initiates,Services,excluded,,,,
+TOTAL,,,TotalEnergies Marketing Nigeria,Oil and Gas,main,passed (report in hand: FY2025 audited financial statements with directors' report),17,verified from report cover and principal-activity statement,activity-based (report p.17); NGX sector label not stated in report
+TRANSCOHOT,,,Transcorp Hotels,Services,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+TRANSCORP,,,Transnational Corporation,Conglomerates,robustness_stratum,passed (report in hand),37,verified from report cover and principal-activity statement,activity-based (report p.37); NGX sector label not stated in report
+TRANSEXPR,,,Trans-Nationwide Express,Services,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+TRANSPOWER,,,Transcorp Power,Utilities,main,passed (report in hand: FY2025 annual reports and accounts),4,verified from report cover and principal-activity statement,activity-based (report p.4); NGX sector label not stated in report
+TRIPPLEG,,,Tripple Gee and Company,Industrial Goods,main,passed (report in hand: FY to 31 Mar 2025 financial statements),7,verified from report cover and principal-activity statement,activity-based (report p.7); NGX sector label not stated in report
+UACN,,,UAC of Nigeria,Conglomerates,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+UBA,MRF,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),United Bank for Africa,Financial Services,excluded,,,,
+UCAP,,,United Capital,Financial Services,excluded,,,,
+UHREIT,,,,,excluded,,,,
+UNILEVER,,,Unilever Nigeria,Consumer Goods,main,passed (report in hand),31,verified from report cover and principal-activity statement,activity-based (report p.31); NGX sector label not stated in report
+UNIONDICON,DWL,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Union Dicon Salt,Industrial Goods,main,passed (report in hand: FY2025 statements of audited accounts (scan; OCR copy)),12,verified from report cover and principal-activity statement,activity-based (report p.12); NGX sector label not stated in report
+UNITYBNK,MRF,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),Unity Bank,Financial Services,excluded,,,,
+UNIVINSURE,,,Universal Insurance,Financial Services,excluded,,,,
+UPDC,BLS,not verified (no legend found in NGX weekly reports or price-list sources checked 2026-11-07),UPDC,Construction/Real Estate,robustness_stratum,pending — not found on own site or doclib; see docs/manual_download_list.md,,,
+UPDCREIT,,,,,excluded,,,,
+UPL,,,University Press,Services,excluded,,,,
+VERITASKAP,,,Veritas Kapital Assurance,Financial Services,excluded,,,,
+VFDGROUP,,,VFD Group,Financial Services,excluded,,,,
+VITAFOAM,,,Vitafoam Nigeria,Consumer Goods,main,passed (report in hand),118,verified from report cover and principal-activity statement,activity-based (report p.118); NGX sector label not stated in report
+WAPIC,,,Wapic Insurance,Financial Services,excluded,,,,
+WEMABANK,,,Wema Bank,Financial Services,excluded,,,,
+ZENITHBANK,,,Zenith Bank,Financial Services,excluded,,,,
+ZICHIS,,,,,excluded,,,,

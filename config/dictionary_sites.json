@@ -1,0 +1,6485 @@
+{
+ "name": "Site-mention dictionary (design f5; outcomes Y4 and Y5)",
+ "frozen_on": "2026-11-17",
+ "source": "data/processed/facilities.csv (Phase 2, 214 sites, 59 tickers), which supersedes the Phase 0 file data/interim/facility_locatability.csv named in f5 (amendment A17). Terms curated by the analyst from the facility, location_as_written and geocode_place columns; no corpus text was searched or counted.",
+ "amendment": "A17",
+ "rules": {
+  "unit": "one paragraph (or split piece) of the firm's own documents; only that firm's sites are matched",
+  "preprocessing": "the firm's exclude_phrases (its own name where it contains a site term) are deleted from the text before matching",
+  "R1": "place term (not ambiguous): case-insensitive whole-word match of the term, together with at least one facility-context term anywhere in the same paragraph (f5: 'town or estate name together with that firm's facility context within the same paragraph')",
+  "R2": "ambiguous place term (any ambiguity flag except firm-name collision): case-sensitive match, and a facility-context term in the same sentence (sentences split at . ! ? followed by a space)",
+  "R3": "facility proper name or licence (e.g. 'MTN Plaza', 'Qua Iboe', 'OML 40'): the name is itself the facility, so it counts on its own, case-sensitive. 'R3+R2': an ambiguous facility name also needs a facility-context term in the same sentence",
+  "generic_words": "generic words such as 'plant' or 'factory' are never terms on their own (f5); they are only context terms",
+  "site_named": "a paragraph names site S if any term of S matches under its rule. Y4: physical-risk climate paragraphs naming at least one of the firm's sites. Y5: site S named in any of the firm's documents 2020-2025, in any context (any section, including notes that name sites, f1)",
+  "shared_terms_within_firm": "where one term belongs to several sites of the same firm (e.g. NB 'Aba': brewery, malting plant and sales office), a match names all of them; the site-level Y5 therefore cannot separate such sites"
+ },
+ "facility_context_terms": [
+  {
+   "term": "plant",
+   "pattern": "(?<![A-Za-z0-9])plant(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "factory",
+   "pattern": "(?<![A-Za-z0-9])factory(?![A-Za-z0-9])"
+  },
+  {
+   "term": "factories",
+   "pattern": "(?<![A-Za-z0-9])factories(?![A-Za-z0-9])"
+  },
+  {
+   "term": "facility",
+   "pattern": "(?<![A-Za-z0-9])facility(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "facilities",
+   "pattern": "(?<![A-Za-z0-9])facilities(?![A-Za-z0-9])"
+  },
+  {
+   "term": "site",
+   "pattern": "(?<![A-Za-z0-9])site(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "mill",
+   "pattern": "(?<![A-Za-z0-9])mill(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "brewery",
+   "pattern": "(?<![A-Za-z0-9])brewery(?![A-Za-z0-9])"
+  },
+  {
+   "term": "breweries",
+   "pattern": "(?<![A-Za-z0-9])breweries(?![A-Za-z0-9])"
+  },
+  {
+   "term": "malting",
+   "pattern": "(?<![A-Za-z0-9])malting(?![A-Za-z0-9])"
+  },
+  {
+   "term": "refinery",
+   "pattern": "(?<![A-Za-z0-9])refinery(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "refineries",
+   "pattern": "(?<![A-Za-z0-9])refineries(?![A-Za-z0-9])"
+  },
+  {
+   "term": "depot",
+   "pattern": "(?<![A-Za-z0-9])depot(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "terminal",
+   "pattern": "(?<![A-Za-z0-9])terminal(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "warehouse",
+   "pattern": "(?<![A-Za-z0-9])warehouse(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "estate",
+   "pattern": "(?<![A-Za-z0-9])estate(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "plantation",
+   "pattern": "(?<![A-Za-z0-9])plantation(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "farm",
+   "pattern": "(?<![A-Za-z0-9])farm(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "quarry",
+   "pattern": "(?<![A-Za-z0-9])quarry(?![A-Za-z0-9])"
+  },
+  {
+   "term": "quarries",
+   "pattern": "(?<![A-Za-z0-9])quarries(?![A-Za-z0-9])"
+  },
+  {
+   "term": "mine",
+   "pattern": "(?<![A-Za-z0-9])mine(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "mining",
+   "pattern": "(?<![A-Za-z0-9])mining(?![A-Za-z0-9])"
+  },
+  {
+   "term": "flow station",
+   "pattern": "(?<![A-Za-z0-9])flow[\\s\\-‐‑–]+station(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "field",
+   "pattern": "(?<![A-Za-z0-9])field(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "operations",
+   "pattern": "(?<![A-Za-z0-9])operations(?![A-Za-z0-9])"
+  },
+  {
+   "term": "operation",
+   "pattern": "(?<![A-Za-z0-9])operation(?![A-Za-z0-9])"
+  },
+  {
+   "term": "office",
+   "pattern": "(?<![A-Za-z0-9])office(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "headquarters",
+   "pattern": "(?<![A-Za-z0-9])headquarters(?![A-Za-z0-9])"
+  },
+  {
+   "term": "head office",
+   "pattern": "(?<![A-Za-z0-9])head[\\s\\-‐‑–]+office(?![A-Za-z0-9])"
+  },
+  {
+   "term": "premises",
+   "pattern": "(?<![A-Za-z0-9])premises(?![A-Za-z0-9])"
+  },
+  {
+   "term": "complex",
+   "pattern": "(?<![A-Za-z0-9])complex(?![A-Za-z0-9])"
+  },
+  {
+   "term": "station",
+   "pattern": "(?<![A-Za-z0-9])station(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "power station",
+   "pattern": "(?<![A-Za-z0-9])power[\\s\\-‐‑–]+station(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "tank farm",
+   "pattern": "(?<![A-Za-z0-9])tank[\\s\\-‐‑–]+farm(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "jetty",
+   "pattern": "(?<![A-Za-z0-9])jetty(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "hotel",
+   "pattern": "(?<![A-Za-z0-9])hotel(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "distribution centre",
+   "pattern": "(?<![A-Za-z0-9])distribution[\\s\\-‐‑–]+centre(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "distribution center",
+   "pattern": "(?<![A-Za-z0-9])distribution[\\s\\-‐‑–]+center(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "data centre",
+   "pattern": "(?<![A-Za-z0-9])data[\\s\\-‐‑–]+centre(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "data center",
+   "pattern": "(?<![A-Za-z0-9])data[\\s\\-‐‑–]+center(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "works",
+   "pattern": "(?<![A-Za-z0-9])works(?![A-Za-z0-9])"
+  },
+  {
+   "term": "kiln",
+   "pattern": "(?<![A-Za-z0-9])kiln(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "project",
+   "pattern": "(?<![A-Za-z0-9])project(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "production",
+   "pattern": "(?<![A-Za-z0-9])production(?![A-Za-z0-9])"
+  },
+  {
+   "term": "manufacturing",
+   "pattern": "(?<![A-Za-z0-9])manufacturing(?![A-Za-z0-9])"
+  },
+  {
+   "term": "processing",
+   "pattern": "(?<![A-Za-z0-9])processing(?![A-Za-z0-9])"
+  },
+  {
+   "term": "concession",
+   "pattern": "(?<![A-Za-z0-9])concession(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "licence",
+   "pattern": "(?<![A-Za-z0-9])licence(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "license",
+   "pattern": "(?<![A-Za-z0-9])license(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "location",
+   "pattern": "(?<![A-Za-z0-9])location(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "branch",
+   "pattern": "(?<![A-Za-z0-9])branch(?:e?s)?(?![A-Za-z0-9])"
+  },
+  {
+   "term": "port",
+   "pattern": "(?<![A-Za-z0-9])port(?:e?s)?(?![A-Za-z0-9])"
+  }
+ ],
+ "ambiguous_terms": {
+  "Ikoyi": [
+   "shared: named for 7 firms (DANGCEM, ETERNA, HBMNG, INTBREW, MTNN, TRANSCORP, TRANSPOWER)",
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Okpella": [
+   "shared: named for 2 firms (BUACEMENT, DANGCEM)"
+  ],
+  "Apapa": [
+   "shared: named for 5 firms (BUAFOODS, DANGCEM, DANGSUGAR, HONYFLOUR, UNIONDICON)",
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Victoria Island": [
+   "shared: named for 7 firms (ARADEL, BUACEMENT, BUAFOODS, GEREGU, OANDO, SEPLAT, TOTAL)",
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Sokoto": [
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Ogba": [
+   "shared: named for 2 firms (ENAMELWA, GUINNESS)"
+  ],
+  "Benin City": [
+   "shared: named for 3 firms (ELLAHLAKES, GUINNESS, NB)",
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Aba": [
+   "shared: named for 4 firms (GUINNESS, LIVESTOCK, NB, VITAFOAM)",
+   "major place: a state, state capital or major city/district that occurs as general geography",
+   "common word (wordfreq zipf 3.3 >= 3.0)"
+  ],
+  "Okomu": [
+   "firm-name collision: firm-name phrases removed before matching"
+  ],
+  "Extension 1": [
+   "other sense: ordinary phrase"
+  ],
+  "Extension I": [
+   "other sense: ordinary phrase"
+  ],
+  "Extension 2": [
+   "other sense: ordinary phrase"
+  ],
+  "Extension II": [
+   "other sense: ordinary phrase"
+  ],
+  "Cowan": [
+   "common word (wordfreq zipf 3.2 >= 3.0)",
+   "other sense: a surname"
+  ],
+  "ATO": [
+   "other sense: acronym in other uses"
+  ],
+  "Agbara": [
+   "shared: named for 3 firms (BETAGLAS, NESTLE, UNILEVER)"
+  ],
+  "Ughelli": [
+   "shared: named for 2 firms (BETAGLAS, TRANSPOWER)"
+  ],
+  "Banana Island": [
+   "shared: named for 2 firms (AIRTELAFRI, INTBREW)"
+  ],
+  "Sagamu": [
+   "shared: named for 2 firms (HBMNG, HONYFLOUR)"
+  ],
+  "Ashaka": [
+   "firm-name collision: firm-name phrases removed before matching"
+  ],
+  "Ikeja": [
+   "shared: named for 8 firms (BERGER, BUAFOODS, CADBURY, CAP, EUNISELL, LIVESTOCK, MAYBAKER, VITAFOAM)",
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Ilupeju": [
+   "shared: named for 3 firms (ACADEMY, NESTLE, PZ)"
+  ],
+  "Oregun": [
+   "shared: named for 5 firms (MEYER, MORISON, NASCON, NEIMETH, UNILEVER)"
+  ],
+  "Iganmu": [
+   "shared: named for 2 firms (NB, THOMASWY)"
+  ],
+  "Ibadan": [
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Ota": [
+   "shared: named for 2 firms (FIDSON, NB)"
+  ],
+  "Onitsha": [
+   "shared: named for 2 firms (HONYFLOUR, NB)",
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Makurdi": [
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Abuja": [
+   "shared: named for 3 firms (MAYBAKER, NB, TRANSCORP)",
+   "major place: a state, state capital or major city/district that occurs as general geography",
+   "common word (wordfreq zipf 3.1 >= 3.0)"
+  ],
+  "Kaduna": [
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Port Harcourt": [
+   "shared: named for 4 firms (ARADEL, BUAFOODS, NB, TRANSCORP)",
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Enugu": [
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "ANOH": [
+   "other sense: acronym"
+  ],
+  "QIT": [
+   "other sense: acronym"
+  ],
+  "OML 56": [
+   "shared: named for 2 firms (OANDO, SEPLAT)"
+  ],
+  "Yoho": [
+   "other sense: also a national park in Canada"
+  ],
+  "Numan": [
+   "other sense: also a personal name"
+  ],
+  "Nasarawa Sugar": [
+   "other sense: contains a state name"
+  ],
+  "Taraba Sugar": [
+   "other sense: contains a state name"
+  ],
+  "Adamawa Sugar": [
+   "other sense: contains a state name"
+  ],
+  "Marina": [
+   "common word (wordfreq zipf 3.8 >= 3.0)",
+   "other sense: an ordinary word (marina) and a Lagos street/district"
+  ],
+  "Jos": [
+   "major place: a state, state capital or major city/district that occurs as general geography",
+   "common word (wordfreq zipf 3.2 >= 3.0)"
+  ],
+  "Kano": [
+   "shared: named for 4 firms (BUAFOODS, MAYBAKER, NNFM, VITAFOAM)",
+   "major place: a state, state capital or major city/district that occurs as general geography",
+   "common word (wordfreq zipf 3.2 >= 3.0)"
+  ],
+  "Tin Can": [
+   "shared: named for 2 firms (BUAFOODS, HONYFLOUR)",
+   "other sense: ordinary words"
+  ],
+  "Owerri": [
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Oshodi": [
+   "shared: named for 3 firms (IMG, MECURE, RTBRISCOE)"
+  ],
+  "Uyo": [
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Umuahia": [
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "Kwale": [
+   "other sense: also a county in Kenya"
+  ],
+  "Adani": [
+   "other sense: also the name of an Indian conglomerate"
+  ],
+  "Ondo": [
+   "major place: a state, state capital or major city/district that occurs as general geography"
+  ],
+  "JUHI": [
+   "other sense: acronym"
+  ]
+ },
+ "firms": {
+  "DANGCEM": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0001",
+     "facility": "Head office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikoyi",
+     "terms": [
+      {
+       "term": "Ikoyi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikoyi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (DANGCEM, ETERNA, HBMNG, INTBREW, MTNN, TRANSCORP, TRANSPOWER)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0002",
+     "facility": "Obajana plant",
+     "facility_type": "cement plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Obajana",
+     "terms": [
+      {
+       "term": "Obajana",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Obajana(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0003",
+     "facility": "Gboko plant",
+     "facility_type": "cement plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Gboko",
+     "terms": [
+      {
+       "term": "Gboko",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Gboko(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0004",
+     "facility": "Ibese plant",
+     "facility_type": "cement plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ibese",
+     "terms": [
+      {
+       "term": "Ibese",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ibese(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0005",
+     "facility": "Okpella plant",
+     "facility_type": "cement plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Okpella",
+     "terms": [
+      {
+       "term": "Okpella",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Okpella(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (BUACEMENT, DANGCEM)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0006",
+     "facility": "Itori plant (under construction)",
+     "facility_type": "cement plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Itori",
+     "terms": [
+      {
+       "term": "Itori",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Itori(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0007",
+     "facility": "Apapa export terminal",
+     "facility_type": "terminal",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Apapa",
+     "terms": [
+      {
+       "term": "Apapa",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Apapa(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (BUAFOODS, DANGCEM, DANGSUGAR, HONYFLOUR, UNIONDICON)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0008",
+     "facility": "Onne export terminal",
+     "facility_type": "terminal",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Onne",
+     "terms": [
+      {
+       "term": "Onne",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Onne(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0009",
+     "facility": "Depots",
+     "facility_type": "depots",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "BUACEMENT": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0010",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Victoria Island",
+     "terms": [
+      {
+       "term": "Victoria Island",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Victoria[\\s\\-‐‑–]+Island(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (ARADEL, BUACEMENT, BUAFOODS, GEREGU, OANDO, SEPLAT, TOTAL)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0011",
+     "facility": "Obu plant",
+     "facility_type": "cement plant",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Okpella",
+     "terms": [
+      {
+       "term": "Obu",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Obu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Okpella",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Okpella(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (BUACEMENT, DANGCEM)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0012",
+     "facility": "Sokoto (Kalambaina) plant",
+     "facility_type": "cement plant",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Kalambaina",
+     "terms": [
+      {
+       "term": "Kalambaina",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kalambaina(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Sokoto",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Sokoto(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0013",
+     "facility": "Head office building (Sokoto)",
+     "facility_type": "office under construction",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Sokoto",
+     "terms": [
+      {
+       "term": "Sokoto",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Sokoto(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0014",
+     "facility": "Ososo project",
+     "facility_type": "project site",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ososo",
+     "terms": [
+      {
+       "term": "Ososo",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ososo(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0015",
+     "facility": "LNG plant",
+     "facility_type": "energy plant",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "GUINNESS": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0016",
+     "facility": "Headquarters",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ogba",
+     "terms": [
+      {
+       "term": "Ogba",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ogba(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (ENAMELWA, GUINNESS)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0017",
+     "facility": "Ogba Brewery",
+     "facility_type": "brewery",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ogba",
+     "terms": [
+      {
+       "term": "Ogba",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ogba(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (ENAMELWA, GUINNESS)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0018",
+     "facility": "Benin Brewery",
+     "facility_type": "brewery",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Benin City",
+     "terms": [
+      {
+       "term": "Benin City",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Benin[\\s\\-‐‑–]+City(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (ELLAHLAKES, GUINNESS, NB)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      },
+      {
+       "term": "Oregbeni",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oregbeni(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Ikpoba Hill",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikpoba[\\s\\-‐‑–]+Hill(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Benin Brewery",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Benin[\\s\\-‐‑–]+Brewery(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0019",
+     "facility": "Aba Brewery/Logistics Centre",
+     "facility_type": "brewery and logistics",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Aba",
+     "terms": [
+      {
+       "term": "Aba",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Aba(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (GUINNESS, LIVESTOCK, NB, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.3 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      },
+      {
+       "term": "Osisioma",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Osisioma(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "OKOMUOIL": {
+   "census_stratum": "main",
+   "exclude_phrases": [
+    "Okomu Oil Palm Company",
+    "Okomu Oil Palm Plc",
+    "Okomu Oil Palm Co",
+    "Okomu Oil"
+   ],
+   "sites": [
+    {
+     "facility_id": "F0020",
+     "facility": "Main estate (registered office and principal place of business)",
+     "facility_type": "plantation",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Okomu",
+     "terms": [
+      {
+       "term": "Okomu",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Okomu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [
+        "firm-name collision: firm-name phrases removed before matching"
+       ],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Okomu-Udo",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Okomu[\\s\\-‐‑–]+Udo(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0021",
+     "facility": "Extension 1",
+     "facility_type": "plantation",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Extension 1",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Extension[\\s\\-‐‑–]+1(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: ordinary phrase"
+       ],
+       "match_rule": "R3+R2"
+      },
+      {
+       "term": "Extension I",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Extension[\\s\\-‐‑–]+I(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: ordinary phrase"
+       ],
+       "match_rule": "R3+R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0022",
+     "facility": "Extension 2 (incl. two 30 t/h oil mills)",
+     "facility_type": "plantation and oil mill",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Extension 2",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Extension[\\s\\-‐‑–]+2(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: ordinary phrase"
+       ],
+       "match_rule": "R3+R2"
+      },
+      {
+       "term": "Extension II",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Extension[\\s\\-‐‑–]+II(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: ordinary phrase"
+       ],
+       "match_rule": "R3+R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0023",
+     "facility": "Rubber factory",
+     "facility_type": "factory",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "PRESCO": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0024",
+     "facility": "Obaretin Estate (corporate office)",
+     "facility_type": "plantation and corporate office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Obaretin",
+     "terms": [
+      {
+       "term": "Obaretin",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Obaretin(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0025",
+     "facility": "Cowan estate",
+     "facility_type": "plantation",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Cowan",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Cowan(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "common word (wordfreq zipf 3.2 >= 3.0)",
+        "other sense: a surname"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0026",
+     "facility": "Ologbo estate",
+     "facility_type": "plantation",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Ologbo",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ologbo(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0027",
+     "facility": "ATO estate",
+     "facility_type": "plantation",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "ATO",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])ATO(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: acronym in other uses"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0028",
+     "facility": "Elele estate",
+     "facility_type": "plantation",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Elele",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Elele(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0029",
+     "facility": "Ubima estate",
+     "facility_type": "plantation",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Ubima",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ubima(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0030",
+     "facility": "Sakponba Estate (new 50 t/h palm oil mill)",
+     "facility_type": "plantation and oil mill",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Sakponba",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Sakponba(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0031",
+     "facility": "Processing plants",
+     "facility_type": "mill and refinery",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "BETAGLAS": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0032",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Iddo",
+     "terms": [
+      {
+       "term": "Iddo",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Iddo(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0033",
+     "facility": "Agbara plant",
+     "facility_type": "glass plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Agbara",
+     "terms": [
+      {
+       "term": "Agbara",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Agbara(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (BETAGLAS, NESTLE, UNILEVER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0034",
+     "facility": "Ughelli plant",
+     "facility_type": "glass plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ughelli",
+     "terms": [
+      {
+       "term": "Ughelli",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ughelli(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (BETAGLAS, TRANSPOWER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "INTBREW": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0035",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Banana Island",
+     "terms": [
+      {
+       "term": "Banana Island",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Banana[\\s\\-‐‑–]+Island(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (AIRTELAFRI, INTBREW)"
+       ],
+       "match_rule": "R2"
+      },
+      {
+       "term": "Ikoyi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikoyi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (DANGCEM, ETERNA, HBMNG, INTBREW, MTNN, TRANSCORP, TRANSPOWER)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0036",
+     "facility": "Breweries",
+     "facility_type": "breweries",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "HBMNG": {
+   "census_stratum": "main",
+   "exclude_phrases": [
+    "Ashaka Cement",
+    "Ashaka Cem"
+   ],
+   "sites": [
+    {
+     "facility_id": "F0037",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikoyi",
+     "terms": [
+      {
+       "term": "Ikoyi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikoyi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (DANGCEM, ETERNA, HBMNG, INTBREW, MTNN, TRANSCORP, TRANSPOWER)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0038",
+     "facility": "Ewekoro",
+     "facility_type": "operating location",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ewekoro",
+     "terms": [
+      {
+       "term": "Ewekoro",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ewekoro(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0039",
+     "facility": "Sagamu",
+     "facility_type": "operating location",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Sagamu",
+     "terms": [
+      {
+       "term": "Sagamu",
+       "kind": "place",
+       "spellings": [
+        "Shagamu"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Sagamu(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Shagamu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (HBMNG, HONYFLOUR)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0040",
+     "facility": "Mfamosing",
+     "facility_type": "operating location",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Mfamosing",
+     "terms": [
+      {
+       "term": "Mfamosing",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Mfamosing(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0041",
+     "facility": "Ashaka",
+     "facility_type": "operating location",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ashaka",
+     "terms": [
+      {
+       "term": "Ashaka",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ashaka(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [
+        "firm-name collision: firm-name phrases removed before matching"
+       ],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "CADBURY": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0042",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikeja",
+     "terms": [
+      {
+       "term": "Ikeja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikeja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 8 firms (BERGER, BUAFOODS, CADBURY, CAP, EUNISELL, LIVESTOCK, MAYBAKER, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0043",
+     "facility": "Factory",
+     "facility_type": "factory",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "MTNN": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0044",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikoyi",
+     "terms": [
+      {
+       "term": "Ikoyi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikoyi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (DANGCEM, ETERNA, HBMNG, INTBREW, MTNN, TRANSCORP, TRANSPOWER)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0045",
+     "facility": "Head office (MTN Plaza)",
+     "facility_type": "corporate office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikoyi",
+     "terms": [
+      {
+       "term": "MTN Plaza",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])MTN[\\s\\-‐‑–]+Plaza(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Ikoyi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikoyi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (DANGCEM, ETERNA, HBMNG, INTBREW, MTNN, TRANSCORP, TRANSPOWER)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0046",
+     "facility": "Dabengwa Tier III Data Centre",
+     "facility_type": "data centre",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Dabengwa",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Dabengwa(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0047",
+     "facility": "Switching centres",
+     "facility_type": "network facility",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    },
+    {
+     "facility_id": "F0048",
+     "facility": "Base stations",
+     "facility_type": "network sites",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "NESTLE": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0049",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ilupeju",
+     "terms": [
+      {
+       "term": "Ilupeju",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ilupeju(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (ACADEMY, NESTLE, PZ)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0050",
+     "facility": "Agbara factory (with distribution centre)",
+     "facility_type": "factory",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Agbara",
+     "terms": [
+      {
+       "term": "Agbara",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Agbara(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (BETAGLAS, NESTLE, UNILEVER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0051",
+     "facility": "Flowergate factory",
+     "facility_type": "factory",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Flowergate",
+     "terms": [
+      {
+       "term": "Flowergate",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Flowergate(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0052",
+     "facility": "Abaji factory",
+     "facility_type": "factory",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Abaji",
+     "terms": [
+      {
+       "term": "Abaji",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Abaji(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "UNILEVER": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0053",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Oregun",
+     "terms": [
+      {
+       "term": "Oregun",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oregun(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (MEYER, MORISON, NASCON, NEIMETH, UNILEVER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0054",
+     "facility": "Oregun manufacturing site",
+     "facility_type": "factory",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Oregun",
+     "terms": [
+      {
+       "term": "Oregun",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oregun(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (MEYER, MORISON, NASCON, NEIMETH, UNILEVER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0055",
+     "facility": "Agbara manufacturing site",
+     "facility_type": "factory",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Agbara",
+     "terms": [
+      {
+       "term": "Agbara",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Agbara(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (BETAGLAS, NESTLE, UNILEVER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0056",
+     "facility": "Warehouse",
+     "facility_type": "warehouse",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "NB": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0057",
+     "facility": "Headquarters (Iganmu House)",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Iganmu",
+     "terms": [
+      {
+       "term": "Iganmu House",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Iganmu[\\s\\-‐‑–]+House(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Iganmu",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Iganmu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (NB, THOMASWY)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0058",
+     "facility": "Lagos Brewery",
+     "facility_type": "brewery",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Iganmu",
+     "terms": [
+      {
+       "term": "Lagos Brewery",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Lagos[\\s\\-‐‑–]+Brewery(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Iganmu",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Iganmu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (NB, THOMASWY)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0059",
+     "facility": "Ibadan Brewery",
+     "facility_type": "brewery",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ibadan",
+     "terms": [
+      {
+       "term": "Ibadan Brewery",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ibadan[\\s\\-‐‑–]+Brewery(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Ibadan",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ibadan(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0060",
+     "facility": "Kudenda Brewery/Malting Plant",
+     "facility_type": "brewery and malting plant",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Kudenda",
+     "terms": [
+      {
+       "term": "Kudenda",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kudenda(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Kaduna Brewery",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kaduna[\\s\\-‐‑–]+Brewery(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0061",
+     "facility": "Aba Malting Plant",
+     "facility_type": "malting plant",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Aba",
+     "terms": [
+      {
+       "term": "Ogbor Hill",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ogbor[\\s\\-‐‑–]+Hill(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Obingwa",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Obingwa(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Aba",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Aba(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (GUINNESS, LIVESTOCK, NB, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.3 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0062",
+     "facility": "Aba Brewery",
+     "facility_type": "brewery",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Aba",
+     "terms": [
+      {
+       "term": "Aba Brewery",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Aba[\\s\\-‐‑–]+Brewery(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Aba",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Aba(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (GUINNESS, LIVESTOCK, NB, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.3 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0063",
+     "facility": "Ama Brewery",
+     "facility_type": "brewery",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ngwo",
+     "terms": [
+      {
+       "term": "Ama Brewery",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ama[\\s\\-‐‑–]+Brewery(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Amaeke",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Amaeke(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Ngwo",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ngwo(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0064",
+     "facility": "Awo-Omamma Brewery (mothballed)",
+     "facility_type": "brewery",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Awo-Omamma",
+     "terms": [
+      {
+       "term": "Awo-Omamma",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Awo[\\s\\-‐‑–]+Omamma(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0065",
+     "facility": "Kakuri Brewery (mothballed)",
+     "facility_type": "brewery",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Kakuri",
+     "terms": [
+      {
+       "term": "Kakuri",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kakuri(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0066",
+     "facility": "Ota Brewery",
+     "facility_type": "brewery",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ota",
+     "terms": [
+      {
+       "term": "Ota",
+       "kind": "place",
+       "spellings": [
+        "Otta"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ota(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Otta(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (FIDSON, NB)"
+       ],
+       "match_rule": "R2"
+      },
+      {
+       "term": "Sango Ota",
+       "kind": "place",
+       "spellings": [
+        "Sango-Otta",
+        "Sango Otta"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Sango[\\s\\-‐‑–]+Ota(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Sango[\\s\\-‐‑–]+Otta(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Sango[\\s\\-‐‑–]+Otta(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0067",
+     "facility": "Ijebu-Ode Brewery",
+     "facility_type": "brewery",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Imagbon",
+     "terms": [
+      {
+       "term": "Ijebu-Ode",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ijebu[\\s\\-‐‑–]+Ode(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Imagbon",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Imagbon(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0068",
+     "facility": "Onitsha Distribution Centre",
+     "facility_type": "distribution centre",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Onitsha",
+     "terms": [
+      {
+       "term": "Onitsha",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Onitsha(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (HONYFLOUR, NB)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0069",
+     "facility": "Makurdi Distribution Centre",
+     "facility_type": "distribution centre",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Makurdi",
+     "terms": [
+      {
+       "term": "Makurdi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Makurdi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0070",
+     "facility": "Lagos Sales Office",
+     "facility_type": "sales office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Iganmu",
+     "terms": [
+      {
+       "term": "Iganmu",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Iganmu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (NB, THOMASWY)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0071",
+     "facility": "Ibadan Sales Office",
+     "facility_type": "sales office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ibadan",
+     "terms": [
+      {
+       "term": "Ibadan",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ibadan(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0072",
+     "facility": "Benin Sales Office",
+     "facility_type": "sales office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Benin City",
+     "terms": [
+      {
+       "term": "Benin City",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Benin[\\s\\-‐‑–]+City(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (ELLAHLAKES, GUINNESS, NB)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0073",
+     "facility": "Abuja Sales Office",
+     "facility_type": "sales office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Abuja",
+     "terms": [
+      {
+       "term": "Abuja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Abuja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (MAYBAKER, NB, TRANSCORP)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.1 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      },
+      {
+       "term": "Idu",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Idu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0074",
+     "facility": "Kaduna Sales Office",
+     "facility_type": "sales office",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Kakuri",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kakuri(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Kaduna",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kaduna(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0075",
+     "facility": "Port Harcourt Sales Office",
+     "facility_type": "sales office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Port Harcourt",
+       "kind": "place",
+       "spellings": [
+        "Portharcourt"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Port[\\s\\-‐‑–]+Harcourt(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Portharcourt(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (ARADEL, BUAFOODS, NB, TRANSCORP)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      },
+      {
+       "term": "Woji",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Woji(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0076",
+     "facility": "Enugu Sales Office",
+     "facility_type": "sales office",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Enugu",
+     "terms": [
+      {
+       "term": "Enugu",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Enugu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      },
+      {
+       "term": "Nsude",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Nsude(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0077",
+     "facility": "Aba Sales Office",
+     "facility_type": "sales office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Aba",
+     "terms": [
+      {
+       "term": "Aba",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Aba(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (GUINNESS, LIVESTOCK, NB, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.3 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "SEPLAT": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0078",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Victoria Island",
+     "terms": [
+      {
+       "term": "Seplat House",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Seplat[\\s\\-‐‑–]+House(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Victoria Island",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Victoria[\\s\\-‐‑–]+Island(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (ARADEL, BUACEMENT, BUAFOODS, GEREGU, OANDO, SEPLAT, TOTAL)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0079",
+     "facility": "Oben gas processing",
+     "facility_type": "gas plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Oben",
+     "terms": [
+      {
+       "term": "Oben",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oben(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0080",
+     "facility": "Sapele gas processing",
+     "facility_type": "gas plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Sapele",
+     "terms": [
+      {
+       "term": "Sapele",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Sapele(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0081",
+     "facility": "ANOH gas plant",
+     "facility_type": "gas plant",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "ANOH",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])ANOH(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: acronym"
+       ],
+       "match_rule": "R3+R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0082",
+     "facility": "Amukpe flow station",
+     "facility_type": "flow station",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Amukpe",
+     "terms": [
+      {
+       "term": "Amukpe",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Amukpe(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0083",
+     "facility": "Qua Iboe Terminal",
+     "facility_type": "export terminal",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Qua Iboe",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Qua[\\s\\-‐‑–]+Iboe(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "QIT",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])QIT(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: acronym"
+       ],
+       "match_rule": "R3+R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0084",
+     "facility": "Other operated export terminals",
+     "facility_type": "export terminals",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    },
+    {
+     "facility_id": "F0085",
+     "facility": "Western licences OML 4, 38, 41",
+     "facility_type": "oil and gas licence area",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "OML 4",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*4(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "OML 38",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*38(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "OML 41",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*41(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0086",
+     "facility": "Eastern licences OML 53, 56",
+     "facility_type": "oil and gas licence area",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "OML 53",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*53(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "OML 56",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*56(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (OANDO, SEPLAT)"
+       ],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0087",
+     "facility": "Elcrest licence OML 40",
+     "facility_type": "oil and gas licence area",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "OML 40",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*40(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0088",
+     "facility": "Offshore licences OML 67, 68, 70, 104",
+     "facility_type": "offshore licence area",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "OML 67",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*67(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "OML 68",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*68(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "OML 70",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*70(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "OML 104",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*104(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0089",
+     "facility": "Yoho production platform",
+     "facility_type": "offshore platform",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Yoho",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Yoho(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: also a national park in Canada"
+       ],
+       "match_rule": "R3+R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "DANGSUGAR": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0090",
+     "facility": "Registered office (administrative building)",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Apapa",
+     "terms": [
+      {
+       "term": "Apapa",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Apapa(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (BUAFOODS, DANGCEM, DANGSUGAR, HONYFLOUR, UNIONDICON)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0091",
+     "facility": "Numan refinery operations",
+     "facility_type": "sugar refinery",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Numan",
+     "terms": [
+      {
+       "term": "Numan",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Numan(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: also a personal name"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0092",
+     "facility": "Nasarawa Sugar Company Project (greenfield)",
+     "facility_type": "sugar estate project",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Nasarawa Sugar",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Nasarawa[\\s\\-‐‑–]+Sugar(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: contains a state name"
+       ],
+       "match_rule": "R3+R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0093",
+     "facility": "Dangote Taraba Sugar Limited (backward integration project)",
+     "facility_type": "sugar estate project",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Taraba Sugar",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Taraba[\\s\\-‐‑–]+Sugar(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: contains a state name"
+       ],
+       "match_rule": "R3+R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0094",
+     "facility": "Dangote Adamawa Sugar Limited (backward integration project)",
+     "facility_type": "sugar estate project",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Adamawa Sugar",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Adamawa[\\s\\-‐‑–]+Sugar(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: contains a state name"
+       ],
+       "match_rule": "R3+R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "FTNCOCOA": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0095",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Magodo",
+     "terms": [
+      {
+       "term": "Magodo",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Magodo(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0096",
+     "facility": "Factory",
+     "facility_type": "cocoa processing factory",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Olodo",
+     "terms": [
+      {
+       "term": "Olodo",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Olodo(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Monatan",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Monatan(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "CONOIL": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0097",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Marina",
+     "terms": [
+      {
+       "term": "Bull Plaza",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Bull[\\s\\-‐‑–]+Plaza(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Marina",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Marina(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "common word (wordfreq zipf 3.8 >= 3.0)",
+        "other sense: an ordinary word (marina) and a Lagos street/district"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0098",
+     "facility": "Dealer service station network",
+     "facility_type": "fuel retail network",
+     "rating": "C",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    },
+    {
+     "facility_id": "F0099",
+     "facility": "Depots",
+     "facility_type": "depots",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "NASCON": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0100",
+     "facility": "Business office",
+     "facility_type": "corporate office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Oregun",
+     "terms": [
+      {
+       "term": "Oregun",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oregun(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (MEYER, MORISON, NASCON, NEIMETH, UNILEVER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0101",
+     "facility": "Salt processing plants",
+     "facility_type": "salt refinery",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "VITAFOAM": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0102",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikeja",
+     "terms": [
+      {
+       "term": "Ikeja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikeja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 8 firms (BERGER, BUAFOODS, CADBURY, CAP, EUNISELL, LIVESTOCK, MAYBAKER, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0103",
+     "facility": "Aba manufacturing facility",
+     "facility_type": "foam factory",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Aba",
+     "terms": [
+      {
+       "term": "Aba",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Aba(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (GUINNESS, LIVESTOCK, NB, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.3 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0104",
+     "facility": "Ikeja manufacturing facility",
+     "facility_type": "foam factory",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikeja",
+     "terms": [
+      {
+       "term": "Ikeja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikeja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 8 firms (BERGER, BUAFOODS, CADBURY, CAP, EUNISELL, LIVESTOCK, MAYBAKER, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0105",
+     "facility": "Jos manufacturing facility",
+     "facility_type": "foam factory",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Jos",
+     "terms": [
+      {
+       "term": "Jos",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Jos(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.2 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0106",
+     "facility": "Kano manufacturing facility",
+     "facility_type": "foam factory",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Kano",
+     "terms": [
+      {
+       "term": "Kano",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kano(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (BUAFOODS, MAYBAKER, NNFM, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.2 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "NEIMETH": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0107",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Oregun",
+     "terms": [
+      {
+       "term": "Oregun",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oregun(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (MEYER, MORISON, NASCON, NEIMETH, UNILEVER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0108",
+     "facility": "Oregun plant",
+     "facility_type": "pharmaceutical plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Oregun",
+     "terms": [
+      {
+       "term": "Oregun",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oregun(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (MEYER, MORISON, NASCON, NEIMETH, UNILEVER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0109",
+     "facility": "Amawbia manufacturing facility (under construction)",
+     "facility_type": "pharmaceutical plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Amawbia",
+     "terms": [
+      {
+       "term": "Amawbia",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Amawbia(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "CUTIX": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0110",
+     "facility": "Registered office and factory",
+     "facility_type": "cable factory",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Nnewi",
+     "terms": [
+      {
+       "term": "Nnewi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Nnewi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "BERGER": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0111",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikeja",
+     "terms": [
+      {
+       "term": "Ikeja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikeja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 8 firms (BERGER, BUAFOODS, CADBURY, CAP, EUNISELL, LIVESTOCK, MAYBAKER, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0112",
+     "facility": "Paint manufacturing facility",
+     "facility_type": "paint factory",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "PZ": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0113",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ilupeju",
+     "terms": [
+      {
+       "term": "Ilupeju",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ilupeju(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (ACADEMY, NESTLE, PZ)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0114",
+     "facility": "Factories",
+     "facility_type": "factories",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    },
+    {
+     "facility_id": "F0115",
+     "facility": "Depots",
+     "facility_type": "depots",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "MAYBAKER": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0116",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikeja",
+     "terms": [
+      {
+       "term": "Ikeja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikeja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 8 firms (BERGER, BUAFOODS, CADBURY, CAP, EUNISELL, LIVESTOCK, MAYBAKER, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0117",
+     "facility": "Kano warehouse (leased out)",
+     "facility_type": "warehouse",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Kano",
+     "terms": [
+      {
+       "term": "Kano",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kano(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (BUAFOODS, MAYBAKER, NNFM, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.2 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0118",
+     "facility": "Abuja warehouse (leased out)",
+     "facility_type": "warehouse",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Abuja",
+     "terms": [
+      {
+       "term": "Abuja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Abuja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (MAYBAKER, NB, TRANSCORP)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.1 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0119",
+     "facility": "Abuja sales depot",
+     "facility_type": "depot",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Abuja",
+     "terms": [
+      {
+       "term": "Abuja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Abuja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (MAYBAKER, NB, TRANSCORP)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.1 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0120",
+     "facility": "Manufacturing plant",
+     "facility_type": "pharmaceutical plant",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "MORISON": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0121",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Oregun",
+     "terms": [
+      {
+       "term": "Oregun",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oregun(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (MEYER, MORISON, NASCON, NEIMETH, UNILEVER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0122",
+     "facility": "Manufacturing site",
+     "facility_type": "pharmaceutical plant",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "HONYFLOUR": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0123",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Apapa",
+     "terms": [
+      {
+       "term": "Golden Penny Place",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Golden[\\s\\-‐‑–]+Penny[\\s\\-‐‑–]+Place(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Apapa",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Apapa(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (BUAFOODS, DANGCEM, DANGSUGAR, HONYFLOUR, UNIONDICON)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0124",
+     "facility": "Apapa Factory",
+     "facility_type": "flour mill",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Apapa",
+     "terms": [
+      {
+       "term": "Apapa",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Apapa(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (BUAFOODS, DANGCEM, DANGSUGAR, HONYFLOUR, UNIONDICON)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      },
+      {
+       "term": "Tin Can",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Tin[\\s\\-‐‑–]+Can(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (BUAFOODS, HONYFLOUR)",
+        "other sense: ordinary words"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0125",
+     "facility": "Sagamu Factory",
+     "facility_type": "flour mill",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Sagamu",
+     "terms": [
+      {
+       "term": "Sagamu",
+       "kind": "place",
+       "spellings": [
+        "Shagamu"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Sagamu(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Shagamu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (HBMNG, HONYFLOUR)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0126",
+     "facility": "Onitsha warehouse",
+     "facility_type": "warehouse",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Onitsha",
+     "terms": [
+      {
+       "term": "Onitsha",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Onitsha(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (HONYFLOUR, NB)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "TRANSCORP": {
+   "census_stratum": "robustness_stratum",
+   "exclude_phrases": [
+    "Transcorp Hotels Plc",
+    "Transnational Corporation"
+   ],
+   "sites": [
+    {
+     "facility_id": "F0127",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikoyi",
+     "terms": [
+      {
+       "term": "Ikoyi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikoyi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (DANGCEM, ETERNA, HBMNG, INTBREW, MTNN, TRANSCORP, TRANSPOWER)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0128",
+     "facility": "Transcorp Hilton Hotel Abuja",
+     "facility_type": "hotel",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Abuja",
+     "terms": [
+      {
+       "term": "Transcorp Hilton",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Transcorp[\\s\\-‐‑–]+Hilton(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Abuja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Abuja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (MAYBAKER, NB, TRANSCORP)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.1 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0129",
+     "facility": "Transcorp Hotels Port Harcourt",
+     "facility_type": "hotel",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Port Harcourt",
+     "terms": [
+      {
+       "term": "Transcorp Hotels Port Harcourt",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Transcorp[\\s\\-‐‑–]+Hotels[\\s\\-‐‑–]+Port[\\s\\-‐‑–]+Harcourt(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Port Harcourt",
+       "kind": "place",
+       "spellings": [
+        "Portharcourt"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Port[\\s\\-‐‑–]+Harcourt(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Portharcourt(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (ARADEL, BUAFOODS, NB, TRANSCORP)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0130",
+     "facility": "Afam Power",
+     "facility_type": "power plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Afam",
+     "terms": [
+      {
+       "term": "Afam",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Afam(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0131",
+     "facility": "Transcorp Power plant",
+     "facility_type": "power plant",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "ABCTRANS": {
+   "census_stratum": "robustness_stratum",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0132",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Owerri",
+     "terms": [
+      {
+       "term": "Owerri",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Owerri(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      },
+      {
+       "term": "Uratta",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Uratta(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0133",
+     "facility": "Amuwo-Odofin property",
+     "facility_type": "property (pledged)",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Amuwo Odofin",
+     "terms": [
+      {
+       "term": "Amuwo-Odofin",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Amuwo[\\s\\-‐‑–]+Odofin(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0134",
+     "facility": "Eliozu property",
+     "facility_type": "property (pledged)",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Eliozu",
+     "terms": [
+      {
+       "term": "Eliozu",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Eliozu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0135",
+     "facility": "Jibowu property (with hotel)",
+     "facility_type": "terminal and hotel property",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Jibowu",
+     "terms": [
+      {
+       "term": "Jibowu",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Jibowu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0136",
+     "facility": "Bus terminals",
+     "facility_type": "terminals",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "RTBRISCOE": {
+   "census_stratum": "robustness_stratum",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0137",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Matori",
+     "terms": [
+      {
+       "term": "Matori",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Matori(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Oshodi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oshodi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (IMG, MECURE, RTBRISCOE)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "LIVESTOCK": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0138",
+     "facility": "Ikeja mill",
+     "facility_type": "feed mill",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikeja",
+     "terms": [
+      {
+       "term": "Ikeja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikeja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 8 firms (BERGER, BUAFOODS, CADBURY, CAP, EUNISELL, LIVESTOCK, MAYBAKER, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0139",
+     "facility": "Aba mill",
+     "facility_type": "feed mill",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Aba",
+     "terms": [
+      {
+       "term": "Aba",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Aba(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (GUINNESS, LIVESTOCK, NB, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.3 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0140",
+     "facility": "Leased factory (Northern Rice and Oil Mill)",
+     "facility_type": "factory (leased)",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Northern Rice and Oil Mill",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Northern[\\s\\-‐‑–]+Rice[\\s\\-‐‑–]+and[\\s\\-‐‑–]+Oil[\\s\\-‐‑–]+Mill(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "THOMASWY": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0141",
+     "facility": "Head office",
+     "facility_type": "head office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Iganmu",
+     "terms": [
+      {
+       "term": "Iganmu",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Iganmu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (NB, THOMASWY)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0142",
+     "facility": "Paper products manufacturing site",
+     "facility_type": "factory",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "ACADEMY": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0143",
+     "facility": "Company premises (registered office)",
+     "facility_type": "printing works and office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ilupeju",
+     "terms": [
+      {
+       "term": "Ilupeju",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ilupeju(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (ACADEMY, NESTLE, PZ)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "ARADEL": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0144",
+     "facility": "Head office",
+     "facility_type": "head office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Victoria Island",
+     "terms": [
+      {
+       "term": "Victoria Island",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Victoria[\\s\\-‐‑–]+Island(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (ARADEL, BUACEMENT, BUAFOODS, GEREGU, OANDO, SEPLAT, TOTAL)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0145",
+     "facility": "Ogbele Field",
+     "facility_type": "oil and gas field",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Ogbele",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ogbele(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0146",
+     "facility": "OML 17",
+     "facility_type": "oil and gas licence area",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "OML 17",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*17(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0147",
+     "facility": "Refinery",
+     "facility_type": "refinery",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    },
+    {
+     "facility_id": "F0148",
+     "facility": "Ever Oil & Gas Depot (50% stake)",
+     "facility_type": "tank farm",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Port Harcourt",
+     "terms": [
+      {
+       "term": "Ever Oil",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ever[\\s\\-‐‑–]+Oil(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Port Harcourt",
+       "kind": "place",
+       "spellings": [
+        "Portharcourt"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Port[\\s\\-‐‑–]+Harcourt(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Portharcourt(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (ARADEL, BUAFOODS, NB, TRANSCORP)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "BUAFOODS": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0149",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Victoria Island",
+     "terms": [
+      {
+       "term": "Victoria Island",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Victoria[\\s\\-‐‑–]+Island(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (ARADEL, BUACEMENT, BUAFOODS, GEREGU, OANDO, SEPLAT, TOTAL)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0150",
+     "facility": "Plant site: Apapa",
+     "facility_type": "plant (type per table)",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Apapa",
+     "terms": [
+      {
+       "term": "Apapa",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Apapa(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (BUAFOODS, DANGCEM, DANGSUGAR, HONYFLOUR, UNIONDICON)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      },
+      {
+       "term": "Tin Can",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Tin[\\s\\-‐‑–]+Can(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (BUAFOODS, HONYFLOUR)",
+        "other sense: ordinary words"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0151",
+     "facility": "Plant site: Ikeja",
+     "facility_type": "plant (type per table)",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikeja",
+     "terms": [
+      {
+       "term": "Ikeja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikeja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 8 firms (BERGER, BUAFOODS, CADBURY, CAP, EUNISELL, LIVESTOCK, MAYBAKER, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0152",
+     "facility": "BUA Foods Industrial Complex, Port Harcourt",
+     "facility_type": "plant (type per table)",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Port Harcourt",
+     "terms": [
+      {
+       "term": "BUA Foods Industrial Complex",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])BUA[\\s\\-‐‑–]+Foods[\\s\\-‐‑–]+Industrial[\\s\\-‐‑–]+Complex(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Port Harcourt",
+       "kind": "place",
+       "spellings": [
+        "Portharcourt"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Port[\\s\\-‐‑–]+Harcourt(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Portharcourt(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (ARADEL, BUAFOODS, NB, TRANSCORP)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0153",
+     "facility": "BUA Sugar Refinery FZE",
+     "facility_type": "sugar refinery",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Port Harcourt",
+     "terms": [
+      {
+       "term": "BUA Sugar Refinery",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])BUA[\\s\\-‐‑–]+Sugar[\\s\\-‐‑–]+Refinery(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Bundu",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Bundu(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Port Harcourt",
+       "kind": "place",
+       "spellings": [
+        "Portharcourt"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Port[\\s\\-‐‑–]+Harcourt(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Portharcourt(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (ARADEL, BUAFOODS, NB, TRANSCORP)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0154",
+     "facility": "LASUCO Sugar Company",
+     "facility_type": "sugar estate and factory",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Lafiagi",
+     "terms": [
+      {
+       "term": "LASUCO",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])LASUCO(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Lafiagi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Lafiagi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0155",
+     "facility": "Flour Mills Plants II",
+     "facility_type": "flour mill",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Port Harcourt",
+     "terms": [
+      {
+       "term": "Flour Mills Plants II",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Flour[\\s\\-‐‑–]+Mills[\\s\\-‐‑–]+Plants[\\s\\-‐‑–]+II(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Port Harcourt",
+       "kind": "place",
+       "spellings": [
+        "Portharcourt"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Port[\\s\\-‐‑–]+Harcourt(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Portharcourt(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (ARADEL, BUAFOODS, NB, TRANSCORP)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0156",
+     "facility": "Plant site: Sharada Industrial Estate, Kano",
+     "facility_type": "plant (type per table)",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Kano",
+     "terms": [
+      {
+       "term": "Sharada",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Sharada(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Kano",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kano(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (BUAFOODS, MAYBAKER, NNFM, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.2 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "ENAMELWA": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0157",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ogba",
+     "terms": [
+      {
+       "term": "Ogba",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ogba(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (ENAMELWA, GUINNESS)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0158",
+     "facility": "Rented factory premises",
+     "facility_type": "factory (rented)",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "FIDSON": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0159",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Obanikoro",
+     "terms": [
+      {
+       "term": "Obanikoro",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Obanikoro(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0160",
+     "facility": "Biotech factory",
+     "facility_type": "pharmaceutical factory",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ota",
+     "terms": [
+      {
+       "term": "Ota",
+       "kind": "place",
+       "spellings": [
+        "Otta"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ota(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Otta(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (FIDSON, NB)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "MEYER": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0161",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Oregun",
+     "terms": [
+      {
+       "term": "Oregun",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oregun(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (MEYER, MORISON, NASCON, NEIMETH, UNILEVER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0162",
+     "facility": "Paint manufacturing site",
+     "facility_type": "paint factory",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "NNFM": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0163",
+     "facility": "Registered office and production facility",
+     "facility_type": "flour mill",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Kano",
+     "terms": [
+      {
+       "term": "Kano",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kano(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 4 firms (BUAFOODS, MAYBAKER, NNFM, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography",
+        "common word (wordfreq zipf 3.2 >= 3.0)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "TOTAL": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0164",
+     "facility": "Head office (Eko Tower 1)",
+     "facility_type": "head office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Victoria Island",
+     "terms": [
+      {
+       "term": "Eko Tower",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Eko[\\s\\-‐‑–]+Tower(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Victoria Island",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Victoria[\\s\\-‐‑–]+Island(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (ARADEL, BUACEMENT, BUAFOODS, GEREGU, OANDO, SEPLAT, TOTAL)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0165",
+     "facility": "Service station network (major distributors list)",
+     "facility_type": "fuel retail network",
+     "rating": "C",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    },
+    {
+     "facility_id": "F0166",
+     "facility": "White products depots",
+     "facility_type": "depots",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    },
+    {
+     "facility_id": "F0167",
+     "facility": "Lubricant blending plant",
+     "facility_type": "lubricant blending plant",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "CHAMPION": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0168",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Uyo",
+     "terms": [
+      {
+       "term": "Uyo",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Uyo(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0169",
+     "facility": "Brewery",
+     "facility_type": "brewery",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "EUNISELL": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0170",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikeja",
+     "terms": [
+      {
+       "term": "Ikeja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikeja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 8 firms (BERGER, BUAFOODS, CADBURY, CAP, EUNISELL, LIVESTOCK, MAYBAKER, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0171",
+     "facility": "Factory",
+     "facility_type": "factory",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "GOLDBREW": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0172",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Umuahia",
+     "terms": [
+      {
+       "term": "Umuahia",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Umuahia(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0173",
+     "facility": "Brewery",
+     "facility_type": "brewery",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "IMG": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0174",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Oshodi",
+     "terms": [
+      {
+       "term": "Oshodi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oshodi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (IMG, MECURE, RTBRISCOE)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0175",
+     "facility": "Gas production plants",
+     "facility_type": "industrial gas plant",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "JAPAULGOLD": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0176",
+     "facility": "Registered office (Japaul House)",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Agidingbi",
+     "terms": [
+      {
+       "term": "Japaul House",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Japaul[\\s\\-‐‑–]+House(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Agidingbi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Agidingbi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0177",
+     "facility": "Gold mining site, Libeli",
+     "facility_type": "gold mine (operations to start 2026)",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Libeli",
+     "terms": [
+      {
+       "term": "Libeli",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Libeli(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "MECURE": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0178",
+     "facility": "Corporate office (Debo Industrial Compound)",
+     "facility_type": "corporate office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Oshodi",
+     "terms": [
+      {
+       "term": "Debo Industrial Compound",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Debo[\\s\\-‐‑–]+Industrial[\\s\\-‐‑–]+Compound(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Oshodi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Oshodi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (IMG, MECURE, RTBRISCOE)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0179",
+     "facility": "Pharmaceutical factory",
+     "facility_type": "pharmaceutical factory",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "MULTITREX": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0180",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Warewa",
+     "terms": [
+      {
+       "term": "Warewa",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Warewa(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0181",
+     "facility": "Cocoa processing plant",
+     "facility_type": "cocoa processing plant",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "TRIPPLEG": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0182",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Abule Oshun",
+     "terms": [
+      {
+       "term": "Abule Oshun",
+       "kind": "place",
+       "spellings": [
+        "Abule-Osun"
+       ],
+       "patterns": [
+        "(?<![A-Za-z0-9])Abule[\\s\\-‐‑–]+Oshun(?![A-Za-z0-9])",
+        "(?<![A-Za-z0-9])Abule[\\s\\-‐‑–]+Osun(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0183",
+     "facility": "Printing and packaging factory",
+     "facility_type": "printing factory",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "TRANSPOWER": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0184",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikoyi",
+     "terms": [
+      {
+       "term": "Ikoyi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikoyi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (DANGCEM, ETERNA, HBMNG, INTBREW, MTNN, TRANSCORP, TRANSPOWER)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0185",
+     "facility": "Ughelli power plant",
+     "facility_type": "power plant",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ughelli",
+     "terms": [
+      {
+       "term": "Ughelli",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ughelli(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (BETAGLAS, TRANSPOWER)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "CAP": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0186",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikeja",
+     "terms": [
+      {
+       "term": "Ikeja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikeja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 8 firms (BERGER, BUAFOODS, CADBURY, CAP, EUNISELL, LIVESTOCK, MAYBAKER, VITAFOAM)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0187",
+     "facility": "Paint manufacturing site",
+     "facility_type": "paint factory",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "OANDO": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0188",
+     "facility": "Registered office (The Wings Complex)",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Victoria Island",
+     "terms": [
+      {
+       "term": "Wings Complex",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Wings[\\s\\-‐‑–]+Complex(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Victoria Island",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Victoria[\\s\\-‐‑–]+Island(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (ARADEL, BUACEMENT, BUAFOODS, GEREGU, OANDO, SEPLAT, TOTAL)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0189",
+     "facility": "Producing licences OML 56, OML 13, OML 60-63",
+     "facility_type": "oil and gas licence areas",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "OML 56",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*56(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (OANDO, SEPLAT)"
+       ],
+       "match_rule": "R3"
+      },
+      {
+       "term": "OML 13",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*13(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "OML 60",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*60(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "OML 61",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*61(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "OML 62",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*62(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "OML 63",
+       "kind": "licence",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])OMLs?[\\s\\-]*63(?![0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0190",
+     "facility": "Kwale-Okpai Independent Power Plant",
+     "facility_type": "power plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Okpai",
+     "terms": [
+      {
+       "term": "Kwale",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kwale(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: also a county in Kenya"
+       ],
+       "match_rule": "R2"
+      },
+      {
+       "term": "Okpai",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Okpai(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Kwale IPP",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kwale[\\s\\-‐‑–]+IPP(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "JBERGER": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0191",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Utako",
+     "terms": [
+      {
+       "term": "Utako",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Utako(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0192",
+     "facility": "Site yards and workshops",
+     "facility_type": "construction yards",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "AIRTELAFRI": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0193",
+     "facility": "Airtel Networks Limited (Nigeria) office",
+     "facility_type": "head office (Nigerian subsidiary)",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Banana Island",
+     "terms": [
+      {
+       "term": "Banana Island",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Banana[\\s\\-‐‑–]+Island(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 2 firms (AIRTELAFRI, INTBREW)"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0194",
+     "facility": "Nigerian mobile network (Airtel Networks Limited)",
+     "facility_type": "telecom network",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    },
+    {
+     "facility_id": "F0195",
+     "facility": "Nxtra data centre, Nigeria (in development)",
+     "facility_type": "data centre",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "ELLAHLAKES": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0196",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Benin City",
+     "terms": [
+      {
+       "term": "Benin City",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Benin[\\s\\-‐‑–]+City(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 3 firms (ELLAHLAKES, GUINNESS, NB)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0197",
+     "facility": "Iguelaba farm (CPO mill being installed)",
+     "facility_type": "oil palm plantation estate",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Iguelaba",
+     "terms": [
+      {
+       "term": "Iguelaba",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Iguelaba(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0198",
+     "facility": "Adani farm (5,000 ha concession)",
+     "facility_type": "farm estate (in development)",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Adani",
+     "terms": [
+      {
+       "term": "Adani",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Adani(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: also the name of an Indian conglomerate"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0199",
+     "facility": "Ondo State land (5,000 ha)",
+     "facility_type": "farm land",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "Ondo",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ondo(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "MULTIVERSE": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0200",
+     "facility": "Alagunten quarry",
+     "facility_type": "quarry",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Alagunten",
+     "terms": [
+      {
+       "term": "Alagunten",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Alagunten(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0201",
+     "facility": "Abuni lead-zinc mines",
+     "facility_type": "lead-zinc mine",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Abuni",
+     "terms": [
+      {
+       "term": "Abuni",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Abuni(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "MCNICHOLS": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0202",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Arepo",
+     "terms": [
+      {
+       "term": "Arepo",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Arepo(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0203",
+     "facility": "Food and beverage factory",
+     "facility_type": "food factory",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "UNIONDICON": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0204",
+     "facility": "Registered office (Kirikiri Lighter Terminal)",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Apapa",
+     "terms": [
+      {
+       "term": "Kirikiri",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Kirikiri(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Apapa",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Apapa(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 5 firms (BUAFOODS, DANGCEM, DANGSUGAR, HONYFLOUR, UNIONDICON)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0205",
+     "facility": "Salt processing plant",
+     "facility_type": "salt refinery",
+     "rating": "D",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    }
+   ]
+  },
+  "ALEX": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0206",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Inyishi",
+     "terms": [
+      {
+       "term": "Inyishi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Inyishi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0207",
+     "facility": "Inyishi plant complex (extrusion, billet casting)",
+     "facility_type": "aluminium extrusion plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Inyishi",
+     "terms": [
+      {
+       "term": "Inyishi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Inyishi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0208",
+     "facility": "Suleja powder-coating plant (leased)",
+     "facility_type": "powder-coating plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Suleja",
+     "terms": [
+      {
+       "term": "Suleja",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Suleja(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "ETERNA": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0209",
+     "facility": "Registered office",
+     "facility_type": "registered office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ikoyi",
+     "terms": [
+      {
+       "term": "Ikoyi",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ikoyi(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (DANGCEM, ETERNA, HBMNG, INTBREW, MTNN, TRANSCORP, TRANSPOWER)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0210",
+     "facility": "Storage tank farms, Ibru Jetty",
+     "facility_type": "tank farm",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ibafon",
+     "terms": [
+      {
+       "term": "Ibru Jetty",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ibru[\\s\\-‐‑–]+Jetty(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "Ibafon",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ibafon(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0211",
+     "facility": "Owned service stations",
+     "facility_type": "fuel retail network",
+     "rating": "D",
+     "asset_type": "dispersed",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [],
+     "note": "no proper name in facilities.csv (generic or unnamed site): cannot be named by the dictionary; Y5 = 0 by construction"
+    },
+    {
+     "facility_id": "F0212",
+     "facility": "JUHI-2 aviation tank farm (joint venture)",
+     "facility_type": "aviation tank farm",
+     "rating": "C",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "",
+     "terms": [
+      {
+       "term": "JUHI-2",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])JUHI[\\s\\-‐‑–]+2(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [],
+       "match_rule": "R3"
+      },
+      {
+       "term": "JUHI",
+       "kind": "facility_name",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])JUHI(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "other sense: acronym"
+       ],
+       "match_rule": "R3+R2"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  },
+  "GEREGU": {
+   "census_stratum": "main",
+   "exclude_phrases": [],
+   "sites": [
+    {
+     "facility_id": "F0213",
+     "facility": "Corporate office",
+     "facility_type": "corporate office",
+     "rating": "A",
+     "asset_type": "point",
+     "is_office": "yes",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Victoria Island",
+     "terms": [
+      {
+       "term": "Victoria Island",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Victoria[\\s\\-‐‑–]+Island(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": true,
+       "ambiguity_flags": [
+        "shared: named for 7 firms (ARADEL, BUACEMENT, BUAFOODS, GEREGU, OANDO, SEPLAT, TOTAL)",
+        "major place: a state, state capital or major city/district that occurs as general geography"
+       ],
+       "match_rule": "R2"
+      }
+     ],
+     "note": ""
+    },
+    {
+     "facility_id": "F0214",
+     "facility": "Geregu power plant (plant operations)",
+     "facility_type": "power plant",
+     "rating": "B",
+     "asset_type": "point",
+     "is_office": "no",
+     "location_as_written": "[location text from a company report removed in the public copy]",
+     "geocode_place": "Ajaokuta",
+     "terms": [
+      {
+       "term": "Ajaokuta",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Ajaokuta(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      },
+      {
+       "term": "Itobe",
+       "kind": "place",
+       "spellings": [],
+       "patterns": [
+        "(?<![A-Za-z0-9])Itobe(?![A-Za-z0-9])"
+       ],
+       "case_sensitive": false,
+       "ambiguity_flags": [],
+       "match_rule": "R1"
+      }
+     ],
+     "note": ""
+    }
+   ]
+  }
+ }
+}

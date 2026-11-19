@@ -1,0 +1,52 @@
+firm,sector,hazard,main_sites,exposed_sites,mentions_hazard,names_exposed_site_in_hazard_para,names_exposed_site_in_any_hazard_para,mentions_hazard_refined,names_exposed_site_in_hazard_para_refined,names_exposed_site_in_any_hazard_para_refined,exposed_sites_ever_named_Y5
+ACADEMY,Industrial Goods,heat,1,1,0,0,0,0,0,0,1
+ACADEMY,Industrial Goods,water stress,1,1,0,0,0,0,0,0,1
+ARADEL,Oil and Gas,river flood,1,1,0,0,0,0,0,0,1
+ARADEL,Oil and Gas,coastal flood,1,1,1,0,0,0,0,0,1
+BETAGLAS,Industrial Goods,river flood,2,2,0,0,0,0,0,0,2
+BETAGLAS,Industrial Goods,heat,2,1,0,0,0,0,0,0,1
+BUACEMENT,Industrial Goods,river flood,4,1,1,1,1,1,1,1,1
+BUACEMENT,Industrial Goods,water stress,4,1,1,1,1,1,1,1,1
+BUAFOODS,Consumer Goods,river flood,7,6,1,0,0,1,0,0,5
+BUAFOODS,Consumer Goods,coastal flood,7,3,1,0,0,1,0,0,3
+BUAFOODS,Consumer Goods,heat,7,2,0,0,0,0,0,0,1
+BUAFOODS,Consumer Goods,water stress,7,3,0,0,1,0,0,1,2
+CUTIX,Industrial Goods,river flood,1,1,0,0,0,0,0,0,1
+DANGCEM,Industrial Goods,river flood,5,3,1,1,1,1,1,1,3
+DANGCEM,Industrial Goods,heat,5,2,1,0,1,1,0,1,2
+DANGCEM,Industrial Goods,water stress,5,1,1,0,0,1,0,0,1
+DANGSUGAR,Consumer Goods,river flood,1,1,0,0,0,0,0,0,1
+FIDSON,Healthcare,heat,1,1,0,0,0,0,0,0,1
+GEREGU,Utilities,river flood,1,1,1,0,0,1,0,0,1
+GUINNESS,Consumer Goods,river flood,3,2,0,0,0,0,0,0,2
+GUINNESS,Consumer Goods,heat,3,1,0,0,0,0,0,0,1
+GUINNESS,Consumer Goods,water stress,3,1,1,0,0,1,0,0,1
+HBMNG,Industrial Goods,river flood,3,1,0,0,0,0,0,0,1
+HBMNG,Industrial Goods,heat,3,2,0,0,0,0,0,0,2
+HONYFLOUR,Consumer Goods,river flood,3,2,0,0,0,0,0,0,2
+HONYFLOUR,Consumer Goods,heat,3,2,0,0,0,0,0,0,2
+HONYFLOUR,Consumer Goods,water stress,3,1,0,0,0,0,0,0,1
+LIVESTOCK,Agriculture,river flood,2,1,1,0,0,1,0,0,1
+LIVESTOCK,Agriculture,heat,2,1,0,0,0,0,0,0,1
+LIVESTOCK,Agriculture,water stress,2,1,0,0,0,0,0,0,1
+MAYBAKER,Healthcare,water stress,3,1,0,0,0,0,0,0,1
+NB,Consumer Goods,river flood,9,5,0,0,0,0,0,0,5
+NB,Consumer Goods,heat,9,4,0,0,0,0,0,0,4
+NB,Consumer Goods,water stress,9,1,0,0,0,0,0,0,1
+NEIMETH,Healthcare,river flood,1,1,0,0,0,0,0,0,1
+NEIMETH,Healthcare,heat,1,1,0,0,0,0,0,0,1
+NEIMETH,Healthcare,water stress,1,1,0,0,0,0,0,0,1
+NESTLE,Consumer Goods,river flood,2,1,0,0,0,0,0,0,1
+NESTLE,Consumer Goods,heat,2,1,0,0,0,0,0,0,1
+NNFM,Consumer Goods,river flood,1,1,1,0,0,1,0,0,1
+NNFM,Consumer Goods,water stress,1,1,0,0,0,0,0,0,1
+OKOMUOIL,Agriculture,river flood,1,1,0,0,0,0,0,0,1
+SEPLAT,Oil and Gas,river flood,3,3,1,0,1,1,0,0,3
+SEPLAT,Oil and Gas,heat,3,1,1,0,0,1,0,0,1
+TRANSPOWER,Utilities,river flood,1,1,0,0,0,0,0,0,1
+UNILEVER,Consumer Goods,river flood,2,2,0,0,0,0,0,0,2
+UNILEVER,Consumer Goods,heat,2,2,0,0,0,0,0,0,2
+UNILEVER,Consumer Goods,water stress,2,1,1,0,0,1,0,0,1
+VITAFOAM,Consumer Goods,river flood,4,1,0,0,0,0,0,0,1
+VITAFOAM,Consumer Goods,heat,4,1,0,0,0,0,0,0,1
+VITAFOAM,Consumer Goods,water stress,4,2,0,0,0,0,0,0,2

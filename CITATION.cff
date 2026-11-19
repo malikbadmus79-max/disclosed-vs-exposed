@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Disclosed vs Exposed: physical climate risk at Nigeria's listed companies ahead of IFRS S2"
+type: dataset
+authors:
+  - family-names: Badmus
+    given-names: Malik Kolawole
+    affiliation: "Independent researcher"
+date-released: 2026-11-18
+repository-code: "https://github.com/malikbadmus79-max/disclosed-vs-exposed"
+url: "https://github.com/malikbadmus79-max/disclosed-vs-exposed"
+license:
+  - MIT
+  - CC-BY-4.0
+abstract: >-
+  A descriptive study of 56 Nigerian Exchange companies with physical operations (2020-2025) comparing their
+  physical climate-risk disclosure with the open-data hazard exposure of the sites they name, as a baseline
+  before mandatory IFRS S2 reporting in Nigeria (2028).
+keywords:
+  - IFRS S2
+  - physical climate risk
+  - corporate disclosure
+  - Nigeria
+  - decoupling

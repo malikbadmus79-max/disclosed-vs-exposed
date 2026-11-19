@@ -1,0 +1,215 @@
+facility_id,ticker,census_stratum,source_doc,pdf_page,facility,facility_type,asset_type,asset_note,state_as_written,rating,is_office,location_source,geocode_place,osm_named_feature_candidate,lat,lon,coord_method,coord_source,coord_precision_m,coord_note,osm_state,state_check,a6_check,buffer_m
+F0001,DANGCEM,main,2025 AR,127,Head office,registered office,point,,,A,yes,report,Ikoyi,Dangote Corporate Head Office (node 5700588895),6.445179,3.427200,osm_feature,OSM node/5700588895 'Dangote Corporate Head Office',250,,Lagos,consistent,correct (rule-based),500
+F0002,DANGCEM,main,2025 AR,127,Obajana plant,cement plant,point,,,B,no,report,Obajana,Dangote Obajana Cement (way 944919621); Dangote Cement (way 236584082),7.922569,6.429108,osm_feature,OSM way/944919621 'Dangote Obajana Cement',250,,Kogi,consistent,,
+F0003,DANGCEM,main,2025 AR,127,Gboko plant,cement plant,point,,,B,no,report,Gboko,Dangote Cement Gboko (way 1288604749),7.410827,8.973367,osm_feature,OSM way/1288604749 'Dangote Cement Gboko',250,,Benue,consistent,,
+F0004,DANGCEM,main,2025 AR,127,Ibese plant,cement plant,point,,,B,no,report,Ibese,Dangote Ibese Cement Power Station (way 945308310),7.009222,3.050905,osm_feature,OSM way/945308310 'Dangote Ibese Cement Power Station',250,feature is the plant's power station,Ogun,consistent,,
+F0005,DANGCEM,main,2025 AR,35,Okpella plant,cement plant,point,,,B,no,report,Okpella,none,,,,,,no OSM place named 'Okpella' returned,,,,
+F0006,DANGCEM,main,2025 AR,21,Itori plant (under construction),cement plant,point,,,B,no,report,Itori,none,,,,,,no OSM place named 'Itori' returned,,,,
+F0007,DANGCEM,main,2025 AR,19,Apapa export terminal,terminal,point,,,B,no,report,Apapa,none,6.446905,3.362237,osm_place_rank,OSM node/13236892516 place=town 'Apapa',5000,only city/town among 2 same-named OSM places,Lagos,no state in report text,,
+F0008,DANGCEM,main,2025 AR,19,Onne export terminal,terminal,point,,,B,no,report,Onne,none,4.724985,7.152435,osm_place,OSM node/501404491 place=town 'Onne',5000,,Rivers,no state in report text,,
+F0009,DANGCEM,main,2025 AR,130,Depots,depots,dispersed,,,D,no,report,,none,,,,,,,,,,
+F0010,BUACEMENT,main,2025 AR,22,Registered office,registered office,point,,,A,yes,report,Victoria Island,none,6.430028,3.425990,osm_place,OSM node/501471396 place=town 'Victoria Island',5000,,Lagos,consistent,approximate (rule-based),5000
+F0011,BUACEMENT,main,2025 AR,22,Obu plant,cement plant,point,,,A,no,report,Okpella,BUA Cement Plc Okpella (node 13075110580),7.355524,6.400235,osm_feature,OSM node/13075110580 'BUA Cement Plc Okpella',250,,Edo,consistent,correct (rule-based),500
+F0012,BUACEMENT,main,2025 AR,22,Sokoto (Kalambaina) plant,cement plant,point,,,A,no,report,Kalambaina,BUA Cement (way 975425452),13.058409,5.172173,osm_feature,OSM way/975425452 'BUA Cement',250,,Sokoto,consistent,correct (rule-based),500
+F0013,BUACEMENT,main,2025 AR,69,Head office building (Sokoto),office under construction,point,,,B,no,report,Sokoto,none,13.061059,5.237319,osm_place_rank,OSM node/501540904 place=city 'Sokoto',10000,only city/town among 2 same-named OSM places,Sokoto,consistent,,
+F0014,BUACEMENT,main,2025 AR,69,Ososo project,project site,point,,,B,no,report,Ososo,none,7.411966,6.256104,osm_place,OSM node/501432045 place=village 'Ososo',2000,,Edo,no state in report text,,
+F0015,BUACEMENT,main,2025 AR,18,LNG plant,energy plant,point,,,D,no,report,,none,,,,,,,,,,
+F0016,GUINNESS,main,2025 AR,10,Headquarters,registered office,point,,,A,yes,report,Ogba,Guinness Nigeria (way 135619504),6.615572,3.336100,osm_feature,OSM way/135619504 'Guinness Nigeria',250,single building feature shared by HQ and brewery,Lagos,consistent,correct (rule-based),500
+F0017,GUINNESS,main,2025 AR,10,Ogba Brewery,brewery,point,,,A,no,report,Ogba,Guinness Nigeria (way 135619504),6.615572,3.336100,osm_feature,OSM way/135619504 'Guinness Nigeria',250,single building feature shared by HQ and brewery,Lagos,no state in report text,correct (rule-based),500
+F0018,GUINNESS,main,2025 AR,10,Benin Brewery,brewery,point,,,A,no,report,Benin City,none,6.333059,5.622106,osm_place,OSM node/2149000430 place=city 'Benin City',10000,,Edo,no state in report text,approximate (rule-based),10000
+F0019,GUINNESS,main,2025 AR,10,Aba Brewery/Logistics Centre,brewery and logistics,point,,,B,no,report,Aba,none,5.112801,7.365138,osm_place_rank,OSM node/501517702 place=city 'Aba',10000,only city/town among 9 same-named OSM places,Abia,consistent,,
+F0020,OKOMUOIL,main,2024 AR (OCR),12,Main estate (registered office and principal place of business),plantation,point,bounded area site (estate); polygon preferred,,B,no,report,Okomu,Okomu Oil Palm Estate (relation 14379780),6.374882,5.202223,osm_feature,OSM relation/14379780 'Okomu Oil Palm Estate',250,,Edo,consistent,,
+F0021,OKOMUOIL,main,2024 AR (OCR),4,Extension 1,plantation,point,bounded area site (estate); polygon preferred,,D,no,report,,none,,,,,,,,,,
+F0022,OKOMUOIL,main,2024 AR (OCR),4,Extension 2 (incl. two 30 t/h oil mills),plantation and oil mill,point,bounded area site (estate); polygon preferred,,C,no,report,,none,,,,,,,,,,
+F0023,OKOMUOIL,main,2024 AR (OCR),15,Rubber factory,factory,point,,,D,no,osm,,Okomu Rubber Plant (relation 14379936),6.404668,5.235624,osm_feature,OSM relation/14379936 'Okomu Rubber Plant',250,,Edo,no state in report text,,
+F0024,PRESCO,main,2025 AR,3,Obaretin Estate (corporate office),plantation and corporate office,point,bounded area site (estate); polygon preferred,,A,no,report,Obaretin,none,,,,,,no OSM place named 'Obaretin' returned,,,no coordinate,
+F0025,PRESCO,main,2025 AR,84,Cowan estate,plantation,point,bounded area site (estate); polygon preferred,,C,no,report,,none,,,,,,,,,,
+F0026,PRESCO,main,2025 AR,84,Ologbo estate,plantation,point,bounded area site (estate); polygon preferred,,C,no,report,,none,,,,,,,,,,
+F0027,PRESCO,main,2025 AR,84,ATO estate,plantation,point,bounded area site (estate); polygon preferred,,C,no,report,,none,,,,,,,,,,
+F0028,PRESCO,main,2025 AR,84,Elele estate,plantation,point,bounded area site (estate); polygon preferred,,C,no,report,,none,,,,,,,,,,
+F0029,PRESCO,main,2025 AR,84,Ubima estate,plantation,point,bounded area site (estate); polygon preferred,,C,no,report,,none,,,,,,,,,,
+F0030,PRESCO,main,2025 AR,100,Sakponba Estate (new 50 t/h palm oil mill),plantation and oil mill,point,bounded area site (estate); polygon preferred,,C,no,report,,none,,,,,,,,,,
+F0031,PRESCO,main,2025 AR,31,Processing plants,mill and refinery,point,,,D,no,report,,none,,,,,,,,,,
+F0032,BETAGLAS,main,2023 AR,12,Registered office,registered office,point,,,A,yes,report,Iddo,none,6.470172,3.381113,osm_place,OSM node/501396306 place=suburb 'Iddo',2000,,Lagos,consistent,approximate (rule-based),2000
+F0033,BETAGLAS,main,2023 AR,5,Agbara plant,glass plant,point,,,B,no,report,Agbara,none,6.504693,3.100489,osm_place_rank,OSM node/501513868 place=town 'Agbara',5000,only city/town among 2 same-named OSM places,Ogun,consistent,,
+F0034,BETAGLAS,main,2023 AR,5,Ughelli plant,glass plant,point,,,B,no,report,Ughelli,none,5.494188,5.995321,osm_place,OSM node/501429259 place=town 'Ughelli',5000,,Delta,consistent,,
+F0035,INTBREW,main,2023 FS,23,Registered office,registered office,point,,,A,yes,report,Banana Island,none,6.464222,3.452867,osm_place,OSM node/14161700677 place=suburb 'Banana Island',2000,,Lagos,consistent,approximate (rule-based),2000
+F0036,INTBREW,main,2023 FS,4,Breweries,breweries,point,,,D,no,osm,,"International Breweries plc (relation 8382484), Ilesa",7.626120,4.784259,osm_feature,OSM relation/8382484 'International Breweries plc',250,OSM supplies the only location,Osun,no state in report text,,
+F0037,HBMNG,main,2023 FS,3,Registered office,registered office,point,,,A,yes,report,Ikoyi,none,6.452343,3.428052,osm_place_rank,OSM node/5908615078 place=town 'Ikoyi',5000,only city/town among 3 same-named OSM places,Lagos,consistent,approximate (rule-based),5000
+F0038,HBMNG,main,2023 FS,7,Ewekoro,operating location,point,,,B,no,report,Ewekoro,none,6.907079,3.208703,osm_place,OSM node/501330545 place=village 'Ewekoro',2000,,Ogun,consistent,,
+F0039,HBMNG,main,2023 FS,7,Sagamu,operating location,point,,,B,no,report,Sagamu,none,6.847716,3.644055,osm_place,OSM node/501330380 place=city 'Sagamu',10000,,Ogun,consistent,,
+F0040,HBMNG,main,2023 FS,7,Mfamosing,operating location,point,,,B,no,report,Mfamosing,none,5.111814,8.525423,osm_place,OSM node/501514406 place=town 'Mfamosing',5000,,Cross River,consistent,,
+F0041,HBMNG,main,2023 FS,7,Ashaka,operating location,point,,,B,no,report,Ashaka,none,,,,,,ambiguous: 2 OSM places named 'Ashaka'; not assigned,,,,
+F0042,CADBURY,main,2025 FS,8,Registered office,registered office,point,,,A,yes,report,Ikeja,"Cadbury Nigeria (way 223754822, man_made=works)",6.622153,3.351138,osm_feature,OSM way/223754822 'Cadbury Nigeria',250,,Lagos,consistent,correct (rule-based),500
+F0043,CADBURY,main,2025 FS,8,Factory,factory,point,,,D,no,osm,,"Cadbury Nigeria (way 223754822, man_made=works)",6.622153,3.351138,osm_feature,OSM way/223754822 'Cadbury Nigeria',250,,Lagos,no state in report text,,
+F0044,MTNN,main,2025 AR,20,Registered office,registered office,point,,,A,yes,report,Ikoyi,none,6.452343,3.428052,osm_place_rank,OSM node/5908615078 place=town 'Ikoyi',5000,only city/town among 3 same-named OSM places,Lagos,consistent,approximate (rule-based),5000
+F0045,MTNN,main,2025 SR,5,Head office (MTN Plaza),corporate office,point,,,A,yes,report,Ikoyi,none,6.452343,3.428052,osm_place_rank,OSM node/5908615078 place=town 'Ikoyi',5000,only city/town among 3 same-named OSM places,Lagos,consistent,approximate (rule-based),5000
+F0046,MTNN,main,2025 AR,35,Dabengwa Tier III Data Centre,data centre,point,,,D,no,report,,none,,,,,,,,,,
+F0047,MTNN,main,2025 SR,12,Switching centres,network facility,dispersed,,,D,no,report,,none,,,,,,,,,,
+F0048,MTNN,main,2025 SR,12,Base stations,network sites,dispersed,,,D,no,report,,none,,,,,,,,,,
+F0049,NESTLE,main,2025 AR,8,Registered office,registered office,point,,,A,yes,report,Ilupeju,none,6.555054,3.359283,osm_place,OSM node/13235411955 place=suburb 'Ilupeju',2000,,Lagos,no state in report text,approximate (rule-based),2000
+F0050,NESTLE,main,2025 AR,3,Agbara factory (with distribution centre),factory,point,,,B,no,report,Agbara,Nestle Nig Plc Staff Clinic (node 11889706143),6.504693,3.100489,osm_place_rank,OSM node/501513868 place=town 'Agbara',5000,only city/town among 2 same-named OSM places,Ogun,no state in report text,,
+F0051,NESTLE,main,2025 AR,3,Flowergate factory,factory,point,,,B,no,report,Flowergate,none,,,,,,no OSM place named 'Flowergate' returned,,,,
+F0052,NESTLE,main,2025 AR,3,Abaji factory,factory,point,,,B,no,report,Abaji,none,8.473783,6.944018,osm_place,OSM node/3615288382 place=town 'Abaji',5000,,Federal Capital Territory,no state in report text,,
+F0053,UNILEVER,main,2025 AR,5,Registered office,registered office,point,,,A,yes,report,Oregun,none,6.601001,3.364464,osm_place,OSM node/501514506 place=suburb 'Oregun',2000,,Lagos,consistent,approximate (rule-based),2000
+F0054,UNILEVER,main,2025 AR,31,Oregun manufacturing site,factory,point,,,B,no,report,Oregun,none,6.601001,3.364464,osm_place,OSM node/501514506 place=suburb 'Oregun',2000,,Lagos,consistent,,
+F0055,UNILEVER,main,2025 AR,31,Agbara manufacturing site,factory,point,,,B,no,report,Agbara,"Unilever (node 5678239529, office=company)",6.513250,3.079877,osm_feature,OSM node/5678239529 'Unilever',250,feature tagged office=company,Ogun,consistent,,
+F0056,UNILEVER,main,2025 AR,42,Warehouse,warehouse,point,,,D,no,report,,none,,,,,,,,,,
+F0057,NB,main,2025 AR,8,Headquarters (Iganmu House),registered office,point,,,A,yes,report,Iganmu,none,6.482424,3.364162,osm_place,OSM node/501513077 place=suburb 'Iganmu',2000,,Lagos,consistent,approximate (rule-based),2000
+F0058,NB,main,2025 AR,8,Lagos Brewery,brewery,point,,,A,no,report,Iganmu,none,6.482424,3.364162,osm_place,OSM node/501513077 place=suburb 'Iganmu',2000,,Lagos,consistent,approximate (rule-based),2000
+F0059,NB,main,2025 AR,8,Ibadan Brewery,brewery,point,,,A,no,report,Ibadan,"Nigerian Breweries Ltd (way 82466274, landuse=industrial)",7.398541,3.968975,osm_feature,OSM way/82466274 'Nigerian Breweries Ltd',250,,Oyo,no state in report text,correct (rule-based),500
+F0060,NB,main,2025 AR,8,Kudenda Brewery/Malting Plant,brewery and malting plant,point,,,A,no,report,Kudenda,none,,,,,,no OSM place named 'Kudenda' returned,,,no coordinate,
+F0061,NB,main,2025 AR,8,Aba Malting Plant,malting plant,point,,,A,no,report,Aba,none,5.112801,7.365138,osm_place_rank,OSM node/501517702 place=city 'Aba',10000,only city/town among 9 same-named OSM places,Abia,no state in report text,approximate (rule-based),10000
+F0062,NB,main,2025 AR,8,Aba Brewery,brewery,point,,,A,no,report,Aba,none,5.112801,7.365138,osm_place_rank,OSM node/501517702 place=city 'Aba',10000,only city/town among 9 same-named OSM places,Abia,no state in report text,approximate (rule-based),10000
+F0063,NB,main,2025 AR,8,Ama Brewery,brewery,point,,,B,no,report,Ngwo,none,6.431049,7.427926,osm_place,OSM node/13228673672 place=town 'Ngwo',5000,,Enugu,consistent,,
+F0064,NB,main,2025 AR,8,Awo-Omamma Brewery (mothballed),brewery,point,,,A,no,report,Awo-Omamma,none,,,,,,no OSM place named 'Awo-Omamma' returned,,,no coordinate,
+F0065,NB,main,2025 AR,8,Kakuri Brewery (mothballed),brewery,point,,,B,no,report,Kakuri,none,,,,,,no OSM place named 'Kakuri' returned,,,,
+F0066,NB,main,2025 AR,8,Ota Brewery,brewery,point,,,A,no,report,Ota,none,6.684526,3.233010,osm_place_rank,OSM node/501392235 place=town 'Ota',5000,only city/town among 2 same-named OSM places,Ogun,no state in report text,approximate (rule-based),5000
+F0067,NB,main,2025 AR,8,Ijebu-Ode Brewery,brewery,point,,,A,no,report,Imagbon,none,6.764892,3.963782,osm_place,OSM node/501496602 place=village 'Imagbon',2000,,Ogun,consistent,approximate (rule-based),2000
+F0068,NB,main,2025 AR,8,Onitsha Distribution Centre,distribution centre,point,,,A,no,report,Onitsha,none,6.146162,6.801909,osm_place,OSM node/5232601618 place=city 'Onitsha',10000,,Anambra,no state in report text,approximate (rule-based),10000
+F0069,NB,main,2025 AR,8,Makurdi Distribution Centre,distribution centre,point,,,A,no,report,Makurdi,none,7.731263,8.538425,osm_place_rank,OSM node/312045158 place=city 'Makurdi',10000,only city/town among 4 same-named OSM places,Benue,consistent,approximate (rule-based),10000
+F0070,NB,main,2025 AR,8,Lagos Sales Office,sales office,point,,,A,yes,report,Iganmu,none,6.482424,3.364162,osm_place,OSM node/501513077 place=suburb 'Iganmu',2000,,Lagos,consistent,approximate (rule-based),2000
+F0071,NB,main,2025 AR,8,Ibadan Sales Office,sales office,point,,,A,yes,report,Ibadan,none,,,,,,ambiguous: 3 OSM places named 'Ibadan'; not assigned,,,no coordinate,
+F0072,NB,main,2025 AR,8,Benin Sales Office,sales office,point,,,A,yes,report,Benin City,none,6.333059,5.622106,osm_place,OSM node/2149000430 place=city 'Benin City',10000,,Edo,no state in report text,approximate (rule-based),10000
+F0073,NB,main,2025 AR,8,Abuja Sales Office,sales office,point,,,A,yes,report,Abuja,none,9.064331,7.489297,osm_place_rank,OSM node/31203257 place=city 'Abuja',10000,only city/town among 7 same-named OSM places,Federal Capital Territory,consistent,approximate (rule-based),10000
+F0074,NB,main,2025 AR,8,Kaduna Sales Office,sales office,point,,,B,yes,report,,none,,,,,,,,,,
+F0075,NB,main,2025 AR,8,Port Harcourt Sales Office,sales office,point,,,A,yes,report,,none,,,,,,,,,no coordinate,
+F0076,NB,main,2025 AR,8,Enugu Sales Office,sales office,point,,,B,yes,report,Enugu,none,6.449652,7.513686,osm_place_rank,OSM node/27565107 place=city 'Enugu',10000,only city/town among 2 same-named OSM places,Enugu,consistent,,
+F0077,NB,main,2025 AR,8,Aba Sales Office,sales office,point,,,A,yes,report,Aba,none,5.112801,7.365138,osm_place_rank,OSM node/501517702 place=city 'Aba',10000,only city/town among 9 same-named OSM places,Abia,no state in report text,approximate (rule-based),10000
+F0078,SEPLAT,main,2025 IAR,2,Registered office,registered office,point,,,A,yes,report,Victoria Island,none,6.430028,3.425990,osm_place,OSM node/501471396 place=town 'Victoria Island',5000,,Lagos,consistent,approximate (rule-based),5000
+F0079,SEPLAT,main,2025 IAR,9,Oben gas processing,gas plant,point,,,B,no,report,Oben,none,,,,,,no OSM place named 'Oben' returned,,,,
+F0080,SEPLAT,main,2025 IAR,9,Sapele gas processing,gas plant,point,,,B,no,report,Sapele,none,5.894814,5.679589,osm_place,OSM node/501482915 place=city 'Sapele',10000,,Delta,no state in report text,,
+F0081,SEPLAT,main,2025 IAR,6,ANOH gas plant,gas plant,point,,,D,no,report,,none,,,,,,,,,,
+F0082,SEPLAT,main,2025 IAR,31,Amukpe flow station,flow station,point,,,B,no,report,Amukpe,none,5.860764,5.715487,osm_place,OSM node/501512142 place=town 'Amukpe',5000,,Delta,no state in report text,,
+F0083,SEPLAT,main,2025 IAR,81,Qua Iboe Terminal,export terminal,point,,,B,no,report,,none,4.548414,8.014093,osm_feature,OSM relation/15408639 'Qua Iboe Oil Terminal',250,,Akwa Ibom,no state in report text,,
+F0084,SEPLAT,main,2025 IAR,7,Other operated export terminals,export terminals,point,,,D,no,report,,none,,,,,,,,,,
+F0085,SEPLAT,main,2025 IAR,175,"Western licences OML 4, 38, 41",oil and gas licence area,dispersed,,,D,no,report,,none,,,,,,,,,,
+F0086,SEPLAT,main,2025 IAR,27,"Eastern licences OML 53, 56",oil and gas licence area,dispersed,,,D,no,report,,none,,,,,,,,,,
+F0087,SEPLAT,main,2025 IAR,27,Elcrest licence OML 40,oil and gas licence area,dispersed,,,D,no,report,,none,,,,,,,,,,
+F0088,SEPLAT,main,2025 IAR,119,"Offshore licences OML 67, 68, 70, 104",offshore licence area,dispersed,,,D,no,report,,none,,,,,,,,,,
+F0089,SEPLAT,main,2025 IAR,121,Yoho production platform,offshore platform,point,,,D,no,report,,none,,,,,,,,,,
+F0090,DANGSUGAR,main,2025 FS,35,Registered office (administrative building),registered office,point,,Lagos,A,yes,report,Apapa,,6.446905,3.362237,osm_place_rank,OSM node/13236892516 place=town 'Apapa',5000,only city/town among 2 same-named OSM places,Lagos,consistent,approximate (rule-based),5000
+F0091,DANGSUGAR,main,2025 FS,4,Numan refinery operations,sugar refinery,point,,Adamawa,B,no,report,Numan,,9.459844,12.035928,osm_place,OSM node/501424898 place=town 'Numan',5000,,Adamawa,consistent,,
+F0092,DANGSUGAR,main,2025 FS,4,Nasarawa Sugar Company Project (greenfield),sugar estate project,point,,Nasarawa (from entity name),C,no,report,,,,,,,,,,,,
+F0093,DANGSUGAR,main,2025 FS,4,Dangote Taraba Sugar Limited (backward integration project),sugar estate project,point,,Taraba (from entity name),C,no,report,,,,,,,,,,,,
+F0094,DANGSUGAR,main,2025 FS,4,Dangote Adamawa Sugar Limited (backward integration project),sugar estate project,point,,Adamawa (from entity name),C,no,report,,,,,,,,,,,,
+F0095,FTNCOCOA,main,2025 FS,3,Registered office,registered office,point,,Lagos,A,yes,report,Magodo,,6.618081,3.377782,osm_place,OSM node/1484920806 place=suburb 'Magodo',2000,,Lagos,consistent,approximate (rule-based),2000
+F0096,FTNCOCOA,main,2025 FS,3,Factory,cocoa processing factory,point,,Oyo,A,no,report,Olodo,,,,,,,ambiguous: 4 OSM places named 'Olodo'; not assigned,,,no coordinate,
+F0097,CONOIL,main,2025 FS,3,Registered office,registered office,point,,Lagos,A,yes,report,Marina,,,,withdrawn,OSM node/501527201 place=village 'Marina',,withdrawn after state mismatch,Kebbi,MISMATCH: report ['Lagos'] vs OSM Kebbi; coordinate withdrawn,no coordinate,
+F0098,CONOIL,main,2025 FS,8,Dealer service station network,fuel retail network,dispersed,,Lagos; FCT; Enugu; Rivers; Anambra; Edo; Oyo; Ogun; Kaduna,C,no,report,,,,,,,,,,,,
+F0099,CONOIL,main,2025 FS,58,Depots,depots,dispersed,,,D,no,report,,,,,,,,,,,,
+F0100,NASCON,main,2025 FS,3,Business office,corporate office,point,,Lagos,A,yes,report,Oregun,,6.601001,3.364464,osm_place,OSM node/501514506 place=suburb 'Oregun',2000,,Lagos,consistent,approximate (rule-based),2000
+F0101,NASCON,main,2025 FS,5,Salt processing plants,salt refinery,point,,,D,no,report,,,,,,,,,,,,
+F0102,VITAFOAM,main,2025 FS,61,Registered office,registered office,point,,Lagos,A,yes,report,Ikeja,,6.601627,3.351598,osm_place,OSM node/501540907 place=city 'Ikeja',10000,,Lagos,consistent,approximate (rule-based),10000
+F0103,VITAFOAM,main,2025 FS,4,Aba manufacturing facility,foam factory,point,,,B,no,report,Aba,,5.112801,7.365138,osm_place_rank,OSM node/501517702 place=city 'Aba',10000,only city/town among 9 same-named OSM places,Abia,no state in report text,,
+F0104,VITAFOAM,main,2025 FS,4,Ikeja manufacturing facility,foam factory,point,,,B,no,report,Ikeja,,6.601627,3.351598,osm_place,OSM node/501540907 place=city 'Ikeja',10000,,Lagos,no state in report text,,
+F0105,VITAFOAM,main,2025 FS,4,Jos manufacturing facility,foam factory,point,,,B,no,report,Jos,,9.917513,8.897940,osm_place,OSM node/501540902 place=city 'Jos',10000,,Plateau,no state in report text,,
+F0106,VITAFOAM,main,2025 FS,4,Kano manufacturing facility,foam factory,point,,,B,no,report,Kano,,11.993998,8.521974,osm_place_rank,OSM node/501540880 place=city 'Kano',10000,only city/town among 2 same-named OSM places,Kano,no state in report text,,
+F0107,NEIMETH,main,2025 FS,3,Registered office,registered office,point,,Lagos,A,yes,report,Oregun,,6.601001,3.364464,osm_place,OSM node/501514506 place=suburb 'Oregun',2000,,Lagos,consistent,approximate (rule-based),2000
+F0108,NEIMETH,main,2025 FS,49,Oregun plant,pharmaceutical plant,point,,,B,no,report,Oregun,,6.601001,3.364464,osm_place,OSM node/501514506 place=suburb 'Oregun',2000,,Lagos,no state in report text,,
+F0109,NEIMETH,main,2025 FS,54,Amawbia manufacturing facility (under construction),pharmaceutical plant,point,,Anambra,B,no,report,Amawbia,,,,,,,no OSM place named 'Amawbia' returned,,,,
+F0110,CUTIX,main,2025 FS,3,Registered office and factory,cable factory,point,,Anambra,A,no,report,Nnewi,,6.019531,6.917181,osm_place,OSM node/501498472 place=city 'Nnewi',10000,,Anambra,consistent,approximate (rule-based),10000
+F0111,BERGER,main,2025 FS,31,Registered office,registered office,point,,Lagos,A,yes,report,Ikeja,,6.601627,3.351598,osm_place,OSM node/501540907 place=city 'Ikeja',10000,,Lagos,consistent,approximate (rule-based),10000
+F0112,BERGER,main,2025 FS,7,Paint manufacturing facility,paint factory,point,,,D,no,report,,,,,,,,,,,,
+F0113,PZ,main,2025 FS,3,Registered office,registered office,point,,Lagos,A,yes,report,Ilupeju,,6.555054,3.359283,osm_place,OSM node/13235411955 place=suburb 'Ilupeju',2000,,Lagos,consistent,approximate (rule-based),2000
+F0114,PZ,main,2025 FS,10,Factories,factories,point,,,D,no,report,,,,,,,,,,,,
+F0115,PZ,main,2025 FS,5,Depots,depots,dispersed,,,D,no,report,,,,,,,,,,,,
+F0116,MAYBAKER,main,2025 FS,3,Registered office,registered office,point,,Lagos,A,yes,report,Ikeja,,6.601627,3.351598,osm_place,OSM node/501540907 place=city 'Ikeja',10000,,Lagos,consistent,approximate (rule-based),10000
+F0117,MAYBAKER,main,2025 FS,33,Kano warehouse (leased out),warehouse,point,,,B,no,report,Kano,,11.993998,8.521974,osm_place_rank,OSM node/501540880 place=city 'Kano',10000,only city/town among 2 same-named OSM places,Kano,no state in report text,,
+F0118,MAYBAKER,main,2025 FS,33,Abuja warehouse (leased out),warehouse,point,,,B,no,report,Abuja,,9.064331,7.489297,osm_place_rank,OSM node/31203257 place=city 'Abuja',10000,only city/town among 7 same-named OSM places,Federal Capital Territory,no state in report text,,
+F0119,MAYBAKER,main,2025 FS,66,Abuja sales depot,depot,point,,,B,no,report,Abuja,,9.064331,7.489297,osm_place_rank,OSM node/31203257 place=city 'Abuja',10000,only city/town among 7 same-named OSM places,Federal Capital Territory,no state in report text,,
+F0120,MAYBAKER,main,2025 FS,19,Manufacturing plant,pharmaceutical plant,point,,,D,no,report,,,,,,,,,,,,
+F0121,MORISON,main,2025 FS,3,Registered office,registered office,point,,Lagos,A,yes,report,Oregun,,6.601001,3.364464,osm_place,OSM node/501514506 place=suburb 'Oregun',2000,,Lagos,consistent,approximate (rule-based),2000
+F0122,MORISON,main,2025 FS,33,Manufacturing site,pharmaceutical plant,point,,,D,no,report,,,,,,,,,,,,
+F0123,HONYFLOUR,main,2025 FS,3,Registered office,registered office,point,,Lagos,A,yes,report,Apapa,,6.446905,3.362237,osm_place_rank,OSM node/13236892516 place=town 'Apapa',5000,only city/town among 2 same-named OSM places,Lagos,consistent,approximate (rule-based),5000
+F0124,HONYFLOUR,main,2025 FS,3,Apapa Factory,flour mill,point,,Lagos,A,no,report,Apapa,,6.446905,3.362237,osm_place_rank,OSM node/13236892516 place=town 'Apapa',5000,only city/town among 2 same-named OSM places,Lagos,consistent,approximate (rule-based),5000
+F0125,HONYFLOUR,main,2025 FS,3,Sagamu Factory,flour mill,point,,Ogun,B,no,report,Sagamu,,6.847716,3.644055,osm_place,OSM node/501330380 place=city 'Sagamu',10000,,Ogun,consistent,,
+F0126,HONYFLOUR,main,2025 FS,81,Onitsha warehouse,warehouse,point,,,B,no,report,Onitsha,,6.146162,6.801909,osm_place,OSM node/5232601618 place=city 'Onitsha',10000,,Anambra,no state in report text,,
+F0127,TRANSCORP,robustness_stratum,2025 FS,3,Registered office,registered office,point,,Lagos,A,yes,report,Ikoyi,,6.452343,3.428052,osm_place_rank,OSM node/5908615078 place=town 'Ikoyi',5000,only city/town among 3 same-named OSM places,Lagos,consistent,approximate (rule-based),5000
+F0128,TRANSCORP,robustness_stratum,2025 FS,122,Transcorp Hilton Hotel Abuja,hotel,point,,,B,no,report,Abuja,,9.074967,7.494760,osm_feature,OSM relation/12186132 'Transcorp Hilton Abuja',250,,Federal Capital Territory,no state in report text,,
+F0129,TRANSCORP,robustness_stratum,2025 FS,70,Transcorp Hotels Port Harcourt,hotel,point,,,B,no,report,Port Harcourt,,4.767658,7.018853,osm_place,OSM node/27565065 place=city 'Port Harcourt',10000,,Rivers,no state in report text,,
+F0130,TRANSCORP,robustness_stratum,2025 FS,8,Afam Power,power plant,point,,,B,no,report,Afam,,4.816667,7.316667,osm_place,OSM node/501451251 place=village 'Afam',2000,,Rivers,no state in report text,,
+F0131,TRANSCORP,robustness_stratum,2025 FS,8,Transcorp Power plant,power plant,point,,,D,no,report,,,,,,,,,,,,
+F0132,ABCTRANS,robustness_stratum,2025 FS,24,Registered office,registered office,point,,Imo,A,yes,report,Owerri,,5.489736,7.034197,osm_place_rank,OSM node/2469246094 place=city 'Owerri',10000,only city/town among 2 same-named OSM places,Imo,consistent,approximate (rule-based),10000
+F0133,ABCTRANS,robustness_stratum,2025 FS,72,Amuwo-Odofin property,property (pledged),point,,Lagos,A,no,report,Amuwo Odofin,,6.478154,3.311551,osm_place,OSM node/14136596430 place=suburb 'Amuwo Odofin',2000,,Lagos,consistent,approximate (rule-based),2000
+F0134,ABCTRANS,robustness_stratum,2025 FS,72,Eliozu property,property (pledged),point,,,B,no,report,Eliozu,,4.863384,7.023160,osm_place,OSM node/501402343 place=village 'Eliozu',2000,,Rivers,no state in report text,,
+F0135,ABCTRANS,robustness_stratum,2025 FS,72,Jibowu property (with hotel),terminal and hotel property,point,,Lagos,A,no,report,Jibowu,,6.517271,3.366627,osm_place,OSM node/501499101 place=suburb 'Jibowu',2000,,Lagos,consistent,approximate (rule-based),2000
+F0136,ABCTRANS,robustness_stratum,2025 FS,29,Bus terminals,terminals,dispersed,,,D,no,report,,,,,,,,,,,,
+F0137,RTBRISCOE,robustness_stratum,2025 FS,28,Registered office,registered office,point,,Lagos,A,yes,report,Matori,,,,,,,no OSM place named 'Matori' returned,,,no coordinate,
+F0138,LIVESTOCK,main,2025 AR,94,Ikeja mill,feed mill,point,,,B,no,report,Ikeja,,6.601627,3.351598,osm_place,OSM node/501540907 place=city 'Ikeja',10000,,Lagos,no state in report text,,
+F0139,LIVESTOCK,main,2025 AR,94,Aba mill,feed mill,point,,,B,no,report,Aba,,5.112801,7.365138,osm_place_rank,OSM node/501517702 place=city 'Aba',10000,only city/town among 9 same-named OSM places,Abia,no state in report text,,
+F0140,LIVESTOCK,main,2025 AR,103,Leased factory (Northern Rice and Oil Mill),factory (leased),point,,,D,no,report,,,,,,,,,,,,
+F0141,THOMASWY,main,2025 FS,5,Head office,head office,point,,Lagos,A,yes,report,Iganmu,,6.482424,3.364162,osm_place,OSM node/501513077 place=suburb 'Iganmu',2000,,Lagos,consistent,approximate (rule-based),2000
+F0142,THOMASWY,main,2025 FS,5,Paper products manufacturing site,factory,point,,,D,no,report,,,,,,,,,,,,
+F0143,ACADEMY,main,2025 AR,7,Company premises (registered office),printing works and office,point,,Lagos,A,no,report,Ilupeju,,6.555054,3.359283,osm_place,OSM node/13235411955 place=suburb 'Ilupeju',2000,,Lagos,consistent,approximate (rule-based),2000
+F0144,ARADEL,main,2025 FS,27,Head office,head office,point,,Lagos,A,yes,report,Victoria Island,,6.430028,3.425990,osm_place,OSM node/501471396 place=town 'Victoria Island',5000,,Lagos,consistent,approximate (rule-based),5000
+F0145,ARADEL,main,2025 FS,74,Ogbele Field,oil and gas field,dispersed,,,D,no,report,,,,,,,,,,,,
+F0146,ARADEL,main,2025 FS,71,OML 17,oil and gas licence area,dispersed,,,D,no,report,,,,,,,,,,,,
+F0147,ARADEL,main,2025 FS,56,Refinery,refinery,point,,,D,no,report,,,,,,,,,,,,
+F0148,ARADEL,main,2025 FS,68,Ever Oil & Gas Depot (50% stake),tank farm,point,,Rivers,B,no,report,Port Harcourt,,4.767658,7.018853,osm_place,OSM node/27565065 place=city 'Port Harcourt',10000,,Rivers,consistent,,
+F0149,BUAFOODS,main,2024 AR,3,Registered office,registered office,point,,Lagos,A,yes,report,Victoria Island,,6.430028,3.425990,osm_place,OSM node/501471396 place=town 'Victoria Island',5000,,Lagos,consistent,approximate (rule-based),5000
+F0150,BUAFOODS,main,2024 AR,3,Plant site: Apapa,plant (type per table),point,,Lagos,A,no,report,Apapa,,6.446905,3.362237,osm_place_rank,OSM node/13236892516 place=town 'Apapa',5000,only city/town among 2 same-named OSM places,Lagos,consistent,approximate (rule-based),5000
+F0151,BUAFOODS,main,2024 AR,3,Plant site: Ikeja,plant (type per table),point,,Lagos,A,no,report,Ikeja,,6.601627,3.351598,osm_place,OSM node/501540907 place=city 'Ikeja',10000,,Lagos,consistent,approximate (rule-based),10000
+F0152,BUAFOODS,main,2024 AR,3,"BUA Foods Industrial Complex, Port Harcourt",plant (type per table),point,,Rivers,A,no,report,Port Harcourt,,4.767658,7.018853,osm_place,OSM node/27565065 place=city 'Port Harcourt',10000,,Rivers,consistent,approximate (rule-based),10000
+F0153,BUAFOODS,main,2024 AR,3,BUA Sugar Refinery FZE,sugar refinery,point,,Rivers,A,no,report,Port Harcourt,,4.767658,7.018853,osm_place,OSM node/27565065 place=city 'Port Harcourt',10000,,Rivers,consistent,approximate (rule-based),10000
+F0154,BUAFOODS,main,2024 AR,3,LASUCO Sugar Company,sugar estate and factory,point,,Kwara,A,no,report,Lafiagi,,8.853750,5.418955,osm_place_rank,OSM node/501524386 place=town 'Lafiagi',5000,only city/town among 2 same-named OSM places,Kwara,consistent,approximate (rule-based),5000
+F0155,BUAFOODS,main,2024 AR,3,Flour Mills Plants II,flour mill,point,,Rivers,A,no,report,Port Harcourt,,4.767658,7.018853,osm_place,OSM node/27565065 place=city 'Port Harcourt',10000,,Rivers,consistent,approximate (rule-based),10000
+F0156,BUAFOODS,main,2024 AR,3,"Plant site: Sharada Industrial Estate, Kano",plant (type per table),point,,Kano,B,no,report,Kano,,11.993998,8.521974,osm_place_rank,OSM node/501540880 place=city 'Kano',10000,only city/town among 2 same-named OSM places,Kano,consistent,,
+F0157,ENAMELWA,main,2025 FS,3,Registered office,registered office,point,,Lagos,A,yes,report,Ogba,,,,,,,ambiguous: 2 OSM places named 'Ogba'; not assigned,,,no coordinate,
+F0158,ENAMELWA,main,2025 FS,17,Rented factory premises,factory (rented),point,,,D,no,report,,,,,,,,,,,,
+F0159,FIDSON,main,2025 AR,3,Registered office,registered office,point,,Lagos,A,yes,report,Obanikoro,,6.552338,3.370000,osm_place,OSM node/14161659116 place=suburb 'Obanikoro',2000,,Lagos,consistent,approximate (rule-based),2000
+F0160,FIDSON,main,2025 AR,75,Biotech factory,pharmaceutical factory,point,,Ogun,A,no,report,Ota,,6.684526,3.233010,osm_place_rank,OSM node/501392235 place=town 'Ota',5000,only city/town among 2 same-named OSM places,Ogun,consistent,approximate (rule-based),5000
+F0161,MEYER,main,2025 FS,3,Registered office,registered office,point,,Lagos,A,yes,report,Oregun,,6.601001,3.364464,osm_place,OSM node/501514506 place=suburb 'Oregun',2000,,Lagos,consistent,approximate (rule-based),2000
+F0162,MEYER,main,2025 FS,4,Paint manufacturing site,paint factory,point,,,D,no,report,,,,,,,,,,,,
+F0163,NNFM,main,2025 AR,7,Registered office and production facility,flour mill,point,,Kano,A,no,report,Kano,,11.993998,8.521974,osm_place_rank,OSM node/501540880 place=city 'Kano',10000,only city/town among 2 same-named OSM places,Kano,consistent,approximate (rule-based),10000
+F0164,TOTAL,main,2025 FS,7,Head office (Eko Tower 1),head office,point,,Lagos,A,yes,report,Victoria Island,,6.430028,3.425990,osm_place,OSM node/501471396 place=town 'Victoria Island',5000,,Lagos,consistent,approximate (rule-based),5000
+F0165,TOTAL,main,2025 FS,92,Service station network (major distributors list),fuel retail network,dispersed,,Abia; Adamawa; Akwa Ibom; Anambra; Bauchi; Benue; Borno; Cross River; Delta; Ebonyi; Edo; Ekiti; Enugu; Gombe; Imo; Jigawa; Kaduna; Kano; Katsina; Kebbi; Kogi; Kwara; Lagos; Nasarawa; Niger; Ogun; Ondo; Osun; Oyo; Plateau; Rivers; Taraba; Yobe; Zamfara; FCT,C,no,report,,,,,,,,,,,,
+F0166,TOTAL,main,2025 FS,20,White products depots,depots,dispersed,,,D,no,report,,,,,,,,,,,,
+F0167,TOTAL,main,2025 FS,48,Lubricant blending plant,lubricant blending plant,point,,,D,no,report,,,,,,,,,,,,
+F0168,CHAMPION,main,2025 AR,51,Registered office,registered office,point,,Akwa Ibom,B,yes,report,Uyo,,5.032245,7.924791,osm_place,OSM node/501193829 place=city 'Uyo',10000,,Akwa Ibom,consistent,,
+F0169,CHAMPION,main,2025 AR,18,Brewery,brewery,point,,,D,no,report,,,,,,,,,,,,
+F0170,EUNISELL,main,2025 FS,23,Registered office,registered office,point,,Lagos,A,yes,report,Ikeja,,6.601627,3.351598,osm_place,OSM node/501540907 place=city 'Ikeja',10000,,Lagos,consistent,approximate (rule-based),10000
+F0171,EUNISELL,main,2025 FS,7,Factory,factory,point,,,D,no,report,,,,,,,,,,,,
+F0172,GOLDBREW,main,FY2024 (Mar) FS,4,Registered office,registered office,point,,Abia,B,yes,report,Umuahia,,5.532403,7.492417,osm_place,OSM node/2841325913 place=city 'Umuahia',10000,,Abia,consistent,,
+F0173,GOLDBREW,main,FY2024 (Mar) FS,5,Brewery,brewery,point,,,D,no,report,,,,,,,,,,,,
+F0174,IMG,main,2025 AR,5,Registered office,registered office,point,,Lagos,A,yes,report,Oshodi,,6.557025,3.349442,osm_place,OSM node/13136676804 place=town 'Oshodi',5000,,Lagos,consistent,approximate (rule-based),5000
+F0175,IMG,main,2025 AR,5,Gas production plants,industrial gas plant,point,,,D,no,report,,,,,,,,,,,,
+F0176,JAPAULGOLD,main,2025 FS,32,Registered office (Japaul House),registered office,point,,Lagos,A,yes,report,Agidingbi,,6.622262,3.355609,osm_place,OSM node/14178015857 place=suburb 'Agidingbi',2000,,Lagos,consistent,approximate (rule-based),2000
+F0177,JAPAULGOLD,main,2025 FS,32,"Gold mining site, Libeli",gold mine (operations to start 2026),point,,Niger,B,no,report,Libeli,,10.600926,4.934640,osm_place,OSM node/501495271 place=village 'Libeli',2000,,Niger,consistent,,
+F0178,MECURE,main,2025 AR,3,Corporate office (Debo Industrial Compound),corporate office,point,,Lagos,A,yes,report,Oshodi,,6.557025,3.349442,osm_place,OSM node/13136676804 place=town 'Oshodi',5000,,Lagos,consistent,approximate (rule-based),5000
+F0179,MECURE,main,2025 AR,38,Pharmaceutical factory,pharmaceutical factory,point,,,D,no,report,,,,,,,,,,,,
+F0180,MULTITREX,main,FY2024 (Apr) FS,3,Registered office,registered office,point,,Ogun,A,yes,report,Warewa,,,,,,,no OSM place node named 'Warewa' in the Geofabrik extract (2026-11-12),,,no coordinate,
+F0181,MULTITREX,main,FY2024 (Apr) FS,25,Cocoa processing plant,cocoa processing plant,point,,,D,no,report,,,,,,,,,,,,
+F0182,TRIPPLEG,main,FY2025 (Mar) FS,5,Registered office,registered office,point,,Lagos,A,yes,report,Abule Oshun,,,,,,,no OSM place node named 'Abule Oshun' in the Geofabrik extract (2026-11-12),,,no coordinate,
+F0183,TRIPPLEG,main,FY2025 (Mar) FS,40,Printing and packaging factory,printing factory,point,,,D,no,report,,,,,,,,,,,,
+F0184,TRANSPOWER,main,2025 AR,3,Registered office,registered office,point,,Lagos,A,yes,report,Ikoyi,,6.452343,3.428052,osm_place_rank,OSM node/5908615078 place=town 'Ikoyi',5000,only city/town among 3 same-named OSM places,Lagos,consistent,approximate (rule-based),5000
+F0185,TRANSPOWER,main,2025 AR,3,Ughelli power plant,power plant,point,,Delta,A,no,report,Ughelli,,5.494188,5.995321,osm_place,OSM node/501429259 place=town 'Ughelli',5000,,Delta,consistent,approximate (rule-based),5000
+F0186,CAP,main,2025 AR,3,Registered office,registered office,point,,Lagos,A,yes,report,Ikeja,,6.601627,3.351598,osm_place,OSM node/501540907 place=city 'Ikeja',10000,,Lagos,consistent,approximate (rule-based),10000
+F0187,CAP,main,2025 AR,5,Paint manufacturing site,paint factory,point,,,D,no,report,,,,,,,,,,,,
+F0188,OANDO,main,2025 FS,3,Registered office (The Wings Complex),registered office,point,,Lagos,A,yes,report,Victoria Island,,6.430028,3.425990,osm_place,OSM node/501471396 place=town 'Victoria Island',5000,,Lagos,consistent,approximate (rule-based),5000
+F0189,OANDO,main,2025 FS,14,"Producing licences OML 56, OML 13, OML 60-63",oil and gas licence areas,dispersed,,,D,no,report,,,,,,,,,,,,
+F0190,OANDO,main,2025 FS,76,Kwale-Okpai Independent Power Plant,power plant,point,,,B,no,report,Okpai,,,,,,,no OSM place node named 'Okpai' in the Geofabrik extract (2026-11-12),,,,
+F0191,JBERGER,main,2025 AR,4,Registered office,registered office,point,,FCT,A,yes,report,Utako,,9.067966,7.443748,osm_place,OSM relation/12207339 place=admin_area 'Utako',2000,,Federal Capital Territory,consistent,approximate (rule-based),2000
+F0192,JBERGER,main,2025 AR,60,Site yards and workshops,construction yards,dispersed,,,D,no,report,,,,,,,,,,,,
+F0193,AIRTELAFRI,main,FY2025 (Mar) AR,245,Airtel Networks Limited (Nigeria) office,head office (Nigerian subsidiary),point,,Lagos,A,yes,report,Banana Island,,6.464222,3.452867,osm_place,OSM node/14161700677 place=suburb 'Banana Island',2000,,Lagos,consistent,approximate (rule-based),2000
+F0194,AIRTELAFRI,main,FY2025 (Mar) AR,225,Nigerian mobile network (Airtel Networks Limited),telecom network,dispersed,,,D,no,report,,,,,,,,,,,,
+F0195,AIRTELAFRI,main,FY2025 (Mar) AR,101,"Nxtra data centre, Nigeria (in development)",data centre,point,,,D,no,report,,,,,,,,,,,,
+F0196,ELLAHLAKES,main,"FY2024 (Jul) FS, OCR",3,Registered office,registered office,point,,Edo,A,yes,report,Benin City,,6.333059,5.622106,osm_place,OSM node/2149000430 place=city 'Benin City',10000,,Edo,consistent,approximate (rule-based),10000
+F0197,ELLAHLAKES,main,"FY2024 (Jul) FS, OCR",5,Iguelaba farm (CPO mill being installed),oil palm plantation estate,point,,Edo,B,no,report,Iguelaba,,,,,,,no OSM place node named 'Iguelaba' in the Geofabrik extract (2026-11-12),,,,
+F0198,ELLAHLAKES,main,"FY2024 (Jul) FS, OCR",5,"Adani farm (5,000 ha concession)",farm estate (in development),point,,Enugu,B,no,report,Adani,,6.735261,7.015651,osm_place,OSM node/8852011265 place=town 'Adani',5000,,Enugu,consistent,,
+F0199,ELLAHLAKES,main,"FY2024 (Jul) FS, OCR",16,"Ondo State land (5,000 ha)",farm land,point,,Ondo,C,no,report,,,,,,,,,,,,
+F0200,MULTIVERSE,main,"2025 FS, OCR",6,Alagunten quarry,quarry,point,,Ogun,B,no,report,Alagunten,,,,,,,no OSM place node named 'Alagunten' in the Geofabrik extract (2026-11-12),,,,
+F0201,MULTIVERSE,main,"2025 FS, OCR",6,Abuni lead-zinc mines,lead-zinc mine,point,,Nasarawa,B,no,report,Abuni,,,,,,,no OSM place node named 'Abuni' in the Geofabrik extract (2026-11-12),,,,
+F0202,MCNICHOLS,main,"2025 FS, OCR",20,Registered office,registered office,point,,Ogun,A,yes,report,Arepo,,,,,,,no OSM place node named 'Arepo' in the Geofabrik extract (2026-11-12),,,no coordinate,
+F0203,MCNICHOLS,main,"2025 FS, OCR",39,Food and beverage factory,food factory,point,,,D,no,report,,,,,,,,,,,,
+F0204,UNIONDICON,main,"2025 FS, OCR",12,Registered office (Kirikiri Lighter Terminal),registered office,point,,Lagos,A,yes,report,Apapa,,6.446905,3.362237,osm_place_rank,OSM node/13236892516 place=town 'Apapa',5000,only city/town among 2 same-named OSM places,Lagos,consistent,approximate (rule-based),5000
+F0205,UNIONDICON,main,"2025 FS, OCR",12,Salt processing plant,salt refinery,point,,,D,no,report,,,,,,,,,,,,
+F0206,ALEX,main,"2024 FS, OCR",3,Registered office,registered office,point,,Imo,A,yes,report,Inyishi,,,,,,,no OSM place node named 'Inyishi' in the Geofabrik extract (2026-11-12),,,no coordinate,
+F0207,ALEX,main,"2024 FS, OCR",17,"Inyishi plant complex (extrusion, billet casting)",aluminium extrusion plant,point,,Imo,B,no,report,Inyishi,,,,,,,no OSM place node named 'Inyishi' in the Geofabrik extract (2026-11-12),,,,
+F0208,ALEX,main,"2024 FS, OCR",17,Suleja powder-coating plant (leased),powder-coating plant,point,,Niger,B,no,report,Suleja,,9.175833,7.180833,osm_place,OSM node/501516425 place=village 'Suleja',2000,,Niger,consistent,,
+F0209,ETERNA,main,"2025 AR, OCR",4,Registered office,registered office,point,,Lagos,A,yes,report,Ikoyi,,6.452343,3.428052,osm_place_rank,OSM node/5908615078 place=town 'Ikoyi',5000,only city/town among 3 same-named OSM places,Lagos,consistent,approximate (rule-based),5000
+F0210,ETERNA,main,"2025 AR, OCR",56,"Storage tank farms, Ibru Jetty",tank farm,point,,,B,no,report,Ibafon,,,,,,,no OSM place node named 'Ibafon' in the Geofabrik extract (2026-11-12),,,,
+F0211,ETERNA,main,"2025 AR, OCR",56,Owned service stations,fuel retail network,dispersed,,,D,no,report,,,,,,,,,,,,
+F0212,ETERNA,main,"2025 AR, OCR",60,JUHI-2 aviation tank farm (joint venture),aviation tank farm,point,,Lagos,C,no,report,,,,,,,,,,,,
+F0213,GEREGU,main,"2024 AR, OCR",15,Corporate office,corporate office,point,,Lagos,A,yes,report,Victoria Island,,6.430028,3.425990,osm_place,OSM node/501471396 place=town 'Victoria Island',5000,,Lagos,consistent,approximate (rule-based),5000
+F0214,GEREGU,main,"2024 AR, OCR",15,Geregu power plant (plant operations),power plant,point,,Kogi,B,no,report,Ajaokuta,,7.563997,6.629117,osm_place_rank,OSM node/6251483260 place=town 'Ajaokuta',5000,only city/town among 2 same-named OSM places,Kogi,consistent,,

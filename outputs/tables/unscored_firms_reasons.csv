@@ -1,0 +1,30 @@
+firm,reason,facility_rows,non_office,non_office_facilities,fs_only_all_years
+AIRTELAFRI,C1. facility stated only generically (no place named),3,2,"Nigerian mobile network (A [D/d]; Nxtra data centre, Nigeria [D/p]",0
+BERGER,C1. facility stated only generically (no place named),2,1,Paint manufacturing facili [D/p],1
+CADBURY,C1. facility stated only generically (no place named),2,1,Factory [D/p],1
+CAP,C1. facility stated only generically (no place named),2,1,Paint manufacturing site [D/p],0
+CHAMPION,C1. facility stated only generically (no place named),2,1,Brewery [D/p],0
+CONOIL,"B. dispersed assets only (networks, licences, depots)",3,2,Dealer service station net [C/d]; Depots [D/d],1
+ENAMELWA,C1. facility stated only generically (no place named),2,1,Rented factory premises [D/p],0
+ETERNA,"C2. place named in the report, but no coordinate could be assigned (Phase 2)",4,3,"Storage tank farms, Ibru J [B/p]; Owned service stations [D/d]; JUHI-2 aviation tank farm  [C/p]",0
+EUNISELL,C1. facility stated only generically (no place named),2,1,Factory [D/p],1
+FTNCOCOA,"C2. place named in the report, but no coordinate could be assigned (Phase 2)",2,1,Factory [A/p],1
+GOLDBREW,C1. facility stated only generically (no place named),2,1,Brewery [D/p],1
+IMG,C1. facility stated only generically (no place named),2,1,Gas production plants [D/p],0
+INTBREW,C1. facility stated only generically (no place named),2,1,Breweries [D/p],1
+JBERGER,"B. dispersed assets only (networks, licences, depots)",2,1,Site yards and workshops [D/d],0
+MCNICHOLS,C1. facility stated only generically (no place named),2,1,Food and beverage factory [D/p],1
+MECURE,C1. facility stated only generically (no place named),2,1,Pharmaceutical factory [D/p],0
+MEYER,C1. facility stated only generically (no place named),2,1,Paint manufacturing site [D/p],0
+MORISON,C1. facility stated only generically (no place named),2,1,Manufacturing site [D/p],1
+MTNN,C1. facility stated only generically (no place named),5,3,Dabengwa Tier III Data Cen [D/p]; Switching centres [D/d]; Base stations [D/d],0
+MULTITREX,C1. facility stated only generically (no place named),2,1,Cocoa processing plant [D/p],0
+MULTIVERSE,"C2. place named in the report, but no coordinate could be assigned (Phase 2)",2,2,Alagunten quarry [B/p]; Abuni lead-zinc mines [B/p],0
+NASCON,C1. facility stated only generically (no place named),2,1,Salt processing plants [D/p],1
+OANDO,"C2. place named in the report, but no coordinate could be assigned (Phase 2)",3,2,"Producing licences OML 56, [D/d]; Kwale-Okpai Independent Po [B/p]",1
+PRESCO,"C2. place named in the report, but no coordinate could be assigned (Phase 2)",8,8,Obaretin Estate (corporate [A/p]; Cowan estate [C/p]; Ologbo estate [C/p]; ATO estate [C/p]; Elele estate [C/p,0
+PZ,C1. facility stated only generically (no place named),3,2,Factories [D/p]; Depots [D/d],1
+THOMASWY,C1. facility stated only generically (no place named),2,1,Paper products manufacturi [D/p],1
+TOTAL,C1. facility stated only generically (no place named),4,3,Service station network (m [C/d]; White products depots [D/d]; Lubricant blending plant [D/p],1
+TRIPPLEG,C1. facility stated only generically (no place named),2,1,Printing and packaging fac [D/p],1
+UNIONDICON,C1. facility stated only generically (no place named),2,1,Salt processing plant [D/p],1

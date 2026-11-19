@@ -1,0 +1,49 @@
+outcome,role,n,firms,quantity,estimate,boot_low,boot_high,instability
+Y3d,primary,69,27,"R2 gain, exposure block alone (over year FE + document type)",0.0115,0.001,0.1148,
+Y3d,primary,69,27,"R2 gain, institutional block alone",0.144,0.0985,0.4188,
+Y3d,primary,69,27,R2 added by exposure given institutional,0.0426,0.0016,0.1495,
+Y3d,primary,69,27,R2 added by institutional given exposure,0.1751,0.1109,0.426,
+Y3d,primary,69,27,difference: exposure-added minus institutional-added,-0.1325,-0.3729,-0.0599,
+Y3d,primary,69,27,R2 of the full model,0.361,0.2888,0.7296,
+Y3d,primary,69,27,standardised coefficient: rf100_E_share (full model),0.1494,,,
+Y3d,primary,69,27,standardised coefficient: heat_E_share (full model),0.2398,,,
+Y3d,primary,69,27,standardised coefficient: log_total_assets (full model),0.3969,,,
+Y3d,primary,69,27,standardised coefficient: foreign_parent_50 (full model),-0.4448,,,
+Y3d,primary,69,27,standardised coefficient: assurance (full model),-0.0601,,,
+Y3d,primary,69,27,standardised coefficient: big4 (full model),-0.0493,,,
+Y4s,secondary,25,12,"R2 gain, exposure block alone (over year FE + document type)",0.0421,0.0011,0.3722,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y4s,secondary,25,12,"R2 gain, institutional block alone",0.2933,0.0239,0.7632,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y4s,secondary,25,12,R2 added by exposure given institutional,0.0924,-0.0,0.2055,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y4s,secondary,25,12,R2 added by institutional given exposure,0.3436,0.011,0.6417,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y4s,secondary,25,12,difference: exposure-added minus institutional-added,-0.2512,-0.6242,-0.0105,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y4s,secondary,25,12,R2 of the full model,0.5872,0.5194,1.0,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y4s,secondary,25,12,standardised coefficient: rf100_E_share (full model),0.7337,,,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y4s,secondary,25,12,standardised coefficient: heat_E_share (full model),0.0467,,,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y4s,secondary,25,12,standardised coefficient: log_total_assets (full model),1.7944,,,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y4s,secondary,25,12,standardised coefficient: foreign_parent_50 (full model),-0.1136,,,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y4s,secondary,25,12,standardised coefficient: assurance (full model),-0.9004,,,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y4s,secondary,25,12,standardised coefficient: big4 (full model),0.1202,,,"only 8 non-zero outcomes; 32 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,"R2 gain, exposure block alone (over year FE + document type)",0.0032,0.0008,0.1126,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,"R2 gain, institutional block alone",0.2085,0.1296,0.4645,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,R2 added by exposure given institutional,0.0216,0.0009,0.1149,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,R2 added by institutional given exposure,0.227,0.1308,0.4744,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,difference: exposure-added minus institutional-added,-0.2053,-0.4324,-0.1062,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,R2 of the full model,0.463,0.3816,0.7913,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,standardised coefficient: rf100_E_share (full model),0.0798,,,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,standardised coefficient: heat_E_share (full model),0.1851,,,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,standardised coefficient: log_total_assets (full model),0.6172,,,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,standardised coefficient: foreign_parent_50 (full model),-0.467,,,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,standardised coefficient: assurance (full model),-0.309,,,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y3d_refined,robustness: refined dictionary,69,27,standardised coefficient: big4 (full model),-0.1048,,,"4 of 9999 bootstrap draws invalid (outcome without variance or singular design), ignored"
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,"R2 gain, exposure block alone (over year FE + document type)",0.0118,0.0013,0.1958,
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,"R2 gain, institutional block alone",0.5024,0.2341,0.6768,
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,R2 added by exposure given institutional,0.0064,0.0005,0.0561,
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,R2 added by institutional given exposure,0.497,0.172,0.6591,
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,difference: exposure-added minus institutional-added,-0.4906,-0.6498,-0.1386,
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,R2 of the full model,0.7607,0.6039,0.9321,
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,standardised coefficient: rf100_E_share (full model),0.1077,,,
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,standardised coefficient: heat_E_share (full model),-0.026,,,
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,standardised coefficient: log_total_assets (full model),0.4263,,,
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,standardised coefficient: foreign_parent_50 (full model),-0.1715,,,
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,standardised coefficient: assurance (full model),0.2858,,,
+Y1_cb,exploratory ClimateBERT (unvalidated),69,27,standardised coefficient: big4 (full model),-0.0069,,,

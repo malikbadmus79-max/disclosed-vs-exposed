@@ -1,0 +1,20 @@
+# Phase 0 (feasibility audit) only. Analysis dependencies are added in later phases.
+requests>=2.32,<3
+beautifulsoup4>=4.12,<5
+pandas>=2.2,<3
+openpyxl>=3.1,<4
+pypdf>=4,<7
+pymupdf>=1.24,<2
+pdfplumber>=0.11,<1
+# Task 6 smoke test only. Install CPU torch from https://download.pytorch.org/whl/cpu
+torch>=2.2,<3
+transformers>=4.40,<5
+# OCR (frozen text rules). Also needs the Tesseract and Ghostscript programs installed outside pip.
+ocrmypdf>=16,<17
+# Readability check (amendment A1): top 1,000 English words. Code Apache-2.0, data CC BY-SA 4.0.
+wordfreq==3.1.1
+# OSM extract lookup (Phase 2 fallback, 2026-11-12)
+osmium==4.3.2
+shapely==2.2.0
+rasterio>=1.5,<2
+pyogrio>=0.13,<1

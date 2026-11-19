@@ -1,0 +1,3 @@
+# Disclosed vs Exposed: short abstract
+
+Nigeria will require IFRS S2 climate reporting from 2028. We set a pre-mandate baseline for 56 listed firms with physical operations (2020–2025). We compare their physical-risk disclosure with open-data hazard exposure of their named sites. All results are descriptive: the hazard dictionary's checked precision was 0.65. In 68 of 97 firm-years with narrative text, no paragraph uses a hazard term. Of 51 exposed sites, 50 are named in reports, but none is discussed as being at physical risk. Of 15 firms with heat-exposed sites, two use heat terms. Two of 56 firms show all five elements the 2028 regime will require.

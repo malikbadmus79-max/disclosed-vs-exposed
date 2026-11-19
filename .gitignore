@@ -1,0 +1,32 @@
+# Raw and intermediate data (copyright, licences, size): never commit
+data/raw/
+data/interim/
+data/interim/text/
+**/paragraphs.csv
+
+# PDFs: company reports and standards are never committed; only the brief and paper may be
+*.pdf
+!brief/*.pdf
+!paper/*.pdf
+
+# Environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Credentials and keys
+.cdsapirc
+*.key
+*.pem
+.env
+.env.*
+**/secrets*
+.claude/settings.local.json
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/

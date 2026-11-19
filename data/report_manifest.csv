@@ -1,0 +1,110 @@
+doc,firm,stratum,fiscal_year,doc_type,source,sha256,pages,ocr_copy_used,in_main_analysis
+ABCTRANS_2025_FS,ABCTRANS,robustness_stratum,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/46506_ABC_TRANSPORT_PLC-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_MARCH_2026.pdf,8a3c98bf74c140792c68f5a223fbf7310c80b39cf7c8fc25406d5de9da3d68fa,90,no,yes
+ACADEMY_2020_AR,ACADEMY,main,2020,AR,owner browser download (source page: docs/data_sources.md),cf572d228db4564affeee89b442ff6cc28fbd5b0b1a12d29aa7ce45222f124db,100,no,yes
+ACADEMY_2025_AR,ACADEMY,main,2025,AR,owner browser download (source page: docs/data_sources.md),d76f06a68f1f40c4a594f66610bc1b4fdd705efb397e24df2db4e502c6fd9cdc,112,yes,yes
+AIRTELAFRI_2025_AR,AIRTELAFRI,main,2025,AR,owner browser download (source page: docs/data_sources.md),ac7b74ce7526c4e7551c3026ff410233b1e96da50498d47c7e2abbffe6b1b099,268,no,yes
+ALEX_2020_AR,ALEX,main,2020,AR,owner browser download (source page: docs/data_sources.md),b4f2997dd98d0e58ccab4c81b2bc75b98178030db48379a5d0d8590b8dc759ed,102,yes,yes
+ALEX_2024_FS,ALEX,main,2024,FS,owner browser download (source page: docs/data_sources.md),bc26717f8743660e36be5bba08a38f6bcadc8fbe1eda211c3cb46d86b95ba61a,60,yes,yes
+ARADEL_2021_AR,ARADEL,main,2021,AR,owner browser download (source page: docs/data_sources.md),a47818474c275e0ecd0aa6cd7decbcbe3ca2cee62bf6d16b79cd656c9c07e0bb,129,yes,yes
+ARADEL_2024_AR,ARADEL,main,2024,AR,owner browser download (source page: docs/data_sources.md),967d0d5a47a7caf31af01d9ff63c879ce543a615c30dc3ed83bde42095680c29,222,yes,yes
+ARADEL_2025_AR,ARADEL,main,2025,AR,owner browser download (source page: docs/data_sources.md),5091add6c7ea67507e7e86079ae55cb2ae0c285a5378698ca7d43f73d8cce7ca,135,no,yes
+BERGER_2025_FS,BERGER,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/46449_BERGER_PAINTS_NIGERIA_PLC-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_MARCH_2026.pdf,35be13a49efd429d1f4dda5b2887003717b53f85d62cf60c32f0baf041b2fc1c,80,no,yes
+BETAGLAS_2020_AR,BETAGLAS,main,2020,AR,owner browser download (source page: docs/data_sources.md),029a5e0c67ad5aa85ac822513007f08080150f82caf720ea01e678999dca6166,120,no,yes
+BETAGLAS_2023_AR,BETAGLAS,main,2023,AR,https://greenwichregistrars.com/wp-content/uploads/2024/06/BETA-GLASS-ANNUAL-REPORT-AND-AUDITED-FINANCIAL-STATEMENT-2023.pdf,593c75f307ac020a0064c995b22edd0a8cd58928843be4e3130776f878148479,108,no,yes
+BUACEMENT_2020_AR,BUACEMENT,main,2020,AR,https://www.buacement.com/documents/2020-BUA-Cement-Annual-Report-DIGITAL20241010093515.pdf,691e7bede37741c1836102263e88dd5479054535ed2089c97a39a5b65f6e4275,66,no,yes
+BUACEMENT_2021_AR,BUACEMENT,main,2021,AR,https://www.buacement.com/documents/Download%20Audited%20Annual%20Report%20&%20Accounts%20FY%20202120241010043006.pdf,b1c3fc4db199e8252c97b4d1c02e405b00f3499826f44eff4daf50ed0b83c6fc,142,no,yes
+BUACEMENT_2022_AR,BUACEMENT,main,2022,AR,https://www.buacement.com/documents/Download%20Annual%20Report%20and%20Accounts%20FY%20202220241010041946.pdf,352c3d14cb452cfe4965f8e2cb7bcf67efbf3b0df22813d3778abbf1571f87ce,152,no,yes
+BUACEMENT_2023_AR,BUACEMENT,main,2023,AR,https://www.buacement.com/documents/BUA-Cement-Annual-Report-and-Accounts-2023-WEB20241105083027.pdf,efc8452e4db2aa59bd58a90751546714cba8b82a02097b49d43c112c621848c6,160,no,yes
+BUACEMENT_2024_AR,BUACEMENT,main,2024,AR,https://www.buacement.com/documents/BUA%20Cement%20Plc%202024%20-%20compressed20260302033844.pdf,417a70e13bc935b4f5a537f41fcab3bd770f4c9abe328f6781a8011d757fe6dc,148,yes,yes
+BUACEMENT_2025_AR,BUACEMENT,main,2025,AR,https://www.buacement.com/documents/20260514_BUA%20CEMENT%20AR25_VF_update%20(INTERACTIVE)20260514091939.pdf,2ef960b48b07e0e7fe476b4719ade90829856e9c1997f4bd338578d027a7b164,79,no,yes
+BUAFOODS_2022_AR,BUAFOODS,main,2022,AR,owner browser download (source page: docs/data_sources.md),c3981401aa0e466b59c747b47c186063f20993f28a69f5aa8ec3607e11c8425c,194,no,yes
+BUAFOODS_2024_AR,BUAFOODS,main,2024,AR,owner browser download (source page: docs/data_sources.md),4a91616f980427a32327fa63c0f0ab9ea47c78db40cdf37558f5e6ea3917a32a,70,no,yes
+CADBURY_2022_FS,CADBURY,main,2022,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/37448_CADBURY_NIGERIA_PLC%20_AUDITED_FINANCIAL_STATEMENT_FOR_.pdf,3ef3fd379c2efdf05589092634650032fa4c1f889f298c123e3b1fdf86908be2,26,no,yes
+CADBURY_2025_FS,CADBURY,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/45800_CADBURY_NIGERIA_PLC.-_YEAR_END_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_JANUARY_2026.pdf,421330c1df6d2cef9140f567602998df77e7a7b74be7d9871065fcff4cc9c5dc,28,no,yes
+CAP_2025_AR,CAP,main,2025,AR,owner browser download (source page: docs/data_sources.md),87a8eb05244671acd52c336682a2843c6f58e95bff166ae9ab8b3267375b7cf7,87,no,yes
+CHAMPION_2025_AR,CHAMPION,main,2025,AR,owner browser download (source page: docs/data_sources.md),4637adc6fb3bf6dcd6e62080e56926d1719e5ef9e499e14ad501e79191bb17bc,105,yes,yes
+CONOIL_2025_FS,CONOIL,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/47162_CONOIL_PLC-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_JUNE_2026.pdf,198fde19ad8353f81d678303c866e994e2fbbc00f18a4f314a7931eeefd66751,73,no,yes
+CUTIX_2020_AR,CUTIX,main,2020,AR,owner browser download (source page: docs/data_sources.md),746fff9b32ec693a755e388ffbeaee7a68ba9940cb1e7e8583399b8e0b8cb5fc,96,no,yes
+CUTIX_2025_FS,CUTIX,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/44613_CUTIX_PLC.-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_JULY_2025.pdf,f5078cf0dc15b688de981b7fcf87670a5ead5b0f36bb898d57bf657e9fd53acb,82,no,yes
+DANGCEM_2020_AR,DANGCEM,main,2020,AR,https://cement.dangote.com/wp-content/uploads/2021/05/Dangote-Cement-Plc-Annual-Report-20201.pdf,b6cabd4c82676d3d9f0f5f8b15f57cf447839d9e5e6510f1111986d2e73466c8,260,no,yes
+DANGCEM_2022_AR,DANGCEM,main,2022,AR,https://cement.dangote.com/wp-content/uploads/2023/04/DCP-2022-Annual-Report-UPDATED.pdf,6a3d12dfb89f691d3f6dab97b0c7e33e286f81620b0daeb702f34a6f957e06b5,207,no,yes
+DANGCEM_2023_AR,DANGCEM,main,2023,AR,https://cement.dangote.com/wp-content/uploads/2024/04/DCP-Annual-Report_AR23_full.pdf,6078aa26746e208f32e092a6576bc8d1f97c0797339f016b4419cd167b6d3b39,208,no,yes
+DANGCEM_2024_AR,DANGCEM,main,2024,AR,https://cement.dangote.com/wp-content/uploads/2025/05/Dangote-Cement-FY-2024-Annual-Report.pdf,112c0ee8425a1dbda81e700a5965ec43cae89d650882ed354d63f6b603300a53,272,no,yes
+DANGCEM_2024_SRX,DANGCEM,main,2024,SRX,https://cement.dangote.com/wp-content/uploads/2025/05/Dangote-Cement-2024-Sustainability-Report.pdf,643f0ef89011c636db5a3fbde7cde478ec0cfe81d1f03049266cb7e0ce75858b,72,no,yes
+DANGCEM_2025_AR,DANGCEM,main,2025,AR,https://cement.dangote.com/wp-content/uploads/2026/06/Dangote-Cememt-Plc-2025-Annual-Report.pdf,8f4c342e4b369b2a79dfb489761e8e5e969e393d29edab344a6d3e2e21fc7ef5,236,no,yes
+DANGCEM_2025_SRX,DANGCEM,main,2025,SRX,https://cement.dangote.com/wp-content/uploads/2026/07/Dangote-Cement-Plc-AR-2025-Sustainability-Report.pdf,c1550cef88efd39ab0d29f81977da3b86bdf7cb46736b7333c5818cf49ab2024,52,no,yes
+DANGSUGAR_2020_AR,DANGSUGAR,main,2020,AR,owner browser download (source page: docs/data_sources.md),463c81cf6b72249342b7680276fa07a2c421f1fc783f358e074d6511f78081f0,204,no,yes
+DANGSUGAR_2025_FS,DANGSUGAR,main,2025,FS,https://sugar.dangote.com/wp-content/uploads/2026/03/DSR-Plc-FY-2025-Accounts.pdf,8764de17332e7d2768c736b4f5c962a86d9bd7dfdad1004082a47a68278ae158,88,no,yes
+ELLAHLAKES_2020_FS,ELLAHLAKES,main,2020,FS,owner browser download (source page: docs/data_sources.md),db31b4eb2c41c682f1fefb92cc92888e7032e51d344b36ea969ec717dc629466,46,yes,yes
+ELLAHLAKES_2024_FS,ELLAHLAKES,main,2024,FS,owner browser download (source page: docs/data_sources.md),30561ce33882986c1773150cb275c7ea3ddf8a197220747831b9add17307f8d3,46,yes,yes
+ENAMELWA_2025_AR,ENAMELWA,main,2025,AR,owner browser download (source page: docs/data_sources.md),56e5ca94988791178e9dcc19b5cfff435b5ed11b25cc788b782e79beb11e7a9e,47,no,yes
+ETERNA_2025_AR,ETERNA,main,2025,AR,owner browser download (source page: docs/data_sources.md),9c591056032bc89bd4ce1e05a0d0b3c3c223938cab602699a2f96a53cc31b27b,73,yes,yes
+EUNISELL_2025_FS,EUNISELL,main,2025,FS,owner browser download (source page: docs/data_sources.md),88e19aa059696a5336677f1076e6326966bdb102485b6273b1dad450532a0cde,39,no,yes
+FIDSON_2020_AR,FIDSON,main,2020,AR,owner browser download (source page: docs/data_sources.md),3873d1c750da8c461bbd9d95992c50b6c166f9a97acae72871d9eb08de519714,88,yes,yes
+FIDSON_2025_AR,FIDSON,main,2025,AR,owner browser download (source page: docs/data_sources.md),2ac3c80aa1b123eda12ef3ddf933f4decad68ebc6e337bfc3f06b49189ef86cf,87,no,yes
+FTNCOCOA_2025_FS,FTNCOCOA,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/FTN_COCOA_-_2025_AFS.pdf,4aad8dc1d41b38e6b0d992f4dae7c2d04eb142ecb2c762abab594339d74d4aac,55,no,yes
+GEREGU_2022_AR,GEREGU,main,2022,AR,owner browser download (source page: docs/data_sources.md),665559d9af613b537d0127e6cc71dfe3168cf2606e026d62d2bdb63bf43ae774,72,no,yes
+GEREGU_2024_AR,GEREGU,main,2024,AR,owner browser download (source page: docs/data_sources.md),a86f27a06a78456df5dc11d3d5bba74255a3265c38b5d28bf81863f1ad836588,104,yes,yes
+GOLDBREW_2024_FS,GOLDBREW,main,2024,FS,owner browser download (source page: docs/data_sources.md),721664264e588d57adc9b3ff05ee8f84c34cc88be4e374f789822437a45e5157,64,no,yes
+GUINNESS_2020_AR,GUINNESS,main,2020,AR,https://www.guinness-nigeria.com/wp-content/uploads/2020/09/annual-report-2020_guinness-nigeria-plc.pdf,b99dba99db4b680f348d121f0c05e53093141ea47eac52f178e0c5b2c8350453,152,yes,yes
+GUINNESS_2021_AR,GUINNESS,main,2021,AR,https://www.guinness-nigeria.com/wp-content/uploads/2026/08/gnar-21.pdf,15ce2a04ffe7f3d8c09eb6a9ebff6772598dd3a06871f7720071106ca4af0d88,156,yes,yes
+GUINNESS_2022_AR,GUINNESS,main,2022,AR,https://www.guinness-nigeria.com/wp-content/uploads/2026/08/gnar-22.pdf,8165c4c1ba9815a5bdb97c513a6956b154eb6f9454ba384bd183b6eefcf4ecc1,170,yes,yes
+GUINNESS_2023_AR,GUINNESS,main,2023,AR,https://www.guinness-nigeria.com/wp-content/uploads/2026/07/gn-annual-report-and-accounts-2023.pdf,0f2eef9ea4afeab2dbb81284543dbca36e6f1e5b16701205f46ec285b48c6015,164,no,yes
+GUINNESS_2024_AR,GUINNESS,main,2024,AR,https://www.guinness-nigeria.com/wp-content/uploads/2024/09/guinness-nigeria-annual-report-2024.pdf,b216282575814d6a64110a3184cf9d7cb6a4f752f21c3a7a4a4d139b5a68205f,163,yes,yes
+GUINNESS_2025_AR,GUINNESS,main,2025,AR,https://www.guinness-nigeria.com/wp-content/uploads/2026/03/guinness-nigeria-annual-report-2025-3.pdf,d8a558be1620a0f5eb254deedd67c9b58c42e7732612c9a84d506ee2952d6b3c,162,no,yes
+HBMNG_2020_FS,HBMNG,main,2020,FS,owner browser download (source page: docs/data_sources.md),d1b78eaa96756626fdc797d5057877c0dbd51f1b1db5da091b2b68cbdf87696a,72,no,yes
+HBMNG_2023_FS,HBMNG,main,2023,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/40402_LAFARGE_AFRICA_PLC.-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2023_FINANCIAL_STATEMENTS_FEBRUARY_2024.pdf,989377dd292ae160cb620dbce85c0bee31dcd0e746ff4daab1b18e0023079e46,105,yes,yes
+HONYFLOUR_2020_AR,HONYFLOUR,main,2020,AR,owner browser download (source page: docs/data_sources.md),d3e871079b03ab030f5cd520b107f54cc19299c5479b5360a284fe802bfa1fa1,113,no,yes
+HONYFLOUR_2025_FS,HONYFLOUR,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/44197_HONEYWELL_FLOUR_MILL_PLC-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_MAY_2025.pdf,c0bb66102ebf672ca5e2303dc21d108511ea0965bd8ed404589b19a8351a8965,118,no,yes
+IMG_2025_AR,IMG,main,2025,AR,owner browser download (source page: docs/data_sources.md),8c658e8214bbedd7c5ac9f1e871086ea52fee64076c016873293d5d06da6fd68,71,yes,yes
+INTBREW_2023_FS,INTBREW,main,2023,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/40765_INTERNATIONAL_BREWERIES_PLC.-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2023_FINANCIAL_STATEMENTS_MARCH_2024.pdf,2a7c0de5bb7f817a059971c2a8c495ca3e0c58dfb1694d85f41324964dd58a7b,57,no,yes
+JAPAULGOLD_2021_FS,JAPAULGOLD,main,2021,FS,owner browser download (source page: docs/data_sources.md),b6d2c56a56ae53c546d4628b09d58034b33fd6bde115e4ec2834341bb2cca2d5,88,no,yes
+JAPAULGOLD_2025_FS,JAPAULGOLD,main,2025,FS,owner browser download (source page: docs/data_sources.md),5bebf461d2fceb424649a1e197bd08a6e6e6cd5571c8a411bf6260c0681d2958,84,no,yes
+JBERGER_2025_AR,JBERGER,main,2025,AR,owner browser download (source page: docs/data_sources.md),c902ecc14077fc4fdd938e7296e372db36ceb65f293b591655f92668426cb495,89,no,yes
+LIVESTOCK_2020_AR,LIVESTOCK,main,2020,AR,owner browser download (source page: docs/data_sources.md),2a53abf4bfd8746a1f4feb1ec3523ab69af6886107f02190ab6b09b39604dc7d,106,no,yes
+LIVESTOCK_2025_AR,LIVESTOCK,main,2025,AR,https://cardinalstoneregistrars.com/wp-content/uploads/2026/05/LSF%20REPORT%202025.pdf,8e6d5c1470d62250f2ce75b6bdc69018f9baa1492a8819f9fa1dafae2731e5d2,132,yes,yes
+MAYBAKER_2020_AR,MAYBAKER,main,2020,AR,owner browser download (source page: docs/data_sources.md),99e14cb8b4732c7c1719bbcca4ba52e03097a43446ff01b79b4679e850ebb00e,111,yes,yes
+MAYBAKER_2025_FS,MAYBAKER,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/46387_MAY_AND_BAKER-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_MARCH_2026.pdf,6f54cb99424795849fe89de0822edb61c27361172f6a8a9337c6b4685b72f0ab,74,no,yes
+MCNICHOLS_2025_FS,MCNICHOLS,main,2025,FS,owner browser download (source page: docs/data_sources.md),95ba6db5edddc6a582069ea3330f54883677e8544d73f00320d23a71562d282b,52,yes,yes
+MECURE_2025_AR,MECURE,main,2025,AR,owner browser download (source page: docs/data_sources.md),4b57dfaaeb3b0bd1e75758cacb0cbf1070ab8a1490044e19dd85d2cdb9fbb23a,43,no,yes
+MEYER_2025_AR,MEYER,main,2025,AR,owner browser download (source page: docs/data_sources.md),deb8cb66498cd44eed4b6c4c0aeabb630737b4df1cc36454f612bf6b8d00757b,66,no,yes
+MORISON_2025_FS,MORISON,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/46939_MORISON_INDUSTRIES_PLC.-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_MAY_2026.pdf,c3dc48502845aaf55ec4d62ada9f7f476394d381bbc4198c232f63c8eda2ed37,45,no,yes
+MTNN_2025_AR,MTNN,main,2025,AR,owner browser download (source page: docs/data_sources.md),8d845b8dc1e481996d70fff7c813883327d16371a8121bfd280f530d97b3189e,167,no,yes
+MTNN_2025_SR,MTNN,main,2025,SR,owner browser download (source page: docs/data_sources.md),a3301087c3342636745aba62c3e38259b45f76ce130fa941555f3391bab21168,174,no,yes
+MULTITREX_2024_AR,MULTITREX,main,2024,AR,owner browser download (source page: docs/data_sources.md),e1ed36cb80c62a6c0cb41387b98a83410b9abf5785e5be661d8640806a9b645a,57,yes,yes
+MULTIVERSE_2025_AR,MULTIVERSE,main,2025,AR,owner browser download (source page: docs/data_sources.md),0c7b72d9bb3c3c15da2d958dd04947f76112675debe598eca04a284f4dab2b57,49,yes,yes
+NASCON_2025_FS,NASCON,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/46191_NASCON_ALLIED_INDUSTRIES_PLC-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_MARCH_2026.pdf,6752d78b74bc398a858f9c8ec8f37dcc8cf55e16dfdda37288e2c37fe60d2d55,73,no,yes
+NB_2020_AR,NB,main,2020,AR,owner browser download (source page: docs/data_sources.md),e11e61543a45e4f3c5c3da4493db782ef5b2bfdb7d73698dbc811f5e6db28329,110,no,yes
+NB_2025_AR,NB,main,2025,AR,owner browser download (source page: docs/data_sources.md),c8496a1ec289340dadad7d7d3834ea940067b78eee348df3c9689b64bf8c54ce,179,yes,yes
+NEIMETH_2020_AR,NEIMETH,main,2020,AR,owner browser download (source page: docs/data_sources.md),0e72ca1aafb0aeeaf403a5748eec6dd6205fd0b9b246b1c492f03d3262330982,124,no,yes
+NEIMETH_2025_FS,NEIMETH,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/46374_NEIMETH_INTERNATIONAL_PHARMACEUTICALS_PLC-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_MARCH_2026.pdf,2d5d0f64a117be677a363ac8300ad85a506c12925a3255630e2aa8888d9540e0,66,no,yes
+NESTLE_2020_AR,NESTLE,main,2020,AR,owner browser download (source page: docs/data_sources.md),f955b99e7499d56952d62d4c93e82d98ff9433e7debf0cabff5a97040f8fbe3d,177,no,yes
+NESTLE_2025_AR,NESTLE,main,2025,AR,owner browser download (source page: docs/data_sources.md),a787ea26fcf6baff843fd3573167ff8e0f46df4a64a0c6848f161d29d868d37b,182,no,yes
+NNFM_2020_AR,NNFM,main,2020,AR,owner browser download (source page: docs/data_sources.md),05dfce10279852b8e99213d42c20ff9077827caad620d9aa20cb308fddbd5f09,202,no,no (A23: file is another company's report)
+NNFM_2025_AR,NNFM,main,2025,AR,owner browser download (source page: docs/data_sources.md),4b47f569c435d6a5755a5ea9c07983c25206ced22c898186a100455faeb181ed,102,no,yes
+OANDO_2025_FS,OANDO,main,2025,FS,owner browser download (source page: docs/data_sources.md),c057da0d059cf1aa64de7dd0bf494679c7360b1b19b01d8b01ee34ec0584d79e,113,no,yes
+OKOMUOIL_2020_AR,OKOMUOIL,main,2020,AR,https://okomunigeria.com/wp-content/uploads/2021/12/2020-Annual-report-and-accounts.pdf,5a73dd12f3c5e2df0d1b95762d7a7068c72ec047acd411d7235dc5dbd202f2a6,69,yes,yes
+OKOMUOIL_2021_AR,OKOMUOIL,main,2021,AR,https://okomunigeria.com/wp-content/uploads/2022/05/2021-Annual-report-and-accounts.pdf,42fbc8742e437a41800d749a2254e3fe2afacbf63414272dc87dbbfd398a18a1,46,no,yes
+OKOMUOIL_2022_AR,OKOMUOIL,main,2022,AR,https://okomunigeria.com/wp-content/uploads/2023/05/2022-Annual-reports-and-accounts.pdf,8bbc96cccfd5e3e0ce4c9bf14aca9fd8cb8eb8af0e48a206db7467a3ecc6874e,88,no,yes
+OKOMUOIL_2023_AR,OKOMUOIL,main,2023,AR,https://okomunigeria.com/wp-content/uploads/2024/05/Annual-reports-and-accounts.pdf,67c4520b80d1f6b977fb06740da7371cbf95af0be002d6cf75ee3ec13f12d40b,96,yes,yes
+OKOMUOIL_2024_AR,OKOMUOIL,main,2024,AR,https://okomunigeria.com/wp-content/uploads/2025/05/2024-Annual-reports-and-accounts.pdf,7fb9e6d42b0a3df9e3bd3dc6d911a3a232117ef5fb1f2735412f58e58fd5452a,115,yes,yes
+OKOMUOIL_2024_SR,OKOMUOIL,main,2024,SR,https://okomunigeria.com/wp-content/uploads/2025/06/Sustainability-report.pdf,939850db22de04e7119bf506088f7b8f87eeebf2aa7be7c8e5c1c4ce4d25e77f,48,no,yes
+PRESCO_2025_AR,PRESCO,main,2025,AR,https://www.presco-plc.com/prescoPLC/assets/File/Audited%20Financial%20Statements.pdf,c3a6b54ee53e16a8c47fae1076796d3cb2a9f523c99d107d1dc9d925d34bf3ec,119,no,yes
+PZ_2025_FS,PZ,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/44952_P_Z_CUSSONS_NIGERIA_PLC.-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_SEPTEMBER_2025.pdf,f28dfb403f1e5db74d35294aa926e45605932cb7303dc9111066af1399b65bd3,84,no,yes
+RTBRISCOE_2025_FS,RTBRISCOE,robustness_stratum,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/46407_R_T_BRISCOE_(NIGERIA)_PLC.-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_MARCH_2026.pdf,af3caefc4b5aa85146be2c716888ddf1c36f1dd5bcb39514575a3a9d751cc585,79,yes,yes
+SEPLAT_2020_AR,SEPLAT,main,2020,AR,owner browser download (source page: docs/data_sources.md),28daec3ffac1718af96e66274fd2efe81a6d09ac3041f3e18eefbe4d63916da1,312,no,yes
+SEPLAT_2025_IAR,SEPLAT,main,2025,IAR,owner browser download (source page: docs/data_sources.md),ee3404e57ba78d789081b7300c46f811d2c8f461d018daa1209cb5cffeb51081,350,no,yes
+THOMASWY_2025_FS,THOMASWY,main,2025,FS,owner browser download (source page: docs/data_sources.md),c5c6205ada383e2e64173d24f7c268fbf0d3041681486fa121e7390727898a4d,57,yes,yes
+TOTAL_2025_FS,TOTAL,main,2025,FS,owner browser download (source page: docs/data_sources.md),f9798c6628a3ac7ae9bbff34c0b15c720b34e09e9f721734117787a4d829e251,98,no,yes
+TRANSCORP_2025_FS,TRANSCORP,robustness_stratum,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/Transnational_Corporation_Plc_-_2025_AFS.pdf,16c3ad390048543f75ee6b596ee0149714d76c8cabf9c54f2c57ec58ead26a37,138,no,yes
+TRANSPOWER_2020_FS,TRANSPOWER,main,2020,FS,owner browser download (source page: docs/data_sources.md),d323369362ab45df6a121c4b37dbff360efd154f0463e406d77ca948415c0b34,69,no,yes
+TRANSPOWER_2024_AR,TRANSPOWER,main,2024,AR,owner browser download (source page: docs/data_sources.md),50402dd27348c4b894d71c26914807c3f80cd82513acaf1250900508a2dff361,85,no,yes
+TRANSPOWER_2025_AR,TRANSPOWER,main,2025,AR,owner browser download (source page: docs/data_sources.md),2a98a0d0a61d25f18e04315a07468596d6f991a70e52ce67b1cea1709fd1d8da,81,no,yes
+TRIPPLEG_2025_FS,TRIPPLEG,main,2025,FS,owner browser download (source page: docs/data_sources.md),16dc14f3e4756e708384f8ead450a1bc5d3e10047485cd35a3f294b5f6ab4345,57,no,yes
+UNILEVER_2020_AR,UNILEVER,main,2020,AR,owner browser download (source page: docs/data_sources.md),504a6fce5ec2f6acc130f67b66d23209ca3afe3f3eb56ffd3054a77b1ef912ae,169,yes,yes
+UNILEVER_2025_AR,UNILEVER,main,2025,AR,owner browser download (source page: docs/data_sources.md),6c6410d89198e8ed73f04c21c5fc0ea1122e9c4e2e48092fb68cfdd541d86897,176,yes,yes
+UNIONDICON_2025_FS,UNIONDICON,main,2025,FS,owner browser download (source page: docs/data_sources.md),c6c88525157ce20202344cf67afd12960f362eac226cb3764ee33c1da45fd44a,29,yes,yes
+VITAFOAM_2020_AR,VITAFOAM,main,2020,AR,owner browser download (source page: docs/data_sources.md),f09c92dd77418cccf2ed3e458280dd2ddcca63aef12f01dbaf4e7439c4bee71c,128,yes,yes
+VITAFOAM_2025_FS,VITAFOAM,main,2025,FS,https://doclib.ngxgroup.com/Financial_NewsDocs/45601_VITAFOAM_NIG_PLC.-_QUARTER_5_-_FINANCIAL_STATEMENT_FOR_2025_FINANCIAL_STATEMENTS_DECEMBER_2025.pdf,6a1151b0b297dcbbf06798609b34664a696e8701e7138639e5d38c4042904af7,128,no,yes
+seplat-energy_sustainability-report_2023_screen,SEPLAT,main,2023,SR (Phase 6 only; not in corpus),"owner browser download from seplatenergy.com (docs/data_sources.md, batch 6)",0c473d8731927626af74d70c022ef8eee6ece790a419394f2bd1263d95b8a1b5,,no,no
+2025-social-performance-report-1,SEPLAT,main,2025,SPR (Phase 6 only; not in corpus),"owner browser download from seplatenergy.com (docs/data_sources.md, batch 6)",0019a5dab4d86d474c758681d60a3e0c18389c596e46ddca00b1a3f4950656d9,,no,no
